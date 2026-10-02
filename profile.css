@@ -1,0 +1,2945 @@
+/* =========================================================
+   ELIGIFY PROFILE
+   PREMIUM PROFESSIONAL UI
+   TEAL + GOLD + WHITE
+   RESPONSIVE
+   ORIGINAL PROFILE PHOTO DISPLAY
+========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap'
+);
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button,
+input,
+textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --teal: #063F3F;
+    --teal-dark: #032B2B;
+    --teal-deep: #022424;
+
+    --teal-soft: #EAF4F4;
+    --teal-light: #F3F9F9;
+
+    --gold: #D4AF37;
+    --gold-dark: #B8941F;
+    --gold-light: #F7E9B4;
+    --gold-soft: #FCF8E9;
+
+    --white: #FFFFFF;
+
+    --text: #173535;
+    --text-dark: #092E2E;
+    --muted: #718181;
+    --muted-light: #9AA8A8;
+
+    --bg: #F3F7F7;
+
+    --border: #DFEAEA;
+    --border-light: #EAF0F0;
+
+    --green: #278A55;
+    --green-bg: #EFF9F2;
+
+    --red: #D94A5A;
+    --red-bg: #FFF2F4;
+
+    --shadow:
+        0 15px 45px rgba(3, 43, 43, .08);
+
+    --shadow-soft:
+        0 8px 25px rgba(3, 43, 43, .055);
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    min-height: 100vh;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #F1F7F7 50%,
+            #F8F9F5 100%
+        );
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   PREMIUM BACKGROUND
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    top: -150px;
+    right: -120px;
+
+    background: var(--gold);
+
+    opacity: .08;
+
+    border-radius: 50%;
+
+    filter: blur(55px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    bottom: -180px;
+    left: -150px;
+
+    background: var(--teal);
+
+    opacity: .07;
+
+    border-radius: 50%;
+
+    filter: blur(60px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+
+    width: 100%;
+    height: 68px;
+
+    padding: 0 32px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    border-bottom:
+        1px solid rgba(223,234,234,.85);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 3px 18px rgba(3,43,43,.035);
+}
+
+.top-spacer {
+    flex: 1;
+}
+
+
+/* =========================================================
+   TOP BUTTONS
+========================================================= */
+
+.back-btn,
+.menu-btn {
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid transparent;
+
+    background: transparent;
+
+    color: var(--teal);
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        border .25s ease;
+}
+
+.back-btn:hover,
+.menu-btn:hover {
+
+    background: var(--teal-soft);
+
+    border-color: var(--border);
+
+    transform: translateY(-1px);
+}
+
+.back-btn i,
+.menu-btn i {
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.top-actions {
+    position: relative;
+}
+
+.dropdown {
+
+    position: absolute;
+
+    top: 51px;
+    right: 0;
+
+    width: 235px;
+
+    padding: 8px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 55px rgba(3,43,43,.15);
+
+    display: none;
+
+    z-index: 300;
+
+    animation:
+        dropdownIn .2s ease;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+
+@keyframes dropdownIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.dropdown button {
+
+    width: 100%;
+    min-height: 42px;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.dropdown button:hover {
+
+    background: var(--teal-soft);
+    color: var(--teal);
+}
+
+.dropdown button i {
+
+    width: 21px;
+
+    font-size: 17px;
+
+    color: var(--teal);
+}
+
+.dropdown .logout {
+    color: var(--red);
+}
+
+.dropdown .logout i {
+    color: var(--red);
+}
+
+.dropdown .logout:hover {
+
+    background: var(--red-bg);
+    color: var(--red);
+}
+
+.dropdown-line {
+
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 6px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.profile-container {
+
+    width: min(940px, 94%);
+
+    margin: auto;
+
+    padding:
+        30px
+        0
+        70px;
+}
+
+
+/* =========================================================
+   PROFILE SECTION
+========================================================= */
+
+.profile-section {
+
+    width: 100%;
+
+    min-height: 190px;
+
+    padding: 27px 30px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    border:
+        1px solid rgba(223,234,234,.95);
+
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   GOLD DECORATIVE LINE
+========================================================= */
+
+.profile-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--teal),
+            var(--gold),
+            var(--teal)
+        );
+}
+
+
+/* =========================================================
+   PROFILE LEFT
+========================================================= */
+
+.profile-left {
+
+    width: 135px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO WRAPPER
+========================================================= */
+
+.profile-photo-wrapper {
+
+    width: 94px;
+    height: 94px;
+
+    padding: 3px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal),
+            var(--gold)
+        );
+
+    margin-bottom: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(6,63,63,.18);
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    overflow: visible;
+}
+
+
+/* OUTER RING */
+
+.profile-photo-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -6px;
+
+    border:
+        1px solid rgba(212,175,55,.25);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO CONTAINER
+========================================================= */
+
+.profile-photo {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F0F7F7,
+            #E6F1F1
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--teal);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DEFAULT PROFILE ICON
+========================================================= */
+
+.profile-photo i {
+
+    font-size: 36px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+   ORIGINAL SOURCE PRESERVED
+   NO FILTER
+   NO TRANSFORM
+   NO CLIP-PATH
+   NO ARTIFICIAL RASTERIZATION
+========================================================= */
+
+.profile-photo img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    opacity: 1;
+
+    image-rendering: auto;
+
+    /* Parent .profile-photo handles clipping */
+}
+
+
+/* =========================================================
+   PROFILE NAME
+========================================================= */
+
+.profile-name {
+
+    width: 100%;
+
+    color: var(--text-dark);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    word-break: break-word;
+}
+
+
+.profile-bio {
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   PROFILE RIGHT
+========================================================= */
+
+.profile-right {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.username-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 16px;
+}
+
+
+.profile-username {
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color: var(--teal-dark);
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+
+    letter-spacing: -.3px;
+}
+
+
+.verified-icon {
+
+    color: var(--gold-dark);
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   PROFILE STATS
+========================================================= */
+
+.profile-stats {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    background:
+        rgba(248,251,251,.9);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.profile-stat {
+
+    min-height: 68px;
+
+    border: none;
+
+    border-right:
+        1px solid var(--border);
+
+    background: transparent;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        transform .2s ease;
+}
+
+
+.profile-stat:last-child {
+    border-right: none;
+}
+
+
+.profile-stat:hover {
+    background: var(--teal-soft);
+}
+
+
+.profile-stat.active {
+
+    background:
+        linear-gradient(
+            180deg,
+            #F1F8F7,
+            #EAF4F4
+        );
+
+    box-shadow:
+        inset 0 -3px 0 var(--gold);
+}
+
+
+.profile-stat strong {
+
+    color: var(--teal);
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+
+.profile-stat span {
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   EDIT PROFILE
+========================================================= */
+
+.edit-button-wrapper {
+    margin-top: 15px;
+}
+
+
+.edit-profile-main {
+
+    width: 100%;
+
+    height: 44px;
+
+    border:
+        1px solid var(--teal);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F4F9F9
+        );
+
+    color: var(--teal);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+
+.edit-profile-main:hover {
+
+    background: var(--teal);
+
+    color: var(--white);
+
+    box-shadow:
+        0 8px 20px rgba(6,63,63,.18);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   PROFILE TABS
+========================================================= */
+
+.profile-tabs {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 5px;
+
+    background:
+        rgba(255,255,255,.9);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 4px;
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   PROFILE TAB
+========================================================= */
+
+.profile-tab {
+
+    min-height: 46px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #788888;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+
+.profile-tab:hover {
+
+    background: var(--teal-light);
+
+    color: var(--teal);
+}
+
+
+.profile-tab.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #EDF7F6,
+            #E7F2F1
+        );
+
+    color: var(--teal);
+
+    font-weight: 700;
+
+    box-shadow:
+        inset 0 -3px 0 var(--gold);
+}
+
+
+.profile-tab i {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content-area {
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+#contentArea {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(280px, 1fr)
+        );
+
+    gap: 17px;
+}
+
+
+/* =========================================================
+   SCHOLARSHIP CARD
+========================================================= */
+
+.scholarship-card {
+
+    position: relative;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid var(--border);
+
+    border-left:
+        4px solid var(--gold);
+
+    border-radius: 17px;
+
+    padding: 19px;
+
+    box-shadow:
+        0 8px 25px rgba(3,43,43,.055);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+    animation:
+        cardIn .35s ease;
+}
+
+
+.scholarship-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 16px 35px rgba(3,43,43,.10);
+
+    border-color:
+        #D7E5E4;
+}
+
+
+@keyframes cardIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding:
+        5px
+        10px;
+
+    border-radius: 20px;
+
+    background:
+        var(--green-bg);
+
+    color:
+        var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.status i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SCHOLARSHIP TITLE
+========================================================= */
+
+.scholarship-card h3 {
+
+    margin:
+        12px
+        0
+        9px;
+
+    padding-right: 42px;
+
+    color:
+        var(--text-dark);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-btn {
+
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 35px;
+    height: 35px;
+
+    border:
+        1px solid #EEDDE0;
+
+    border-radius: 50%;
+
+    background:
+        #FFF8F9;
+
+    color:
+        #D95365;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        .25s ease;
+}
+
+
+.save-btn:hover {
+
+    background:
+        #FFF0F2;
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 5px 15px rgba(217,74,90,.12);
+}
+
+
+.save-btn i {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.category-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        5px
+        10px;
+
+    border-radius: 20px;
+
+    background:
+        var(--gold-soft);
+
+    color:
+        #94751C;
+
+    border:
+        1px solid #F0E4B8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DEADLINE
+========================================================= */
+
+.deadline {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin:
+        14px
+        0;
+
+    padding:
+        9px
+        10px;
+
+    border-radius: 9px;
+
+    background:
+        #FAFBFB;
+
+    color:
+        var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.deadline i {
+
+    flex-shrink: 0;
+
+    color:
+        var(--red);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.card-actions {
+    margin-top: 14px;
+}
+
+
+.view-btn {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    border:
+        1px solid var(--teal);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F5F9F9
+        );
+
+    color:
+        var(--teal);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        all .25s ease;
+}
+
+
+.view-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal),
+            var(--teal-dark)
+        );
+
+    color:
+        var(--white);
+
+    box-shadow:
+        0 8px 20px rgba(6,63,63,.18);
+}
+
+
+/* =========================================================
+   HISTORY CARD
+========================================================= */
+
+.history-card {
+    border-left-color: var(--teal);
+}
+
+
+.history-card-top {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.user-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+}
+
+
+.user-avatar {
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal-soft),
+            #DCEEEE
+        );
+
+    color: var(--teal);
+
+    border:
+        1px solid #D6E6E5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.user-avatar i {
+    font-size: 19px;
+}
+
+
+.user-info h3 {
+
+    margin: 0;
+    padding: 0;
+
+    color:
+        var(--text-dark);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.user-info p {
+
+    margin-top: 3px;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+}
+
+
+.history-date {
+
+    flex-shrink: 0;
+
+    text-align: right;
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HISTORY DETAILS
+========================================================= */
+
+.profile-details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 15px;
+}
+
+
+.profile-chip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding:
+        6px
+        9px;
+
+    border-radius: 20px;
+
+    background:
+        #F5F9F9;
+
+    border:
+        1px solid #E8EFEF;
+
+    color:
+        #667676;
+
+    font-size: 9px;
+}
+
+
+.profile-chip i {
+
+    color:
+        var(--teal);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HISTORY RESULTS
+========================================================= */
+
+.history-results {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 9px;
+
+    margin-top: 15px;
+}
+
+
+.count-box {
+
+    padding:
+        11px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    border:
+        1px solid transparent;
+}
+
+
+.count-box strong {
+
+    display: block;
+
+    font-size: 19px;
+
+    margin-bottom: 2px;
+
+    font-weight: 700;
+}
+
+
+.eligible-box {
+
+    background:
+        var(--green-bg);
+
+    color:
+        var(--green);
+
+    border-color:
+        #DCEFE2;
+}
+
+
+.noteligible-box {
+
+    background:
+        var(--red-bg);
+
+    color:
+        var(--red);
+
+    border-color:
+        #F3DDE1;
+}
+
+
+/* =========================================================
+   HISTORY FOOTER
+========================================================= */
+
+.history-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 13px;
+
+    padding-top: 11px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+/* =========================================================
+   VIEW RESULT
+========================================================= */
+
+.view-result-btn {
+
+    border: none;
+
+    background:
+        transparent;
+
+    color:
+        var(--teal);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding:
+        6px
+        8px;
+
+    border-radius: 7px;
+
+    transition: .2s ease;
+}
+
+
+.view-result-btn:hover {
+    background: var(--teal-soft);
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.delete-btn {
+
+    border: none;
+
+    background:
+        transparent;
+
+    color:
+        var(--red);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding:
+        6px
+        8px;
+
+    border-radius: 7px;
+
+    transition: .2s ease;
+}
+
+
+.delete-btn:hover {
+    background: var(--red-bg);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-box {
+
+    grid-column:
+        1 / -1;
+
+    padding:
+        65px
+        25px;
+
+    background:
+        rgba(255,255,255,.9);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+
+.empty-box i {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    font-size: 35px;
+
+    color:
+        var(--teal);
+
+    background:
+        var(--teal-soft);
+
+    border-radius: 50%;
+
+    margin-bottom: 15px;
+}
+
+
+.empty-box h2 {
+
+    color:
+        var(--text-dark);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+.empty-box p {
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   EDIT MODAL
+========================================================= */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    padding: 18px;
+
+    background:
+        rgba(3,43,43,.38);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 500;
+}
+
+
+.modal-overlay.show {
+    display: flex;
+}
+
+
+/* =========================================================
+   EDIT CARD
+========================================================= */
+
+.edit-card {
+
+    width:
+        min(470px, 100%);
+
+    max-height:
+        90vh;
+
+    overflow-y:
+        auto;
+
+    background:
+        rgba(255,255,255,.97);
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    border-radius:
+        22px;
+
+    padding:
+        27px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.22);
+
+    animation:
+        modalIn .25s ease;
+
+    position: relative;
+}
+
+
+.edit-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    border-radius:
+        22px 22px 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--teal),
+            var(--gold),
+            var(--teal)
+        );
+}
+
+
+@keyframes modalIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(.98);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   EDIT HEADER
+========================================================= */
+
+.edit-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.edit-header h2 {
+
+    color:
+        var(--text-dark);
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.close-btn {
+
+    width: 36px;
+    height: 36px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 50%;
+
+    background:
+        #F4F7F7;
+
+    color:
+        #657070;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.close-btn:hover {
+
+    background:
+        var(--red-bg);
+
+    color:
+        var(--red);
+
+    border-color:
+        #F1D8DD;
+}
+
+
+/* =========================================================
+   EDIT PHOTO SECTION
+========================================================= */
+
+.edit-photo-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   EDIT PHOTO CONTAINER
+========================================================= */
+
+.edit-photo {
+
+    width: 92px;
+    height: 92px;
+
+    padding: 3px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid var(--teal);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal-soft),
+            #F2F8F8
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color:
+        var(--teal);
+
+    margin-bottom: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(6,63,63,.12);
+
+    flex-shrink: 0;
+}
+
+
+.edit-photo i {
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   EDIT PHOTO IMAGE
+   ORIGINAL SOURCE PRESERVED
+========================================================= */
+
+.edit-photo img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    opacity: 1;
+
+    image-rendering: auto;
+}
+
+
+/* =========================================================
+   CHANGE PHOTO
+========================================================= */
+
+.change-photo-btn {
+
+    color:
+        var(--teal);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.change-photo-btn:hover {
+    color: var(--gold-dark);
+}
+
+
+.change-photo-btn input {
+    display: none;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--text);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.input-wrapper {
+    position: relative;
+}
+
+
+.input-wrapper > i:first-child {
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--teal);
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+
+.input-wrapper input,
+.input-wrapper textarea {
+
+    width: 100%;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background:
+        #FAFCFC;
+
+    color:
+        var(--text);
+
+    font-size: 11px;
+
+    padding:
+        11px
+        12px
+        11px
+        39px;
+
+    transition:
+        border .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.input-wrapper input:hover,
+.input-wrapper textarea:hover {
+    border-color: #C9DADA;
+}
+
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+
+    border-color:
+        var(--teal);
+
+    background:
+        var(--white);
+
+    box-shadow:
+        0 0 0 3px rgba(6,63,63,.07);
+}
+
+
+.input-wrapper textarea {
+
+    min-height:
+        85px;
+
+    resize:
+        vertical;
+
+    line-height:
+        1.5;
+}
+
+
+.readonly-wrapper input {
+
+    background:
+        #F1F5F5;
+
+    color:
+        #777;
+
+    padding-right:
+        40px;
+}
+
+
+.lock-icon {
+
+    left:
+        auto !important;
+
+    right:
+        12px;
+
+    color:
+        #999 !important;
+}
+
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--muted-light);
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   SAVE PROFILE BUTTON
+========================================================= */
+
+.save-profile-btn {
+
+    width: 100%;
+
+    min-height: 45px;
+
+    border:
+        1px solid var(--teal);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal),
+            var(--teal-dark)
+        );
+
+    color:
+        var(--white);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 22px rgba(6,63,63,.20);
+
+    transition:
+        all .25s ease;
+}
+
+
+.save-profile-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #075252,
+            #032B2B
+        );
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 12px 27px rgba(6,63,63,.25);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    transform:
+        translate(-50%, 100px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal-dark),
+            var(--teal)
+        );
+
+    color:
+        var(--white);
+
+    padding:
+        11px
+        18px;
+
+    border-radius:
+        11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 12px 30px rgba(3,43,43,.22);
+
+    transition:
+        .3s ease;
+}
+
+
+.toast.show {
+
+    transform:
+        translate(-50%, 0);
+
+    opacity: 1;
+}
+
+
+.toast i {
+    color:
+        var(--gold-light);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .top-bar {
+
+        height: 62px;
+
+        padding:
+            0 20px;
+    }
+
+
+    .profile-container {
+
+        width: 94%;
+
+        padding-top:
+            22px;
+    }
+
+
+    .profile-section {
+
+        padding:
+            22px;
+
+        gap:
+            22px;
+
+        border-radius:
+            19px;
+    }
+
+
+    .profile-left {
+        width: 110px;
+    }
+
+
+    .profile-photo-wrapper {
+
+        width: 86px;
+        height: 86px;
+    }
+
+
+    .profile-photo i {
+        font-size: 33px;
+    }
+
+
+    .profile-username {
+        font-size: 20px;
+    }
+
+
+    .profile-stats {
+        border-radius: 12px;
+    }
+
+
+    #contentArea {
+
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(250px, 1fr)
+            );
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+
+        background:
+            linear-gradient(
+                180deg,
+                #FFFFFF,
+                #F3F8F8
+            );
+    }
+
+
+    .top-bar {
+
+        height: 58px;
+
+        padding:
+            0 13px;
+    }
+
+
+    .back-btn,
+    .menu-btn {
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .back-btn i,
+    .menu-btn i {
+        font-size: 19px;
+    }
+
+
+    .profile-container {
+
+        width: 94%;
+
+        padding:
+            16px
+            0
+            45px;
+    }
+
+
+    .profile-section {
+
+        padding:
+            19px
+            12px;
+
+        gap:
+            12px;
+
+        border-radius:
+            17px;
+
+        min-height:
+            160px;
+    }
+
+
+    .profile-left {
+        width: 88px;
+    }
+
+
+    .profile-photo-wrapper {
+
+        width: 74px;
+        height: 74px;
+
+        padding: 3px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .profile-photo {
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+
+    .profile-photo img {
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        max-width: none;
+        max-height: none;
+
+        object-fit: cover;
+
+        object-position: center center;
+
+        border-radius: 50%;
+    }
+
+
+    .profile-photo i {
+        font-size: 29px;
+    }
+
+
+    .profile-name {
+        font-size: 11px;
+    }
+
+
+    .profile-bio {
+        font-size: 8px;
+    }
+
+
+    .username-row {
+        margin-bottom: 11px;
+    }
+
+
+    .profile-username {
+        font-size: 16px;
+    }
+
+
+    .verified-icon {
+        font-size: 14px;
+    }
+
+
+    .profile-stat {
+        min-height: 56px;
+    }
+
+
+    .profile-stat strong {
+        font-size: 16px;
+    }
+
+
+    .profile-stat span {
+        font-size: 8px;
+    }
+
+
+    .edit-button-wrapper {
+        margin-top: 11px;
+    }
+
+
+    .edit-profile-main {
+        height: 40px;
+        font-size: 10px;
+    }
+
+
+    .profile-tabs {
+
+        margin-top:
+            15px;
+
+        padding:
+            4px;
+
+        border-radius:
+            12px;
+    }
+
+
+    .profile-tab {
+
+        min-height:
+            43px;
+
+        gap:
+            4px;
+
+        font-size:
+            8px;
+    }
+
+
+    .profile-tab i {
+        font-size: 14px;
+    }
+
+
+    #contentArea {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            13px;
+    }
+
+
+    .scholarship-card {
+
+        padding:
+            16px;
+
+        border-radius:
+            15px;
+    }
+
+
+    .scholarship-card h3 {
+
+        font-size:
+            14px;
+
+        margin:
+            10px 0 8px;
+    }
+
+
+    .status,
+    .category-badge {
+
+        font-size:
+            8px;
+    }
+
+
+    .deadline {
+        font-size:
+            9px;
+    }
+
+
+    .view-btn {
+
+        min-height:
+            38px;
+
+        font-size:
+            10px;
+    }
+
+
+    .history-card-top {
+        gap:
+            7px;
+    }
+
+
+    .user-avatar {
+
+        width:
+            39px;
+
+        height:
+            39px;
+    }
+
+
+    .user-info h3 {
+        font-size:
+            12px;
+    }
+
+
+    .user-info p {
+        font-size:
+            8px;
+    }
+
+
+    .history-date {
+        font-size:
+            7px;
+    }
+
+
+    .profile-chip {
+
+        font-size:
+            8px;
+
+        padding:
+            5px 7px;
+    }
+
+
+    .count-box {
+        font-size:
+            8px;
+    }
+
+
+    .count-box strong {
+        font-size:
+            17px;
+    }
+
+
+    .edit-card {
+
+        padding:
+            22px
+            16px;
+
+        border-radius:
+            18px;
+    }
+
+
+    .edit-header h2 {
+        font-size:
+            18px;
+    }
+
+
+    .edit-photo {
+
+        width:
+            82px;
+
+        height:
+            82px;
+
+        padding:
+            3px;
+
+        overflow:
+            hidden;
+    }
+
+
+    .edit-photo img {
+
+        display:
+            block;
+
+        width:
+            100%;
+
+        height:
+            100%;
+
+        max-width:
+            none;
+
+        max-height:
+            none;
+
+        object-fit:
+            cover;
+
+        object-position:
+            center center;
+
+        border-radius:
+            50%;
+    }
+
+
+    .dropdown {
+        width:
+            210px;
+    }
+
+
+    .toast {
+
+        width:
+            max-content;
+
+        max-width:
+            90%;
+
+        font-size:
+            10px;
+
+        bottom:
+            15px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .profile-container {
+        width: 95%;
+    }
+
+
+    .profile-section {
+
+        gap:
+            8px;
+
+        padding:
+            15px
+            8px;
+    }
+
+
+    .profile-left {
+        width:
+            76px;
+    }
+
+
+    .profile-photo-wrapper {
+
+        width:
+            64px;
+
+        height:
+            64px;
+    }
+
+
+    .profile-photo i {
+        font-size:
+            25px;
+    }
+
+
+    .profile-name {
+        font-size:
+            10px;
+    }
+
+
+    .profile-bio {
+        font-size:
+            7px;
+    }
+
+
+    .profile-username {
+        font-size:
+            14px;
+    }
+
+
+    .profile-stat strong {
+        font-size:
+            14px;
+    }
+
+
+    .profile-stat span {
+        font-size:
+            7px;
+    }
+
+
+    .profile-tab {
+
+        font-size:
+            7px;
+
+        gap:
+            3px;
+    }
+
+
+    .profile-tab i {
+        font-size:
+            13px;
+    }
+
+
+    .scholarship-card {
+        padding:
+            14px;
+    }
+
+
+    .history-results {
+        gap:
+            6px;
+    }
+
+
+    .edit-photo {
+
+        width:
+            74px;
+
+        height:
+            74px;
+    }
+}
+
+
+/* =========================================================
+   SMALL HEIGHT DEVICES
+========================================================= */
+
+@media (max-height: 650px) and (min-width: 481px) {
+
+    .profile-container {
+        padding-top:
+            18px;
+    }
+
+
+    .profile-section {
+        padding:
+            20px 25px;
+    }
+
+
+    .profile-photo-wrapper {
+
+        width:
+            82px;
+
+        height:
+            82px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+
+    outline:
+        2px solid var(--gold);
+
+    outline-offset:
+        2px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:
+        #F1F5F5;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #B8CDCC;
+
+    border-radius:
+        10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--teal);
+}

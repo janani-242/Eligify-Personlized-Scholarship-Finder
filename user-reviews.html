@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Eligify | User Reviews</title>
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         REMIX ICONS
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         PAGE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="user-reviews.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ADMIN LAYOUT
+    ====================================================== -->
+
+    <div class="admin-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo">
+
+                <a href="admin-dashboard.html">
+
+                    <div class="logo-icon">
+                        <i class="ri-bookmark-3-fill"></i>
+                    </div>
+
+                    <div class="logo-text">
+                        <span class="logo-name">
+                            Eligify
+                        </span>
+
+                        <span class="logo-subtitle">
+                            Admin Panel
+                        </span>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-section-title">
+                    MAIN MENU
+                </p>
+
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                >
+                    <i class="ri-dashboard-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="admin-dashboard.html#scholarshipSection"
+                    class="nav-item"
+                >
+                    <i class="ri-award-line"></i>
+                    <span>Scholarships</span>
+                </a>
+
+
+                <a
+                    href="account-history.html"
+                    class="nav-item"
+                >
+                    <i class="ri-user-line"></i>
+                    <span>Users</span>
+                </a>
+
+
+                <a
+                    href="user-reviews.html"
+                    class="nav-item active"
+                >
+                    <i class="ri-star-line"></i>
+                    <span>Reviews</span>
+                </a>
+
+
+                <a
+                    href="admin-notification.html"
+                    class="nav-item"
+                >
+                    <i class="ri-notification-3-line"></i>
+                    <span>Notifications</span>
+                </a>
+
+
+                <p class="nav-section-title">
+                    MANAGEMENT
+                </p>
+
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                    id="addScholarshipBtn"
+                >
+                    <i class="ri-add-circle-line"></i>
+                    <span>Add Scholarship</span>
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="logout-btn"
+                    id="logoutBtn"
+                >
+
+                    <i class="ri-logout-box-r-line"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOP BAR
+            ================================================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <div class="page-heading">
+
+                        <span class="page-eyebrow">
+                            ADMIN PANEL
+                        </span>
+
+                        <h1>
+                            User Reviews
+                        </h1>
+
+                        <p>
+                            Manage and monitor reviews submitted by Eligify users.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <!-- SEARCH -->
+
+                    <div class="review-search">
+
+                        <i class="ri-search-line"></i>
+
+                        <input
+                            type="search"
+                            id="reviewSearch"
+                            placeholder="Search reviews..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <!-- REFRESH -->
+
+                    <button
+                        type="button"
+                        class="refresh-btn"
+                        id="refreshReviewsBtn"
+                        title="Refresh Reviews"
+                    >
+
+                        <i class="ri-refresh-line"></i>
+
+                        <span>
+                            Refresh
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE BODY
+            ================================================== -->
+
+            <section class="reviews-page">
+
+
+                <!-- =================================================
+                     STATISTICS
+                ================================================== -->
+
+                <div class="review-stats">
+
+
+                    <!-- TOTAL REVIEWS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-chat-3-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Total Reviews
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="totalReviews"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AVERAGE RATING -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-star-smile-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Average Rating
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="averageRating"
+                            >
+                                0.0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FIVE STAR -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-star-fill"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                5 Star Reviews
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="fiveStarReviews"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TODAY -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-calendar-check-line"></i>
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span class="stat-label">
+                                Today's Reviews
+                            </span>
+
+                            <strong
+                                class="stat-value"
+                                id="todayReviews"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REVIEWS HEADER
+                ================================================== -->
+
+                <div class="reviews-section-header">
+
+                    <div>
+
+                        <h2>
+                            All User Reviews
+                        </h2>
+
+                        <p>
+                            Real reviews received from Eligify users.
+                        </p>
+
+                    </div>
+
+
+                    <!-- RATING FILTER -->
+
+                    <div class="rating-filter">
+
+                        <label for="ratingFilter">
+                            Filter by rating
+                        </label>
+
+                        <div class="filter-select">
+
+                            <i class="ri-filter-3-line"></i>
+
+                            <select
+                                id="ratingFilter"
+                            >
+
+                                <option value="All">
+                                    All Ratings
+                                </option>
+
+                                <option value="5">
+                                    5 Stars
+                                </option>
+
+                                <option value="4">
+                                    4 Stars
+                                </option>
+
+                                <option value="3">
+                                    3 Stars
+                                </option>
+
+                                <option value="2">
+                                    2 Stars
+                                </option>
+
+                                <option value="1">
+                                    1 Star
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOADING
+                ================================================== -->
+
+                <div
+                    class="reviews-loading"
+                    id="reviewsLoading"
+                    style="display: none;"
+                >
+
+                    <div class="loading-spinner">
+                        <i class="ri-loader-4-line ri-spin"></i>
+                    </div>
+
+                    <h3>
+                        Loading reviews...
+                    </h3>
+
+                    <p>
+                        Please wait while we fetch the latest reviews.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ERROR
+                ================================================== -->
+
+                <div
+                    class="reviews-error"
+                    id="reviewsError"
+                    style="display: none;"
+                >
+
+                    <div class="error-icon">
+                        <i class="ri-error-warning-line"></i>
+                    </div>
+
+                    <h3>
+                        Unable to load reviews
+                    </h3>
+
+                    <p id="reviewsErrorMessage">
+                        Something went wrong while loading reviews.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="retry-btn"
+                        id="retryReviewsBtn"
+                    >
+                        <i class="ri-refresh-line"></i>
+                        Try Again
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
+                <div
+                    class="empty-reviews"
+                    id="emptyReviews"
+                    style="display: none;"
+                >
+
+                    <div class="empty-icon">
+                        <i class="ri-chat-off-line"></i>
+                    </div>
+
+                    <h3>
+                        No Reviews Found
+                    </h3>
+
+                    <p>
+                        There are no reviews matching your current search or filter.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REVIEWS GRID
+                ================================================== -->
+
+                <div
+                    class="reviews-container"
+                    id="reviewsContainer"
+                >
+                    <!-- Real reviews will be inserted by JS -->
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         REVIEW DETAILS MODAL
+    ========================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="reviewModal"
+    >
+
+        <div
+            class="modal review-details-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reviewDetailsTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-eyebrow">
+                        REVIEW DETAILS
+                    </span>
+
+                    <h2 id="reviewDetailsTitle">
+                        Review Details
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeReviewModal"
+                    aria-label="Close"
+                >
+                    <i class="ri-close-line"></i>
+                </button>
+
+            </div>
+
+
+            <div
+                class="modal-body"
+                id="reviewDetails"
+            >
+                <!-- Review details inserted by JS -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         ADMIN REPLY MODAL
+    ========================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="replyReviewModal"
+    >
+
+        <div
+            class="modal reply-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="replyModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-eyebrow">
+                        ADMIN RESPONSE
+                    </span>
+
+                    <h2 id="replyModalTitle">
+                        Reply to Review
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeReplyModal"
+                    aria-label="Close"
+                >
+                    <i class="ri-close-line"></i>
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <!-- USER PREVIEW -->
+
+                <div
+                    class="reply-user-preview"
+                    id="replyUserPreview"
+                >
+                    <!-- User information inserted by JS -->
+                </div>
+
+
+                <!-- REPLY FORM -->
+
+                <form
+                    id="replyReviewForm"
+                    novalidate
+                >
+
+                    <input
+                        type="hidden"
+                        id="replyReviewId"
+                        name="reviewId"
+                    >
+
+
+                    <div class="form-group">
+
+                        <label for="adminReply">
+                            Your Reply
+                        </label>
+
+                        <textarea
+                            id="adminReply"
+                            name="adminReply"
+                            rows="6"
+                            maxlength="500"
+                            placeholder="Write your response to this user..."
+                            required
+                        ></textarea>
+
+
+                        <div class="character-count">
+
+                            <span>
+                                Maximum 500 characters
+                            </span>
+
+                            <span>
+                                <strong id="replyCharacterCount">
+                                    0
+                                </strong>
+                                / 500
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="cancelReplyBtn"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                            id="saveReplyBtn"
+                        >
+                            <i class="ri-send-plane-line"></i>
+                            Send Reply
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         DELETE REVIEW MODAL
+    ========================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="deleteReviewModal"
+    >
+
+        <div
+            class="modal confirmation-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="deleteReviewTitle"
+        >
+
+            <div class="confirmation-icon delete-icon">
+
+                <i class="ri-delete-bin-line"></i>
+
+            </div>
+
+
+            <div class="confirmation-content">
+
+                <h2 id="deleteReviewTitle">
+                    Delete Review?
+                </h2>
+
+                <p>
+                    This review will be permanently removed.
+                    This action cannot be undone.
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelReviewDelete"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="danger-btn"
+                    id="confirmReviewDelete"
+                >
+                    <i class="ri-delete-bin-line"></i>
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         LOGOUT MODAL
+    ========================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="logoutModal"
+    >
+
+        <div
+            class="modal confirmation-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutTitle"
+        >
+
+            <div class="confirmation-icon logout-icon">
+
+                <i class="ri-logout-box-r-line"></i>
+
+            </div>
+
+
+            <div class="confirmation-content">
+
+                <h2 id="logoutTitle">
+                    Logout?
+                </h2>
+
+                <p>
+                    Are you sure you want to logout from the admin panel?
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelLogout"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="danger-btn"
+                    id="confirmLogout"
+                >
+                    <i class="ri-logout-box-r-line"></i>
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div class="toast-icon">
+
+            <i
+                id="toastIcon"
+                class="ri-checkbox-circle-line"
+            ></i>
+
+        </div>
+
+
+        <div class="toast-content">
+
+            <span id="toastMessage">
+                Action completed successfully.
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="user-reviews.js"></script>
+
+</body>
+
+</html>

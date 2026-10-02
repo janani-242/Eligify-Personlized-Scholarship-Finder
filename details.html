@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Eligify | Scholarship Details</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DETAILS CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="details.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         LOADING
+    ====================================================== -->
+
+    <div
+        class="loading"
+        id="loading"
+    >
+
+        <div class="loader"></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
+
+    <div class="details-container">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="details-header">
+
+
+            <button
+                type="button"
+                class="back-btn"
+                onclick="history.back()"
+                aria-label="Go back"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </button>
+
+
+
+            <h2>
+                Scholarship Details
+            </h2>
+
+
+
+            <button
+                type="button"
+                class="save-btn"
+                id="saveBtn"
+                aria-label="Save scholarship"
+            >
+
+                <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             HERO SECTION
+        ================================================== -->
+
+        <section class="scholarship-hero">
+
+
+            <div class="hero-top">
+
+
+                <div class="scholarship-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+
+
+                <span
+                    class="active-badge"
+                    id="status"
+                >
+                    Active
+                </span>
+
+
+            </div>
+
+
+
+            <h1 id="name">
+                Loading Scholarship...
+            </h1>
+
+
+
+            <div class="provider">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <span id="provider">
+                    Loading Provider...
+                </span>
+
+            </div>
+
+
+
+            <!-- SCHOLARSHIP AMOUNT -->
+
+            <div class="amount-box">
+
+
+                <div class="amount-icon">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                </div>
+
+
+
+                <div>
+
+                    <p>
+                        Scholarship Amount
+                    </p>
+
+
+                    <h2 id="amount">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUICK DETAILS
+        ================================================== -->
+
+        <section class="quick-info">
+
+
+            <!-- CATEGORY -->
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <div>
+
+                    <span>
+                        Category
+                    </span>
+
+                    <h4 id="category">
+                        Loading...
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STATE -->
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <span>
+                        State
+                    </span>
+
+                    <h4 id="state">
+                        Loading...
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COURSE LEVEL -->
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <div>
+
+                    <span>
+                        Course Level
+                    </span>
+
+                    <h4 id="courseLevel">
+                        Loading...
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INCOME -->
+
+            <div class="info-card">
+
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                <div>
+
+                    <span>
+                        Income Limit
+                    </span>
+
+                    <h4 id="income">
+                        Loading...
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT SCHOLARSHIP
+        ================================================== -->
+
+        <section class="details-section">
+
+
+            <div class="section-heading">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <h3>
+                    About Scholarship
+                </h3>
+
+            </div>
+
+
+
+            <p id="description">
+                Loading scholarship description...
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ELIGIBILITY CRITERIA
+        ================================================== -->
+
+        <section class="details-section">
+
+
+            <div class="section-heading">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h3>
+                    Eligibility Criteria
+                </h3>
+
+            </div>
+
+
+
+            <div class="eligibility-list">
+
+
+                <!-- ELIGIBLE COURSES -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Eligible Courses
+                        </span>
+
+                        <p id="courses">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- GENDER -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-venus-mars"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Gender
+                        </span>
+
+                        <p id="gender">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- COMMUNITY -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Community
+                        </span>
+
+                        <p id="community">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- MINIMUM MARKS -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Minimum Marks
+                        </span>
+
+                        <p id="marks">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FAMILY INCOME -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Family Income Requirement
+                        </span>
+
+                        <p id="incomeRequirement">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FIRST GRADUATE -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            First Graduate
+                        </span>
+
+                        <p id="firstGraduate">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SINGLE CHILD -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-child"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Single Child
+                        </span>
+
+                        <p id="singleChild">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- AGE LIMIT -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-calendar"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Age Limit
+                        </span>
+
+                        <p id="ageLimit">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- APPLICATION MODE -->
+
+                <div class="eligibility-item">
+
+
+                    <div class="eligibility-icon">
+
+                        <i class="fa-solid fa-laptop"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Application Mode
+                        </span>
+
+                        <p id="applicationMode">
+                            Loading...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             APPLICATION TIMELINE
+        ================================================== -->
+
+        <section class="details-section">
+
+
+            <div class="section-heading">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <h3>
+                    Application Timeline
+                </h3>
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+                <!-- START DATE -->
+
+                <div class="timeline-item">
+
+
+                    <div class="timeline-dot active"></div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+                            Application Starts
+                        </span>
+
+
+                        <h4 id="startDate">
+                            Loading...
+                        </h4>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="timeline-line"></div>
+
+
+
+                <!-- LAST DATE -->
+
+                <div class="timeline-item">
+
+
+                    <div class="timeline-dot"></div>
+
+
+                    <div class="timeline-content">
+
+                        <span>
+                            Application Deadline
+                        </span>
+
+
+                        <h4 id="lastDate">
+                            Loading...
+                        </h4>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             REQUIRED DOCUMENTS
+        ================================================== -->
+
+        <section class="details-section">
+
+
+            <div class="section-heading">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <h3>
+                    Required Documents
+                </h3>
+
+            </div>
+
+
+
+            <div
+                class="documents-box"
+                id="documents"
+            >
+
+
+                <div class="document-item">
+
+                    <i class="fa-solid fa-file"></i>
+
+                    <span>
+                        Loading documents...
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             VERIFICATION
+        ================================================== -->
+
+        <section class="verification-card">
+
+
+            <div class="verify-icon">
+
+                <i class="fa-solid fa-shield-check"></i>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    Verified Information
+                </h3>
+
+
+                <p>
+                    Details are collected from official scholarship sources.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             APPLY INFORMATION
+        ================================================== -->
+
+        <section class="apply-info">
+
+
+            <div class="apply-content">
+
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+
+
+                <div>
+
+                    <h3>
+                        Ready to Apply?
+                    </h3>
+
+
+                    <p>
+                        Visit the official scholarship portal to complete your application.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         STICKY APPLY BUTTON
+    ====================================================== -->
+
+    <div class="bottom-action">
+
+
+        <a
+            href="#"
+            id="applyBtn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="apply-btn"
+        >
+
+            <i class="fa-solid fa-shield-check"></i>
+
+            Verify Details &amp; Apply
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="storage-guard.js"></script>
+    <script src="details.js"></script>
+
+
+</body>
+
+</html>

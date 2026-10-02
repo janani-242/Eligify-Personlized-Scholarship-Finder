@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Eligify | Scholarships
+
+</title>
+
+<!-- Google Font -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- Remix Icons -->
+
+<link
+href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+rel="stylesheet">
+
+<!-- Dashboard CSS -->
+
+<link
+rel="stylesheet"
+href="dashboard.css">
+
+<!-- Scholarship CSS -->
+
+<link
+rel="stylesheet"
+href="scholarships.css">
+
+</head>
+
+<body>
+
+<!-- =======================================
+SIDEBAR
+======================================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<img
+src="logo.png"
+alt="logo">
+
+<h2>
+
+Eligify
+
+</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="ri-home-5-line"></i>
+
+<span>
+
+Home
+
+</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="scholarships.html">
+
+<i class="ri-book-open-line"></i>
+
+<span>
+
+Scholarships
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="eligibility.html">
+
+<i class="ri-award-line"></i>
+
+<span>
+
+Smart Eligibility
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="saved.html">
+
+<i class="ri-heart-3-line"></i>
+
+<span>
+
+Saved
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="ri-user-3-line"></i>
+
+<span>
+
+Profile
+
+</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =======================================
+MAIN
+======================================= -->
+
+<div class="main">
+
+<header class="header">
+
+<div>
+
+<h1>
+
+All Scholarships
+
+</h1>
+
+<p>
+
+Find the best scholarship for your future.
+
+</p>
+
+</div>
+
+</header>
+
+<!-- =======================================
+SEARCH
+======================================= -->
+
+<section class="search-section">
+
+<div class="search-box">
+
+<i class="ri-search-line"></i>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Scholarships...">
+
+</div>
+
+</section>
+
+<!-- =======================================
+SCHOLARSHIPS
+======================================= -->
+
+<section class="scholarship-section">
+
+<h2>
+
+Available Scholarships
+
+</h2>
+
+<div
+id="scholarshipContainer"
+class="scholarship-container">
+
+</div>
+
+<div
+class="view-more-box">
+
+<button
+id="viewMoreBtn">
+
+View More
+
+</button>
+
+</div>
+<div id="cardLoader" class="card-loader">
+
+    <div class="spinner"></div>
+
+    <p>Finding scholarships...</p>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="storage-guard.js"></script>
+    <script src="scholarships.js"></script>
+
+</body>
+
+</html>

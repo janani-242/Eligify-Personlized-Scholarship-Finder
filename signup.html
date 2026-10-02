@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eligify | Create Account</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="signup-card">
+
+            <!-- Logo -->
+            <img src="logo.png" class="logo" alt="Eligify Logo">
+
+
+            <!-- Progress -->
+            <div class="progress-container">
+
+                <div class="progress-step active">
+                    <div class="step-number">1</div>
+                    <span>Account</span>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step" id="stepTwoIndicator">
+                    <div class="step-number">2</div>
+                    <span>Username</span>
+                </div>
+
+            </div>
+
+
+            <!-- ================= STEP 1 ================= -->
+
+            <div id="step1">
+
+                <h1>Create Account</h1>
+
+                <p class="subtitle">
+                    Join Eligify and discover opportunities made for you.
+                </p>
+
+
+                <form id="detailsForm">
+
+                    <!-- Full Name -->
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Full Name"
+                            autocomplete="name"
+                            maxlength="40"
+                            required>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email Address"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create Password"
+                            autocomplete="new-password"
+                            required>
+
+                        <i
+                            class="fa-solid fa-eye toggle"
+                            id="togglePassword">
+                        </i>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm Password"
+                            autocomplete="new-password"
+                            required>
+
+                        <i
+                            class="fa-solid fa-eye toggle"
+                            id="toggleConfirmPassword">
+                        </i>
+
+                    </div>
+
+
+                    <!-- Password Strength -->
+                    <div class="strength">
+
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+
+                        <small id="strengthText">
+                            Password strength
+                        </small>
+
+                    </div>
+
+
+                    <!-- Password Requirements -->
+                    <div class="password-rules">
+
+                        <p id="ruleLength">
+                            <i class="fa-solid fa-circle"></i>
+                            At least 8 characters
+                        </p>
+
+                        <p id="ruleUpper">
+                            <i class="fa-solid fa-circle"></i>
+                            One uppercase letter
+                        </p>
+
+                        <p id="ruleNumber">
+                            <i class="fa-solid fa-circle"></i>
+                            One number
+                        </p>
+
+                        <p id="ruleSpecial">
+                            <i class="fa-solid fa-circle"></i>
+                            One special character
+                        </p>
+
+                    </div>
+
+
+                    <!-- Password Match -->
+                    <small id="passwordMatch"></small>
+
+
+                    <!-- Terms -->
+                    <div class="terms">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required>
+
+                            <span>
+                                I agree to the
+                                <a href="#">Terms & Conditions</a>
+                                and
+                                <a href="#">Privacy Policy</a>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Next Button -->
+                    <button
+                        type="submit"
+                        class="signup-btn">
+
+                        Continue
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= STEP 2 ================= -->
+
+            <div id="step2" class="hidden">
+
+                <!-- Back -->
+                <button
+                    type="button"
+                    class="back-btn"
+                    id="backBtn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+
+                </button>
+
+
+                <h1>Choose Your Username</h1>
+
+                <p class="subtitle">
+                    This username will appear on your Eligify profile.
+                </p>
+
+
+                <!-- Username -->
+                <div class="input-box username-box">
+
+                    <i class="fa-solid fa-at"></i>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Choose a username"
+                        maxlength="20"
+                        autocomplete="username"
+                        required>
+
+                </div>
+
+
+                <!-- Username Status -->
+                <div
+                    id="usernameStatus"
+                    class="username-status">
+
+                    Choose a unique username for your profile
+
+                </div>
+
+
+                <!-- Suggestions -->
+                <div class="suggestion-section">
+
+                    <p class="suggestion-title">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Suggested for you
+
+                    </p>
+
+
+                    <div
+                        class="suggestions"
+                        id="suggestions">
+
+                        <!-- JavaScript suggestions -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- Create Account -->
+                <button
+                    type="button"
+                    class="signup-btn"
+                    id="createAccountBtn">
+
+                    <span id="createButtonText">
+                        Create Account
+                    </span>
+
+                    <i class="fa-solid fa-check"></i>
+
+                </button>
+
+
+                <!-- Login -->
+                <div class="login-link">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Sign In
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast -->
+
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Account created successfully!
+        </span>
+
+    </div>
+
+
+    <!-- Loading -->
+
+    <div
+        class="loading-overlay"
+        id="loadingOverlay">
+
+        <div class="loader"></div>
+
+        <p>
+            Creating your Eligify account...
+        </p>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="storage-guard.js"></script>
+    <script
+        type="module"
+        src="signup.js">
+    </script>
+
+</body>
+
+</html>

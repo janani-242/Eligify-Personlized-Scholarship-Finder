@@ -1,0 +1,768 @@
+/* ==========================================
+   ELIGIFY CATEGORY SCHOLARSHIPS CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+:root{
+
+    --teal:#0B5D5B;
+    --dark:#063F3F;
+    --gold:#D4AF37;
+    --white:#ffffff;
+    --light:#F7F9FA;
+    --text:#223333;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+body{
+
+    background:var(--light);
+    color:var(--text);
+    min-height:100vh;
+
+}
+
+
+/* ==========================================
+HEADER
+========================================== */
+
+
+.category-header{
+
+    background:linear-gradient(
+        135deg,
+        var(--teal),
+        var(--dark)
+    );
+
+    color:white;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    border-radius:0 0 30px 30px;
+
+}
+
+
+.back-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+
+.back-btn:hover{
+
+    background:var(--gold);
+
+}
+
+
+.back-btn i{
+
+    font-size:24px;
+
+}
+
+
+.header-content h1{
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+
+.header-content p{
+
+    margin-top:5px;
+
+    opacity:.85;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+SEARCH
+========================================== */
+
+
+.search-section{
+
+    padding:25px;
+
+}
+
+
+.search-box{
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.search-box i{
+
+    font-size:22px;
+
+    color:#888;
+
+}
+
+
+.search-box input{
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    margin-left:15px;
+
+    font-size:15px;
+
+}
+
+
+
+
+/* ==========================================
+CATEGORY INFO BANNER
+========================================== */
+
+
+.category-info{
+
+    margin:0 25px 25px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.category-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#FFF5D8;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.category-icon i{
+
+    font-size:32px;
+
+    color:var(--gold);
+
+}
+
+
+
+.category-info h2{
+
+    color:var(--teal);
+
+    font-size:22px;
+
+}
+
+
+.category-info p{
+
+    color:#777;
+
+    margin-top:5px;
+
+    font-size:14px;
+
+}
+
+
+
+/* ==========================================
+SCHOLARSHIP SECTION
+========================================== */
+
+
+.scholarship-section{
+
+    padding:0 25px 40px;
+
+}
+
+
+
+.scholarship-container{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:22px;
+
+}
+
+
+
+/* ==========================================
+SCHOLARSHIP CARD
+========================================== */
+
+
+.scholarship-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    border-left:5px solid var(--gold);
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    transition:.35s;
+
+    animation:fadeUp .4s ease;
+
+}
+
+
+
+.scholarship-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(11,93,91,.18);
+
+}
+
+
+
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    background:#EAF8EF;
+
+    color:#16A34A;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+.scholarship-card h3{
+
+    margin:15px 0;
+
+    color:var(--teal);
+
+    font-size:20px;
+
+    line-height:1.5;
+
+}
+
+
+
+.category-badge{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    background:#EEF8F8;
+
+    color:var(--teal);
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+.deadline{
+
+    margin-top:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+.deadline i{
+
+    color:#E63946;
+
+}
+
+
+
+
+/* ==========================================
+SAVE BUTTON
+========================================== */
+
+
+.save-btn{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#F7F7F7;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.save-btn i{
+
+    font-size:22px;
+
+    color:#888;
+
+}
+
+
+
+.save-btn.saved{
+
+    background:#FFE8EC;
+
+}
+
+
+.save-btn.saved i{
+
+    color:#FF3B5C;
+
+}
+
+
+
+
+/* ==========================================
+BUTTON
+========================================== */
+
+
+.card-actions{
+
+    margin-top:20px;
+
+}
+
+
+
+.view-btn{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--teal);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.view-btn:hover{
+
+    background:var(--gold);
+
+}
+
+
+
+
+
+/* ==========================================
+NO RESULT
+========================================== */
+
+
+.no-result{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+
+
+.no-result i{
+
+    font-size:55px;
+
+    color:var(--gold);
+
+}
+
+
+
+.no-result h3{
+
+    margin-top:15px;
+
+    color:var(--teal);
+
+}
+
+
+
+.no-result p{
+
+    color:#777;
+
+    margin-top:8px;
+
+}
+
+
+
+
+/* ==========================================
+LOADER
+========================================== */
+
+
+.loader{
+
+    padding:25px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:22px;
+
+}
+
+
+
+.skeleton-card{
+
+    height:220px;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    #ececec 25%,
+
+    #f7f7f7 50%,
+
+    #ececec 75%
+
+    );
+
+
+    background-size:200% 100%;
+
+    animation:skeleton 1.5s infinite;
+
+}
+
+
+
+
+/* ==========================================
+ANIMATION
+========================================== */
+
+
+@keyframes skeleton{
+
+    0%{
+
+        background-position:200% 0;
+
+    }
+
+    100%{
+
+        background-position:-200% 0;
+
+    }
+
+}
+
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================
+MOBILE RESPONSIVE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+.category-header{
+
+    padding:20px;
+
+}
+
+
+
+.header-content h1{
+
+    font-size:24px;
+
+}
+
+
+
+.category-info{
+
+    margin:0 15px 20px;
+
+}
+
+
+
+.search-section{
+
+    padding:20px 15px;
+
+}
+
+
+
+.scholarship-section{
+
+    padding:0 15px 30px;
+
+}
+
+
+
+.scholarship-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+.category-icon{
+
+    width:55px;
+
+    height:55px;
+
+}
+
+
+.category-icon i{
+
+    font-size:26px;
+
+}
+
+
+.category-info h2{
+
+    font-size:18px;
+
+}
+
+
+.scholarship-card{
+
+    padding:18px;
+
+}
+
+
+}
+.save-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.save-btn i{
+    display:block;
+    font-size:24px;
+    line-height:1;
+    color:#888;
+}
+
+
+.save-btn.saved i{
+    color:#FF3B5C;
+}

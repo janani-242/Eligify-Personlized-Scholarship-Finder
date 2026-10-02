@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ==============================
+   LOGO
+   ============================== */
+
+.logo-container {
+    z-index: 10;
+    animation: fadeZoom 1.5s ease-in-out;
+}
+
+.logo {
+    width: 300px;
+    max-width: 75vw;
+    height: auto;
+    display: block;
+}
+
+/* ==============================
+   GLOW EFFECT
+   ============================== */
+
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #00c6ff 0%,
+        transparent 70%
+    );
+
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* ==============================
+   BRAND FOOTER
+   ============================== */
+
+.brand-footer {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    width: 100%;
+    padding: 0 20px;
+
+    text-align: center;
+    white-space: normal;
+}
+
+/* ELIGIFY + SYMBOL */
+
+.brand-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: #1e293b;
+}
+
+/* SYMBOL */
+
+.brand-icon {
+    font-size: 18px;
+    line-height: 1;
+    color: #0f4c5c;
+}
+
+/* TAGLINE */
+
+.tagline {
+    margin-top: 6px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+
+    color: #475569;
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+   ============================== */
+
+@media (max-width: 768px) {
+
+    .logo {
+        width: 240px;
+        max-width: 70vw;
+    }
+
+    .glow {
+        width: 380px;
+        height: 380px;
+    }
+
+    .brand-footer {
+        bottom: 22px;
+        padding: 0 15px;
+    }
+
+    .brand-name {
+        font-size: 13px;
+        letter-spacing: 2.5px;
+    }
+
+    .brand-icon {
+        font-size: 16px;
+    }
+
+    .tagline {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+    .logo {
+        width: 200px;
+        max-width: 72vw;
+    }
+
+    .glow {
+        width: 300px;
+        height: 300px;
+    }
+
+    .brand-footer {
+        bottom: 18px;
+    }
+
+    .brand-name {
+        font-size: 12px;
+        letter-spacing: 2px;
+        gap: 6px;
+    }
+
+    .brand-icon {
+        font-size: 14px;
+    }
+
+    .tagline {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* ==============================
+   LOGO ANIMATION
+   ============================== */
+
+@keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

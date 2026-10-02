@@ -1,0 +1,2827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eligify | Eligibility Profile</title>
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <!-- =====================================================
+         PAGE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="eligibility.css">
+
+    <style>
+
+        /* =====================================================
+           DYNAMIC QUESTION VISIBILITY
+        ====================================================== */
+
+        .dynamic-hidden {
+            display: none !important;
+        }
+
+        [aria-hidden="true"] {
+            display: none !important;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="eligibility-wrapper">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="eligibility-header">
+
+        <div class="header-left">
+
+            <button
+    type="button"
+    class="dashboard-back-btn"
+    id="dashboardBackBtn">
+
+    <i class="ri-arrow-left-line"></i>
+
+    
+
+</button>
+
+            <a
+                href="dashboard.html"
+                class="brand"
+                aria-label="Eligify Home"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="Eligify"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    Eligify
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="header-profile">
+
+                <div class="profile-avatar">
+
+                    <img
+                        id="headerProfileImage"
+                        src=""
+                        alt="Profile"
+                    >
+
+                    <div
+                        id="headerProfileFallback"
+                        class="profile-avatar-fallback"
+                    >
+                        <i class="ri-user-3-line"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="headerProfileName">
+                        User
+                    </strong>
+
+                    <span>
+                        Eligibility Profile
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="eligibility-main">
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="eligibility-intro">
+
+            <span class="intro-label">
+                ELIGIBILITY PROFILE
+            </span>
+
+            <h1 id="pageTitle">
+                Personalized Scholarship Finder
+            </h1>
+
+            <p id="pageDescription">
+                Complete your profile to discover scholarships that may
+                match your academic, financial and personal eligibility.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROGRESS
+        ================================================== -->
+
+        <div class="progress-container">
+
+            <div class="progress-top">
+
+                <span id="progressLabel">
+                    Personal Information
+                </span>
+
+                <span>
+                    Step
+                    <strong id="progressStep">1</strong>
+                    of 5
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ELIGIBILITY FORM
+        ================================================== -->
+
+        <form
+            id="eligibilityForm"
+            novalidate
+        >
+
+
+            <!-- =================================================
+                 STEP 1
+            ================================================== -->
+
+            <section
+                class="form-step active"
+                id="step1"
+                data-step="1"
+            >
+
+                <div class="form-card">
+
+                    <div class="step-heading">
+
+                        <div>
+
+                            <h2>
+                                Personal Information
+                            </h2>
+
+                            <p>
+                                Provide your basic details so we can identify
+                                location, age and category-specific scholarships.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Full Name -->
+
+                        <div class="form-group full-width">
+
+                            <label for="fullName">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Example: Mabel Princiya M"
+                                autocomplete="name"
+                                maxlength="100"
+                                required
+                            >
+
+                            <small class="field-help">
+                                Enter your name as it appears on your
+                                educational or official documents.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Age -->
+
+                        <div class="form-group">
+
+                            <label for="age">
+                                Age <span>*</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                min="10"
+                                max="100"
+                                step="1"
+                                placeholder="Example: 19"
+                                required
+                            >
+
+                            <small class="field-help">
+                                Your current age in completed years.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Gender -->
+
+                        <div class="form-group">
+
+                            <label for="gender">
+                                Gender <span>*</span>
+                            </label>
+
+                            <select
+                                id="gender"
+                                name="gender"
+                                required
+                            >
+
+                                <option value="">
+                                    Select gender
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Transgender">
+                                    Transgender
+                                </option>
+
+                                <option value="Prefer not to say">
+                                    Prefer not to say
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Some scholarships have gender-specific eligibility.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- State -->
+
+                        <div class="form-group">
+
+                            <label for="state">
+                                Domicile State / UT <span>*</span>
+                            </label>
+
+                            <select
+                                id="state"
+                                name="state"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your state / UT
+                                </option>
+
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+
+                                <option value="Andaman and Nicobar Islands">
+                                    Andaman and Nicobar Islands
+                                </option>
+
+                                <option value="Chandigarh">
+                                    Chandigarh
+                                </option>
+
+                                <option value="Dadra and Nagar Haveli and Daman and Diu">
+                                    Dadra and Nagar Haveli and Daman and Diu
+                                </option>
+
+                                <option value="Delhi">
+                                    Delhi
+                                </option>
+
+                                <option value="Jammu and Kashmir">
+                                    Jammu and Kashmir
+                                </option>
+
+                                <option value="Ladakh">
+                                    Ladakh
+                                </option>
+
+                                <option value="Lakshadweep">
+                                    Lakshadweep
+                                </option>
+
+                                <option value="Puducherry">
+                                    Puducherry
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select the state or Union Territory where
+                                you have permanent residential status.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Domicile Status -->
+
+                        <div class="form-group">
+
+                            <label for="domicileStatus">
+                                Domicile Status <span>*</span>
+                            </label>
+
+                            <select
+                                id="domicileStatus"
+                                name="domicileStatus"
+                                required
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you have official proof
+                                of domicile for the selected state.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Citizenship -->
+
+                        <div class="form-group">
+
+                            <label for="citizenship">
+                                Citizenship / Nationality <span>*</span>
+                            </label>
+
+                            <select
+                                id="citizenship"
+                                name="citizenship"
+                                required
+                            >
+
+                                <option value="">
+                                    Select nationality
+                                </option>
+
+                                <option value="Indian">
+                                    Indian
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: Indian.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Disability -->
+
+                        <div class="form-group">
+
+                            <label for="disabilityStatus">
+                                Disability / PwD Status
+                            </label>
+
+                            <select
+                                id="disabilityStatus"
+                                name="disabilityStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you have a recognised
+                                disability certificate.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Residence -->
+
+                        <div class="form-group">
+
+                            <label for="residenceType">
+                                Place of Residence
+                            </label>
+
+                            <select
+                                id="residenceType"
+                                name="residenceType"
+                            >
+
+                                <option value="">
+                                    Select residence type
+                                </option>
+
+                                <option value="Rural">
+                                    Rural
+                                </option>
+
+                                <option value="Semi-Urban">
+                                    Semi-Urban
+                                </option>
+
+                                <option value="Urban">
+                                    Urban
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: Village → Rural;
+                                Town → Semi-Urban; City → Urban.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <div class="required-note">
+                        <span>*</span> Required fields
+                    </div>
+
+                    <button
+                        type="button"
+                        class="continue-btn"
+                        id="nextStep1"
+                    >
+
+                        <span>
+                            Continue to Education
+                        </span>
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STEP 2
+            ================================================== -->
+
+            <section
+                class="form-step"
+                id="step2"
+                data-step="2"
+            >
+
+                <div class="form-card">
+
+                    <div class="step-heading">
+
+                        <div>
+
+                            <h2>
+                                Education & Institution
+                            </h2>
+
+                            <p>
+                                Tell us about your current programme and
+                                institution to improve course-specific matching.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Education Level -->
+
+                        <div class="form-group">
+
+                            <label for="educationLevel">
+                                Education Level <span>*</span>
+                            </label>
+
+                            <select
+                                id="educationLevel"
+                                name="educationLevel"
+                                required
+                            >
+
+                                <option value="">
+                                    Select education level
+                                </option>
+
+                                <option value="School">
+                                    School
+                                </option>
+
+                                <option value="ITI">
+                                    ITI
+                                </option>
+
+                                <option value="Diploma">
+                                    Diploma
+                                </option>
+
+                                <option value="UG">
+                                    Undergraduate (UG)
+                                </option>
+
+                                <option value="PG">
+                                    Postgraduate (PG)
+                                </option>
+
+                                <option value="MPhil">
+                                    M.Phil
+                                </option>
+
+                                <option value="PhD">
+                                    Ph.D / Research
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: B.Sc → UG; M.Sc → PG.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Course Category -->
+
+                        <div class="form-group">
+
+                            <label for="courseCategory">
+                                Course Category <span>*</span>
+                            </label>
+
+                            <select
+                                id="courseCategory"
+                                name="courseCategory"
+                                required
+                                disabled
+                            >
+
+                                <option value="">
+                                    Select education level first
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: Engineering, Arts, Science,
+                                Commerce or Management.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Course -->
+
+                        <div class="form-group">
+
+                            <label for="course">
+                                Course / Programme <span>*</span>
+                            </label>
+
+                            <select
+                                id="course"
+                                name="course"
+                                required
+                                disabled
+                            >
+
+                                <option value="">
+                                    Select category first
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: B.Sc Computer Science.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Year -->
+
+                        <div class="form-group">
+
+                            <label for="yearOfStudy">
+                                Current Class / Year <span>*</span>
+                            </label>
+
+                            <select
+                                id="yearOfStudy"
+                                name="yearOfStudy"
+                                required
+                                disabled
+                            >
+
+                                <option value="">
+                                    Select your course first
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: 1st Year.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Other Course -->
+
+                        <div
+                            class="form-group hidden"
+                            id="otherCourseGroup"
+                        >
+
+                            <label for="otherCourse">
+                                Specify Your Course <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="otherCourse"
+                                name="otherCourse"
+                                placeholder="Example: B.Sc Data Science"
+                                maxlength="100"
+                            >
+
+                            <small class="field-help">
+                                Enter the complete name of your course.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Institution -->
+
+                        <div class="form-group full-width">
+
+                            <label
+                                for="institutionName"
+                                id="institutionLabel"
+                            >
+                                Institution / College Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="institutionName"
+                                name="institutionName"
+                                placeholder="Example: APC Mahalaxmi College for Women"
+                                maxlength="150"
+                                autocomplete="organization"
+                                required
+                            >
+
+                            <small
+                                class="field-help"
+                                id="institutionHelp"
+                            >
+                                Enter the institution where you are
+                                currently studying.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Institution Type -->
+
+                        <div class="form-group">
+
+                            <label for="schoolType">
+                                Institution Type <span>*</span>
+                            </label>
+
+                            <select
+                                id="schoolType"
+                                name="schoolType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select institution type
+                                </option>
+
+                                <option value="Government">
+                                    Government
+                                </option>
+
+                                <option value="Government Aided">
+                                    Government Aided
+                                </option>
+
+                                <option value="Private">
+                                    Private
+                                </option>
+
+                                <option value="IIT">
+                                    IIT
+                                </option>
+
+                                <option value="NIT">
+                                    NIT
+                                </option>
+
+                                <option value="IIIT">
+                                    IIIT
+                                </option>
+
+                                <option value="University">
+                                    University
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select the type of your current institution.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Government School -->
+
+                        <div class="form-group">
+
+                            <label for="governmentSchool">
+                                Studied in Government School <span>*</span>
+                            </label>
+
+                            <select
+                                id="governmentSchool"
+                                name="governmentSchool"
+                                required
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you studied in a government
+                                school during the required schooling period.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="backStep2"
+                    >
+
+                        <i class="ri-arrow-left-line"></i>
+
+                        <span>
+                            Back
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="continue-btn"
+                        id="nextStep2"
+                    >
+
+                        <span>
+                            Continue to Academics
+                        </span>
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STEP 3
+            ================================================== -->
+
+            <section
+                class="form-step"
+                id="step3"
+                data-step="3"
+            >
+
+                <div class="form-card">
+
+                    <div class="step-heading">
+
+                        <div>
+
+                            <h2>
+                                Academic Performance
+                            </h2>
+
+                            <p>
+                                Provide your academic results so we can match
+                                scholarships with relevant academic requirements.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Current / Qualifying Percentage -->
+
+                        <div
+                            class="form-group"
+                            id="percentageGroup"
+                            data-dynamic-field="percentage"
+                        >
+
+                            <label for="percentage" id="percentageLabel">
+                                Qualifying Exam Percentage <span>*</span>
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="percentage"
+                                    name="percentage"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 72.50"
+                                    required
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small
+                                class="field-help"
+                                id="percentageHelp"
+                            >
+                                Enter the percentage relevant to your
+                                current scholarship eligibility.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Class 10 -->
+
+                        <div
+                            class="form-group"
+                            id="class10Group"
+                            data-dynamic-field="class10"
+                        >
+
+                            <label for="class10Percentage">
+                                Class 10 Percentage
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="class10Percentage"
+                                    name="class10Percentage"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 85"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Your Class 10 final percentage.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Class 12 -->
+
+                        <div
+                            class="form-group"
+                            id="class12Group"
+                            data-dynamic-field="class12"
+                        >
+
+                            <label for="class12Percentage">
+                                Class 12 Percentage
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="class12Percentage"
+                                    name="class12Percentage"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 78.50"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Enter your Class 12 / Higher Secondary
+                                percentage if applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Diploma -->
+
+                        <div
+                            class="form-group"
+                            id="diplomaGroup"
+                            data-dynamic-field="diploma"
+                        >
+
+                            <label for="diplomaPercentage">
+                                Diploma Percentage
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="diplomaPercentage"
+                                    name="diplomaPercentage"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 76"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Fill this if you completed a diploma.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- UG -->
+
+                        <div
+                            class="form-group"
+                            id="ugGroup"
+                            data-dynamic-field="ug"
+                        >
+
+                            <label for="ugPercentage">
+                                UG Percentage
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="ugPercentage"
+                                    name="ugPercentage"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 82"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Your undergraduate aggregate percentage,
+                                if applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- PG -->
+
+                        <div
+                            class="form-group"
+                            id="pgGroup"
+                            data-dynamic-field="pg"
+                        >
+
+                            <label for="pgPercentage">
+                                PG Percentage
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="pgPercentage"
+                                    name="pgPercentage"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 75"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Your postgraduate percentage,
+                                if applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- CGPA -->
+
+                        <div
+                            class="form-group"
+                            id="cgpaGroup"
+                            data-dynamic-field="cgpa"
+                        >
+
+                            <label for="cgpa">
+                                CGPA
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="cgpa"
+                                    name="cgpa"
+                                    min="0"
+                                    max="10"
+                                    step="0.01"
+                                    placeholder="Example: 8.20"
+                                >
+
+                                <span class="input-suffix">
+                                    / 10
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Enter CGPA only if your institution
+                                uses a CGPA system.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Percentile -->
+
+                        <div
+                            class="form-group"
+                            id="percentileGroup"
+                            data-dynamic-field="percentile"
+                        >
+
+                            <label for="percentile">
+                                Percentile
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="percentile"
+                                    name="percentile"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 85"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Enter percentile only when applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Previous Exam -->
+
+                        <div class="form-group">
+
+                            <label for="previousExamStatus">
+                                Previous Qualifying Exam <span>*</span>
+                            </label>
+
+                            <select
+                                id="previousExamStatus"
+                                name="previousExamStatus"
+                                required
+                            >
+
+                                <option value="">
+                                    Select status
+                                </option>
+
+                                <option value="Passed">
+                                    Passed
+                                </option>
+
+                                <option value="Failed">
+                                    Not Passed
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Choose Passed if you successfully completed
+                                your previous qualifying examination.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- First Attempt -->
+
+                        <div
+                            class="form-group"
+                            id="firstAttemptGroup"
+                            data-dynamic-field="firstAttempt"
+                        >
+
+                            <label for="firstAttemptPass">
+                                Passed in First Attempt
+                            </label>
+
+                            <select
+                                id="firstAttemptPass"
+                                name="firstAttemptPass"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you passed the qualifying
+                                exam on your first attempt.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Attendance -->
+
+                        <div
+                            class="form-group"
+                            id="attendanceGroup"
+                            data-dynamic-field="attendance"
+                        >
+
+                            <label for="attendance">
+                                Attendance
+                            </label>
+
+                            <div class="input-with-suffix">
+
+                                <input
+                                    type="number"
+                                    id="attendance"
+                                    name="attendance"
+                                    min="0"
+                                    max="100"
+                                    step="0.01"
+                                    placeholder="Example: 80"
+                                >
+
+                                <span class="input-suffix">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="field-help">
+                                Enter your current attendance percentage
+                                when applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="backStep3"
+                    >
+
+                        <i class="ri-arrow-left-line"></i>
+
+                        <span>
+                            Back
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="continue-btn"
+                        id="nextStep3"
+                    >
+
+                        <span>
+                            Continue to Family Details
+                        </span>
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STEP 4
+            ================================================== -->
+
+            <section
+                class="form-step"
+                id="step4"
+                data-step="4"
+            >
+
+                <div class="form-card">
+
+                    <div class="step-heading">
+
+                        <div>
+
+                            <h2>
+                                Family & Social Eligibility
+                            </h2>
+
+                            <p>
+                                These details help identify scholarships based
+                                on financial circumstances and social eligibility.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Community -->
+
+                        <div class="form-group">
+
+                            <label for="community">
+                                Community <span>*</span>
+                            </label>
+
+                            <select
+                                id="community"
+                                name="community"
+                                required
+                            >
+
+                                <option value="">
+                                    Select community
+                                </option>
+
+                                <option value="General">
+                                    General / OC
+                                </option>
+
+                                <option value="EWS">
+                                    EWS
+                                </option>
+
+                                <option value="BC">
+                                    BC
+                                </option>
+
+                                <option value="MBC">
+                                    MBC
+                                </option>
+
+                                <option value="DNC">
+                                    DNC
+                                </option>
+
+                                <option value="OBC">
+                                    OBC
+                                </option>
+
+                                <option value="SC">
+                                    SC
+                                </option>
+
+                                <option value="ST">
+                                    ST
+                                </option>
+
+                                <option value="Others">
+                                    Others
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Choose the community mentioned in your
+                                official certificate, if applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- EWS -->
+
+                        <div class="form-group">
+
+                            <label for="ewsStatus">
+                                EWS Status
+                            </label>
+
+                            <select
+                                id="ewsStatus"
+                                name="ewsStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you have applicable EWS
+                                status or certificate.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Minority -->
+
+                        <div class="form-group">
+
+                            <label for="minorityStatus">
+                                Minority Status
+                            </label>
+
+                            <select
+                                id="minorityStatus"
+                                name="minorityStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes only when applicable to
+                                scholarship requirements.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Family Income -->
+
+                        <div class="form-group">
+
+                            <label for="familyIncome">
+                                Annual Family Income <span>*</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="familyIncome"
+                                name="familyIncome"
+                                min="0"
+                                step="1"
+                                placeholder="Example: 250000"
+                                required
+                            >
+
+                            <small class="field-help">
+                                Enter total annual family income in rupees.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- First Graduate -->
+
+                        <div class="form-group">
+
+                            <label for="firstGraduate">
+                                First Graduate <span>*</span>
+                            </label>
+
+                            <select
+                                id="firstGraduate"
+                                name="firstGraduate"
+                                required
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you are the first person
+                                in your family to complete a college degree.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Single Child -->
+
+                        <div class="form-group">
+
+                            <label for="singleChild">
+                                Single Child <span>*</span>
+                            </label>
+
+                            <select
+                                id="singleChild"
+                                name="singleChild"
+                                required
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you have no brothers or sisters.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Single Girl -->
+
+                        <div class="form-group">
+
+                            <label for="singleGirlChild">
+                                Single Girl Child
+                            </label>
+
+                            <select
+                                id="singleGirlChild"
+                                name="singleGirlChild"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you are the only girl
+                                child in your family.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Parent Status -->
+
+                        <div class="form-group">
+
+                            <label for="parentStatus">
+                                Parent / Family Support Status
+                            </label>
+
+                            <select
+                                id="parentStatus"
+                                name="parentStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Both Parents">
+                                    Both Parents
+                                </option>
+
+                                <option value="Single Parent">
+                                    Single Parent
+                                </option>
+
+                                <option value="Orphan">
+                                    Orphan
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select the option that best describes
+                                your family situation.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Family Support -->
+
+                        <div class="form-group">
+
+                            <label for="familySupport">
+                                Family Financial Support
+                            </label>
+
+                            <select
+                                id="familySupport"
+                                name="familySupport"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Fully Supported">
+                                    Fully Supported
+                                </option>
+
+                                <option value="Partially Supported">
+                                    Partially Supported
+                                </option>
+
+                                <option value="Self Supported">
+                                    Self Supported
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select the option that best describes
+                                how your education is financially supported.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="backStep4"
+                    >
+
+                        <i class="ri-arrow-left-line"></i>
+
+                        <span>
+                            Back
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="continue-btn"
+                        id="nextStep4"
+                    >
+
+                        <span>
+                            Continue to Additional Eligibility
+                        </span>
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STEP 5
+            ================================================== -->
+
+            <section
+                class="form-step"
+                id="step5"
+                data-step="5"
+            >
+
+                <div class="form-card">
+
+                    <div class="step-heading">
+
+                        <div>
+
+                            <h2>
+                                Additional Eligibility
+                            </h2>
+
+                            <p>
+                                Add competitive-exam, merit and other
+                                eligibility details that may apply to
+                                specific scholarship opportunities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Special Category -->
+
+                        <div
+                            class="form-group full-width"
+                            id="specialCategoryGroup"
+                            data-dynamic-field="specialCategory"
+                        >
+
+                            <label for="specialCategory">
+                                Special Category
+                            </label>
+
+                            <select
+                                id="specialCategory"
+                                name="specialCategory"
+                            >
+
+                                <option value="">
+                                    Select if applicable
+                                </option>
+
+                                <option value="None">
+                                    None
+                                </option>
+
+                                <option value="Ex-Servicemen Ward">
+                                    Ward of Ex-Servicemen / Defence Personnel
+                                </option>
+
+                                <option value="Police Martyr Ward">
+                                    Ward of Police / CAPF Personnel
+                                </option>
+
+                                <option value="Farmer Family">
+                                    Farmer Family
+                                </option>
+
+                                <option value="Beedi Worker Family">
+                                    Beedi Worker Family
+                                </option>
+
+                                <option value="Cine Worker Family">
+                                    Cine Worker Family
+                                </option>
+
+                                <option value="Mine Worker Family">
+                                    Mine Worker Family
+                                </option>
+
+                                <option value="Other Worker Family">
+                                    Other Eligible Worker Family
+                                </option>
+
+                                <option value="Orphan">
+                                    Orphan
+                                </option>
+
+                                <option value="Single Parent">
+                                    Single Parent Family
+                                </option>
+
+                                <option value="Sports Person">
+                                    Sports Person
+                                </option>
+
+                                <option value="Artist">
+                                    Artist / Creative Professional
+                                </option>
+
+                                <option value="Journalist">
+                                    Journalist / Media Family
+                                </option>
+
+                                <option value="Research Scholar">
+                                    Research Scholar
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Choose a special category only when
+                                it genuinely applies to you.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Entrance -->
+
+                        <div
+                            class="form-group"
+                            id="entranceQualifiedGroup"
+                            data-dynamic-field="entrance"
+                        >
+
+                            <label for="entranceQualified">
+                                Entrance / Competitive Exam
+                            </label>
+
+                            <select
+                                id="entranceQualified"
+                                name="entranceQualified"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Qualified / Appeared
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: JEE, NEET, GATE or other
+                                applicable entrance examination.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Examination Name -->
+
+                        <div
+                            class="form-group"
+                            id="entranceExamGroup"
+                            data-dynamic-field="entrance-detail"
+                        >
+
+                            <label for="entranceExam">
+                                Examination Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="entranceExam"
+                                name="entranceExam"
+                                placeholder="Example: JEE Main"
+                                maxlength="100"
+                            >
+
+                            <small class="field-help">
+                                Enter the exact examination name.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Exam Score -->
+
+                        <div
+                            class="form-group"
+                            id="examScoreGroup"
+                            data-dynamic-field="entrance-detail"
+                        >
+
+                            <label for="examScore">
+                                Exam Score / Percentile
+                            </label>
+
+                            <input
+                                type="number"
+                                id="examScore"
+                                name="examScore"
+                                min="0"
+                                step="0.01"
+                                placeholder="Example: 92.5"
+                            >
+
+                            <small class="field-help">
+                                Enter your score or percentile,
+                                if applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Exam Rank -->
+
+                        <div
+                            class="form-group"
+                            id="examRankGroup"
+                            data-dynamic-field="entrance-detail"
+                        >
+
+                            <label for="examRank">
+                                Exam Rank
+                            </label>
+
+                            <input
+                                type="number"
+                                id="examRank"
+                                name="examRank"
+                                min="1"
+                                step="1"
+                                placeholder="Example: 1250"
+                            >
+
+                            <small class="field-help">
+                                Enter your official rank, if applicable.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Merit -->
+
+                        <div
+                            class="form-group"
+                            id="meritStatusGroup"
+                            data-dynamic-field="merit"
+                        >
+
+                            <label for="meritStatus">
+                                Merit / Rank Status
+                            </label>
+
+                            <select
+                                id="meritStatus"
+                                name="meritStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Top Rank">
+                                    Top Rank / Merit
+                                </option>
+
+                                <option value="Qualified">
+                                    Qualified
+                                </option>
+
+                                <option value="Not Qualified">
+                                    Not Qualified
+                                </option>
+
+                                <option value="Not Applicable">
+                                    Not Applicable
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Example: University rank or merit list.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Research -->
+
+                        <div
+                            class="form-group"
+                            id="researchStatusGroup"
+                            data-dynamic-field="research"
+                        >
+
+                            <label for="researchStatus">
+                                Research / Publication Status
+                            </label>
+
+                            <select
+                                id="researchStatus"
+                                name="researchStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Select Yes if you have research work,
+                                publication or proposal.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Portfolio -->
+
+                        <div
+                            class="form-group"
+                            id="portfolioStatusGroup"
+                            data-dynamic-field="portfolio"
+                        >
+
+                            <label for="portfolioStatus">
+                                Portfolio / Audition Requirement
+                            </label>
+
+                            <select
+                                id="portfolioStatus"
+                                name="portfolioStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                                <option value="No">
+                                    No
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Relevant for some arts, design and
+                                performance scholarships.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Interview -->
+
+                        <div
+                            class="form-group"
+                            id="interviewStatusGroup"
+                            data-dynamic-field="interview"
+                        >
+
+                            <label for="interviewStatus">
+                                Interview / Selection Status
+                            </label>
+
+                            <select
+                                id="interviewStatus"
+                                name="interviewStatus"
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Completed / Selected
+                                </option>
+
+                                <option value="No">
+                                    Not Yet
+                                </option>
+
+                                <option value="Not Applicable">
+                                    Not Applicable
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Some scholarships require an interview
+                                or selection process.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Documents -->
+
+                        <div class="form-group full-width">
+
+                            <label for="documentAvailability">
+                                Required Certificate Availability <span>*</span>
+                            </label>
+
+                            <select
+                                id="documentAvailability"
+                                name="documentAvailability"
+                                required
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="Yes">
+                                    Yes, I can provide required documents
+                                </option>
+
+                                <option value="No">
+                                    No / Not Available
+                                </option>
+
+                            </select>
+
+                            <small class="field-help">
+                                Required documents may include income,
+                                community, domicile, disability or other
+                                supporting certificates.
+                            </small>
+
+                            <small class="error-message"></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <div class="required-note">
+                        <span>*</span> Required fields
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="backStep5"
+                    >
+
+                        <i class="ri-arrow-left-line"></i>
+
+                        <span>
+                            Back
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="continue-btn find-btn"
+                        id="findScholarships"
+                    >
+
+                        <span>
+                            Find My Scholarships
+                        </span>
+
+                        <i class="ri-search-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </form>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         DISCLAIMER MODAL
+    ====================================================== -->
+
+    <div
+        class="warning-overlay"
+        id="disclaimerOverlay"
+    >
+
+        <div
+            class="warning-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="warningTitle"
+        >
+
+            <div class="warning-header">
+
+                <div class="warning-icon">
+                    <i class="ri-shield-check-fill"></i>
+                </div>
+
+                <div class="warning-heading">
+
+                    <span class="warning-label">
+                        BEFORE YOU CONTINUE
+                    </span>
+
+                    <h3 id="warningTitle">
+                        A quick note about scholarship eligibility
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="warning-content">
+
+                <p class="warning-intro">
+                    Eligify uses the information you provide to identify
+                    scholarships whose listed requirements may match your profile.
+                </p>
+
+
+                <div class="warning-list">
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-item-icon">
+                            <i class="ri-user-search-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Your answers affect your matches
+                            </strong>
+
+                            <span>
+                                Please enter accurate and up-to-date information.
+                                Incorrect details may cause relevant scholarships
+                                to be missed or unsuitable scholarships to appear.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-item-icon">
+                            <i class="ri-government-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Verify with the official provider
+                            </strong>
+
+                            <span>
+                                The scholarship provider's official notification
+                                and application portal are the final source for
+                                eligibility, documents and requirements.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-item-icon">
+                            <i class="ri-calendar-check-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Check the application deadline
+                            </strong>
+
+                            <span>
+                                Deadlines and scholarship availability may change.
+                                Confirm that the application window is open.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-item-icon">
+                            <i class="ri-file-list-3-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Keep your documents ready
+                            </strong>
+
+                            <span>
+                                Some scholarships may require income, community,
+                                domicile, disability or other supporting certificates.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-item-icon">
+                            <i class="ri-links-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Apply through the correct portal
+                            </strong>
+
+                            <span>
+                                Use the official provider or authorised application
+                                portal listed for the scholarship.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="warning-item responsibility-highlight">
+
+                        <div class="warning-item-icon">
+                            <i class="ri-information-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Eligibility is for guidance
+                            </strong>
+
+                            <span>
+                                Eligify's results are generated using the scholarship
+                                data and the information you provide.
+                            </span>
+
+                            <b>
+                                Final eligibility, selection and award decisions
+                                are made by the respective scholarship provider.
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Agreement -->
+
+            <label class="warning-agreement">
+
+                <input
+                    type="checkbox"
+                    id="disclaimerAgreement"
+                >
+
+                <span class="warning-checkbox">
+                    <i class="ri-check-line"></i>
+                </span>
+
+                <span class="agreement-text">
+                    I have read and understood the information above and agree
+                    to verify scholarship details with the official provider
+                    before applying.
+                </span>
+
+            </label>
+
+
+
+            <!-- Continue -->
+
+            <button
+                type="button"
+                id="acceptDisclaimer"
+                class="warning-continue"
+                disabled
+            >
+
+                <span>
+                    Continue to Results
+                </span>
+
+                <i class="ri-arrow-right-line"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Profile Saved
+            </strong>
+
+            <span id="toastMessage">
+                Your eligibility profile has been saved successfully.
+            </span>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="toastClose"
+            class="toast-close"
+            aria-label="Close notification"
+        >
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="storage-guard.js"></script>
+    <script src="eligibility.js"></script>
+
+</body>
+
+</html>

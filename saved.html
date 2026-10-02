@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eligify | Saved Scholarships</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+<!-- Remix Icons -->
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet">
+
+<!-- Dashboard CSS -->
+<link rel="stylesheet" href="dashboard.css">
+
+<!-- Saved CSS -->
+<link rel="stylesheet" href="saved.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===========================
+SIDEBAR
+=========================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <img src="logo.png" alt="Logo">
+
+        <h2>Eligify</h2>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="ri-home-5-line"></i>
+
+                <span>Home</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="scholarships.html">
+
+                <i class="ri-book-open-line"></i>
+
+                <span>Scholarships</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="eligibility.html">
+
+                <i class="ri-award-line"></i>
+
+                <span>Smart Eligibility</span>
+
+            </a>
+
+        </li>
+
+
+        <li class="active">
+
+            <a href="saved.html">
+
+                <i class="ri-heart-3-fill"></i>
+
+                <span>Saved</span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="profile.html">
+
+                <i class="ri-user-3-line"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+
+
+<!-- ===========================
+MAIN
+=========================== -->
+
+<div class="main">
+
+
+    <!-- ===========================
+    HEADER
+    =========================== -->
+
+    <header class="header">
+
+        <!-- Back Button -->
+
+        <button
+            type="button"
+            class="back-btn"
+            id="backBtn"
+            aria-label="Go back">
+
+            <i class="ri-arrow-left-line"></i>
+
+
+
+        </button>
+
+
+        <h1>Saved Scholarships ❤️</h1>
+
+        <p>
+            Your favourite scholarships are stored here.
+        </p>
+
+    </header>
+
+
+
+    <!-- ===========================
+    SAVED SECTION
+    =========================== -->
+
+    <section class="scholarship-section">
+
+        <div class="section-header">
+
+            <h2>Saved Scholarships</h2>
+
+        </div>
+
+
+        <div
+            id="savedContainer"
+            class="scholarship-container">
+
+            <!-- JS will load cards here -->
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!-- ===========================
+BOTTOM NAVIGATION
+=========================== -->
+
+<nav class="bottom-nav">
+
+    <a href="dashboard.html">
+
+        <i class="ri-home-5-fill"></i>
+
+        <span>Home</span>
+
+    </a>
+
+
+    <a href="scholarships.html">
+
+        <i class="ri-book-open-line"></i>
+
+        <span>Scholarships</span>
+
+    </a>
+
+
+    <a href="eligibility.html">
+
+        <i class="ri-award-line"></i>
+
+        <span>Eligibility</span>
+
+    </a>
+
+
+    <a href="saved.html" class="active">
+
+        <i class="ri-heart-3-fill"></i>
+
+        <span>Saved</span>
+
+    </a>
+
+
+    <a href="profile.html">
+
+        <i class="ri-user-3-line"></i>
+
+        <span>Profile</span>
+
+    </a>
+
+</nav>
+
+
+
+<!-- ===========================
+SCRIPTS
+=========================== -->
+
+<script src="storage-guard.js"></script>
+
+<script src="saved.js"></script>
+
+
+
+<!-- ===========================
+BACK BUTTON SCRIPT
+=========================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const backBtn =
+            document.getElementById("backBtn");
+
+        if (!backBtn) return;
+
+
+        backBtn.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "dashboard.html";
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

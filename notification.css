@@ -1,0 +1,1447 @@
+/* =========================================================
+   ELIGIFY NOTIFICATIONS
+   CLEAN • PROFESSIONAL • RESPONSIVE • SCROLLABLE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --teal: #0B5D5B;
+    --dark: #073F3D;
+    --gold: #D4AF37;
+
+    --white: #FFFFFF;
+    --light: #F7F9FA;
+    --soft: #EEF5F4;
+
+    --text: #223333;
+    --muted: #687777;
+
+    --border: #E2EAEA;
+
+    --shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+    --shadow-hover:
+        0 14px 35px rgba(11, 93, 91, 0.12);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--light);
+    color: var(--text);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+button,
+a,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   MAIN APP
+========================================================= */
+
+#notificationApp {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    padding: 24px 20px;
+
+    background: var(--teal);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 1000;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.25) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.25);
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 38px;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+}
+
+.logo h2 {
+    color: var(--white);
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.sidebar ul {
+    flex: 1;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.sidebar li a:hover {
+    background: rgba(255,255,255,.12);
+}
+
+.sidebar li i {
+    width: 23px;
+
+    font-size: 21px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+#logoutBtn {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--gold);
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+#logoutBtn:hover {
+    background: #C9A52F;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main {
+    width: calc(100% - 260px);
+
+    margin-left: 260px;
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-btn {
+    position: static;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    height: 40px;
+
+    padding: 0 14px;
+
+    margin: 0 0 18px 0;
+
+    border: 1px solid #DCE9E7;
+    border-radius: 10px;
+
+    background: #FFFFFF;
+    color: #0B5D5B;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 14px rgba(7, 63, 61, 0.06);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.back-btn i {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.back-btn:hover {
+    background: #0B5D5B;
+    color: #FFFFFF;
+
+    border-color: #0B5D5B;
+
+    transform: translateX(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(7, 63, 61, 0.12);
+}
+
+.back-btn:active {
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.header-left {
+    min-width: 0;
+}
+
+.header h1 {
+    color: var(--teal);
+
+    font-size: 32px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.header p {
+    margin-top: 6px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HEADER ICONS
+========================================================= */
+
+.icon-btn,
+.profile-btn {
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--white);
+    color: var(--teal);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    box-shadow: var(--shadow);
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.icon-btn i,
+.profile-btn i {
+    font-size: 21px;
+}
+
+.icon-btn:hover,
+.profile-btn:hover {
+    background: var(--teal);
+    color: var(--white);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ACTIVE NOTIFICATION
+========================================================= */
+
+.notification-btn.active-icon {
+    background: var(--teal);
+    color: var(--white);
+}
+
+.notification-dot {
+    position: absolute;
+
+    top: 5px;
+    right: 5px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #E63946;
+
+    border: 2px solid var(--white);
+
+    display: none;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
+.profile-btn {
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-btn img {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   NOTIFICATION CONTENT
+========================================================= */
+
+.notification-content {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding-top: 5px;
+
+    padding-bottom: 40px;
+}
+
+
+/* =========================================================
+   NOTIFICATION TITLE ROW
+========================================================= */
+
+.notification-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+.notification-title-row h2 {
+    color: var(--teal);
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.notification-title-row p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CLEAR ALL
+========================================================= */
+
+.clear-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #E5D0D0;
+    border-radius: 10px;
+
+    background: #FFFFFF;
+    color: #D9534F;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.clear-all-btn i {
+    font-size: 17px;
+}
+
+.clear-all-btn:hover {
+    background: #FFF1F1;
+
+    color: #C43F3B;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   NOTIFICATION LIST
+========================================================= */
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD
+========================================================= */
+
+.notification-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px 18px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+    animation: fadeUp .3s ease;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(11,93,91,.18);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   UNREAD
+========================================================= */
+
+.notification-card.unread {
+    background: #FBFDFC;
+}
+
+.notification-card.unread::after {
+    content: "";
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--teal);
+}
+
+
+/* =========================================================
+   NOTIFICATION ICON
+========================================================= */
+
+.notification-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: var(--soft);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-icon i {
+    color: var(--gold);
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   NOTIFICATION BODY
+========================================================= */
+
+.notification-body {
+    flex: 1;
+
+    min-width: 0;
+
+    padding-right: 20px;
+}
+
+.notification-body h3 {
+    margin-bottom: 5px;
+
+    color: var(--teal);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+.notification-body p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+    word-break: break-word;
+}
+
+.notification-date {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8C9998;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.notification-delete {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #F7F9F9;
+
+    color: #899494;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.notification-delete:hover {
+    background: #FFF0F0;
+
+    color: #D9534F;
+
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   EMPTY NOTIFICATION
+========================================================= */
+
+.empty-notification {
+    min-height: 330px;
+
+    padding: 35px 20px;
+
+    background: var(--white);
+
+    border: 1px dashed #D8E5E3;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+.empty-icon {
+    width: 68px;
+    height: 68px;
+
+    margin-bottom: 17px;
+
+    border-radius: 50%;
+
+    background: var(--soft);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-icon i {
+    color: var(--teal);
+
+    font-size: 31px;
+}
+
+.empty-notification h3 {
+    margin-bottom: 7px;
+
+    color: var(--teal);
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.empty-notification p {
+    max-width: 420px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.bottom-nav {
+    display: none;
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    min-height: 65px;
+
+    padding: 8px 7px;
+
+    background: var(--white);
+
+    border-top: 1px solid var(--border);
+
+    box-shadow:
+        0 -6px 20px rgba(0,0,0,.07);
+
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 9990;
+}
+
+.bottom-nav a {
+    min-width: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    color: #7A8585;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition: color .2s ease;
+}
+
+.bottom-nav i {
+    font-size: 21px;
+}
+
+.bottom-nav a:hover {
+    color: var(--teal);
+}
+
+
+/* =========================================================
+   POPUP OVERLAY
+========================================================= */
+
+.popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.45);
+
+    z-index: 10000;
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.popup {
+    width: 360px;
+    max-width: 100%;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: var(--white);
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.18);
+
+    animation: popup .25s ease;
+}
+
+
+/* =========================================================
+   POPUP ICON
+========================================================= */
+
+.popup-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 17px;
+
+    border-radius: 50%;
+
+    background: #FFF5D8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-icon i {
+    color: var(--gold);
+
+    font-size: 31px;
+}
+
+.delete-icon {
+    background: #FFF0F0;
+}
+
+.delete-icon i {
+    color: #D9534F;
+}
+
+
+/* =========================================================
+   POPUP TEXT
+========================================================= */
+
+.popup h2 {
+    margin-bottom: 9px;
+
+    color: var(--teal);
+
+    font-size: 22px;
+}
+
+.popup p {
+    margin-bottom: 21px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   POPUP BUTTONS
+========================================================= */
+
+.popup-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.popup-buttons button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 11px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.popup-buttons button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CANCEL BUTTONS
+========================================================= */
+
+#cancelLogout,
+#cancelDelete,
+#cancelClearAll {
+    background: #ECEFEF;
+
+    color: #333333;
+}
+
+#cancelLogout:hover,
+#cancelDelete:hover,
+#cancelClearAll:hover {
+    background: #E1E6E6;
+}
+
+
+/* =========================================================
+   CONFIRM LOGOUT
+========================================================= */
+
+#confirmLogout {
+    background: var(--teal);
+
+    color: var(--white);
+}
+
+#confirmLogout:hover {
+    background: var(--dark);
+}
+
+
+/* =========================================================
+   DELETE CONFIRM
+========================================================= */
+
+.delete-confirm-btn {
+    background: #D9534F;
+
+    color: var(--white);
+}
+
+.delete-confirm-btn:hover {
+    background: #C43F3B;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 24px;
+
+        padding-bottom: 90px;
+    }
+
+    .bottom-nav {
+        display: flex;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .main {
+        padding: 20px 17px 90px;
+    }
+
+
+    /* Back */
+
+    .back-btn {
+        height: 38px;
+
+        padding: 0 12px;
+
+        margin-bottom: 14px;
+
+        font-size: 12px;
+
+        border-radius: 9px;
+    }
+
+    .back-btn i {
+        font-size: 17px;
+    }
+
+
+    /* Header */
+
+    .header {
+        align-items: flex-start;
+
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .header-right {
+        gap: 7px;
+    }
+
+    .icon-btn,
+    .profile-btn {
+        width: 41px;
+        height: 41px;
+    }
+
+    .icon-btn i,
+    .profile-btn i {
+        font-size: 20px;
+    }
+
+
+    /* Notification Content */
+
+    .notification-content {
+        padding-top: 0;
+
+        padding-bottom: 25px;
+    }
+
+    .notification-title-row {
+        align-items: flex-start;
+
+        margin-bottom: 16px;
+    }
+
+    .notification-title-row h2 {
+        font-size: 19px;
+    }
+
+    .notification-title-row p {
+        font-size: 11px;
+    }
+
+    .clear-all-btn {
+        padding: 9px 11px;
+
+        font-size: 11px;
+    }
+
+    .clear-all-btn i {
+        font-size: 15px;
+    }
+
+
+    /* Cards */
+
+    .notification-list {
+        gap: 11px;
+    }
+
+    .notification-card {
+        gap: 12px;
+
+        padding: 15px 13px;
+
+        border-radius: 13px;
+    }
+
+    .notification-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 11px;
+    }
+
+    .notification-icon i {
+        font-size: 21px;
+    }
+
+    .notification-body {
+        padding-right: 10px;
+    }
+
+    .notification-body h3 {
+        font-size: 13px;
+    }
+
+    .notification-body p {
+        font-size: 11.5px;
+
+        line-height: 1.6;
+    }
+
+    .notification-date {
+        font-size: 10px;
+
+        margin-top: 6px;
+    }
+
+    .notification-delete {
+        width: 34px;
+        height: 34px;
+
+        font-size: 17px;
+    }
+
+
+    /* Empty */
+
+    .empty-notification {
+        min-height: 290px;
+
+        padding: 30px 15px;
+    }
+
+    .empty-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .empty-icon i {
+        font-size: 27px;
+    }
+
+    .empty-notification h3 {
+        font-size: 16px;
+    }
+
+    .empty-notification p {
+        font-size: 11.5px;
+    }
+
+
+    /* Popup */
+
+    .popup {
+        width: 360px;
+
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+
+    .popup-icon {
+        width: 62px;
+        height: 62px;
+    }
+
+    .popup h2 {
+        font-size: 20px;
+    }
+
+    .popup p {
+        font-size: 12.5px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .main {
+        padding: 15px 13px 88px;
+    }
+
+
+    /* Header */
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 11px;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+
+    .icon-btn,
+    .profile-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .icon-btn i,
+    .profile-btn i {
+        font-size: 18px;
+    }
+
+
+    /* Title */
+
+    .notification-title-row {
+        gap: 10px;
+    }
+
+    .notification-title-row h2 {
+        font-size: 17px;
+    }
+
+    .notification-title-row p {
+        font-size: 10px;
+    }
+
+    .clear-all-btn {
+        padding: 8px 9px;
+
+        font-size: 10px;
+    }
+
+    .clear-all-btn i {
+        font-size: 14px;
+    }
+
+
+    /* Card */
+
+    .notification-card {
+        gap: 10px;
+
+        padding: 13px 10px;
+    }
+
+    .notification-icon {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 9px;
+    }
+
+    .notification-icon i {
+        font-size: 19px;
+    }
+
+    .notification-body {
+        padding-right: 5px;
+    }
+
+    .notification-body h3 {
+        font-size: 12px;
+    }
+
+    .notification-body p {
+        font-size: 10.5px;
+    }
+
+    .notification-date {
+        font-size: 9px;
+    }
+
+    .notification-delete {
+        width: 31px;
+        height: 31px;
+
+        font-size: 16px;
+    }
+
+
+    /* Empty */
+
+    .empty-notification {
+        min-height: 270px;
+    }
+
+    .empty-notification h3 {
+        font-size: 15px;
+    }
+
+    .empty-notification p {
+        font-size: 10.5px;
+    }
+
+
+    /* Popup */
+
+    .popup {
+        padding: 23px 17px;
+    }
+
+    .popup-buttons {
+        gap: 8px;
+    }
+
+    .popup-buttons button {
+        padding: 11px 8px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .notification-card:hover,
+    .notification-delete:hover,
+    .clear-all-btn:hover,
+    .icon-btn:hover,
+    .profile-btn:hover,
+    .back-btn:hover {
+        transform: none;
+    }
+
+}

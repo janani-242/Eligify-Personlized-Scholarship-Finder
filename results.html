@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Eligibility Results | Eligify</title>
+
+    <meta name="description"
+          content="Personalized scholarship eligibility results on Eligify.">
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         RESULTS CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="results.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     RESULTS APPLICATION
+========================================================= -->
+
+<div id="resultsApp">
+
+
+<!-- =========================================================
+     PREMIUM RESULTS LOADER
+========================================================= -->
+
+<div class="results-loader"
+     id="resultsLoader">
+
+    <div class="loader-main">
+
+        <div class="loader-brand">
+
+            <div class="loader-logo-box">
+
+                <img src="logo.png"
+                     alt="Eligify"
+                     class="loader-logo"
+                     onerror="this.style.display='none';">
+
+            </div>
+
+            <div class="loader-brand-text">
+
+                <strong>
+                    Eligify
+                </strong>
+
+                <span>
+                    Scholarship Finder
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="loader-visual">
+
+            <div class="loader-profile-node">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div class="loader-line">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div class="loader-search-node">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+
+            <div class="loader-line right">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div class="loader-result-node">
+
+                <i class="fa-solid fa-award"></i>
+
+            </div>
+
+        </div>
+
+
+        <div class="loader-content">
+
+            <span class="loader-eyebrow">
+                PERSONALIZED MATCHING
+            </span>
+
+            <h1 id="loaderTitle">
+                Finding scholarships for you
+            </h1>
+
+            <p id="loaderMessage">
+                Reading your eligibility profile...
+            </p>
+
+        </div>
+
+
+        <div class="loader-progress-area">
+
+            <div class="loader-progress">
+
+                <div class="loader-progress-bar"
+                     id="loaderProgressBar">
+                </div>
+
+            </div>
+
+
+            <div class="loader-progress-info">
+
+                <span id="loaderProgressText">
+                    Preparing matches
+                </span>
+
+                <strong id="loaderPercentage">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="loader-steps">
+
+            <div class="loader-step active"
+                 id="loaderStep1">
+
+                <span>
+                    <i class="fa-solid fa-user"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Profile
+                    </strong>
+
+                    <small>
+                        Reading details
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-check step-status"></i>
+
+            </div>
+
+
+            <div class="loader-step"
+                 id="loaderStep2">
+
+                <span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Matching
+                    </strong>
+
+                    <small>
+                        Checking criteria
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-check step-status"></i>
+
+            </div>
+
+
+            <div class="loader-step"
+                 id="loaderStep3">
+
+                <span>
+                    <i class="fa-solid fa-filter"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Filtering
+                    </strong>
+
+                    <small>
+                        Comparing opportunities
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-check step-status"></i>
+
+            </div>
+
+
+            <div class="loader-step"
+                 id="loaderStep4">
+
+                <span>
+                    <i class="fa-solid fa-award"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Results
+                    </strong>
+
+                    <small>
+                        Preparing your matches
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-check step-status"></i>
+
+            </div>
+
+        </div>
+
+
+        <div class="loader-footer">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                Your eligibility information is used only to find relevant scholarships.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     API ERROR PAGE
+========================================================= -->
+
+<div class="results-error"
+     id="resultsError"
+     style="display:none;">
+
+    <div class="error-page">
+
+        <div class="error-browser-icon">
+
+            <div class="browser-top">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <div class="browser-body">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+        </div>
+
+
+        <h1>
+            This page took too long to load
+        </h1>
+
+
+        <p id="resultsErrorMessage">
+
+            We couldn't load the scholarship database right now.
+            Please check your internet connection and try again.
+
+        </p>
+
+
+        <div class="error-actions">
+
+            <button type="button"
+                    class="retry-btn"
+                    id="retryResultsBtn">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Try Again
+
+            </button>
+
+
+            <a href="dashboard.html"
+               class="error-home-btn">
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+
+        <small class="error-help-text">
+
+            If the problem continues, the scholarship service may
+            be temporarily unavailable.
+
+        </small>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="results-header">
+
+    <div class="header-container">
+
+
+        <!-- LOGO -->
+
+        <a href="dashboard.html"
+           class="logo-area">
+
+            <img src="logo.png"
+                 alt="Eligify Logo"
+                 class="logo-image"
+                 onerror="this.style.display='none';">
+
+
+            <div class="logo-text">
+
+                <span class="logo-name">
+                    Eligify
+                </span>
+
+                <span class="logo-subtitle">
+                    Eligibility Scholarship Matcher
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="header-page-title">
+
+            Personalized Scholarship Finder
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="header-navigation">
+
+
+            <a href="dashboard.html"
+               class="header-link">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <a href="history.html"
+               class="header-link">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    History
+                </span>
+
+            </a>
+
+
+            <!-- CURRENT USER -->
+
+            <div class="header-user"
+     id="headerUser"
+     onclick="window.location.href='profile.html';"
+     style="cursor:pointer;">
+
+    <div class="header-user-photo">
+
+        <img id="headerProfilePhoto"
+             src=""
+             alt="Profile Photo"
+             style="display:none;">
+
+        <span id="headerProfileInitial">
+            U
+        </span>
+
+    </div>
+
+    <div class="header-user-info">
+
+        <strong id="headerUsername">
+            User
+        </strong>
+
+        <small>
+            Applicant
+        </small>
+
+    </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN RESULTS LAYOUT
+========================================================= -->
+
+<main class="results-layout">
+
+
+    <!-- =====================================================
+         PROFILE SIDEBAR
+    ====================================================== -->
+
+    <aside class="profile-sidebar"
+           id="profileSidebar">
+
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="profile-sidebar-header">
+
+            <div>
+
+                <span class="sidebar-label">
+                    APPLICANT PROFILE
+                </span>
+
+                <h2>
+                    Eligibility Details
+                </h2>
+
+            </div>
+
+
+            <button type="button"
+                    class="sidebar-close-btn"
+                    id="closeProfileSidebar"
+                    aria-label="Close profile">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- PROFILE IDENTITY -->
+
+        <div class="sidebar-identity">
+
+            <div class="profile-photo-wrapper">
+
+                <img id="profilePhoto"
+                     class="profile-photo"
+                     src=""
+                     alt="Profile Photo"
+                     style="display:none;">
+
+                <div class="profile-avatar"
+                     id="profileInitial">
+
+                    U
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-identity-info">
+
+                <h3 id="profileName">
+                    Student
+                </h3>
+
+                <p id="profileUsername">
+                    Applicant
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <!-- =================================================
+             ELIGIBILITY DETAILS
+        ================================================== -->
+
+        <div class="sidebar-details">
+
+
+            <!-- FULL NAME -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-user"></i>
+                    Full Name
+                </span>
+
+                <strong id="profileFullName">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-cake-candles"></i>
+                    Age
+                </span>
+
+                <strong id="profileAge">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-venus-mars"></i>
+                    Gender
+                </span>
+
+                <strong id="profileGender">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- STATE -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    State
+                </span>
+
+                <strong id="profileState">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- COURSE CATEGORY -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-layer-group"></i>
+                    Course Category
+                </span>
+
+                <strong id="profileCourseCategory">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- COURSE -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-book-open"></i>
+                    Course
+                </span>
+
+                <strong id="profileCourseDetail">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- YEAR -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-calendar"></i>
+                    Year of Study
+                </span>
+
+                <strong id="profileYear">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- PERCENTAGE -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Academic Percentage
+                </span>
+
+                <strong id="profileMarks">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- COMMUNITY -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-people-group"></i>
+                    Community
+                </span>
+
+                <strong id="profileCommunity">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- FAMILY INCOME -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    Family Income
+                </span>
+
+                <strong id="profileIncome">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- FIRST GRADUATE -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-user-graduate"></i>
+                    First Graduate
+                </span>
+
+                <strong id="profileFirstGraduate">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- SINGLE CHILD -->
+
+            <div class="sidebar-detail">
+
+                <span>
+                    <i class="fa-solid fa-child"></i>
+                    Single Child
+                </span>
+
+                <strong id="profileSingleChild">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- EDIT ELIGIBILITY -->
+
+        <button type="button"
+                class="edit-profile-btn"
+                id="editProfileBtn">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Edit Eligibility
+
+        </button>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         RESULTS CONTENT
+    ====================================================== -->
+
+    <section class="results-content">
+
+
+        <!-- PROFILE TOGGLE -->
+
+        <button type="button"
+                class="profile-toggle-btn"
+                id="profileToggleBtn">
+
+            <span>
+
+                <i class="fa-solid fa-sliders"></i>
+
+                Eligibility Profile
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="results-intro">
+
+            <div class="intro-content">
+
+                <span class="intro-label">
+                    SCHOLARSHIP ASSESSMENT
+                </span>
+
+
+                <h1>
+                    Your Eligibility Results
+                </h1>
+
+
+                <p class="intro-description">
+
+                    We've compared your eligibility profile with
+                    available scholarship opportunities.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BEST MATCH
+        ================================================== -->
+
+        <section class="best-match-section"
+                 id="bestMatchSection"
+                 style="display:none;">
+
+            <div class="best-match-heading">
+
+                <div>
+
+                    <span>
+
+                        <i class="fa-solid fa-sparkles"></i>
+
+                        TOP RECOMMENDATION
+
+                    </span>
+
+
+                    <h2>
+                        Best Match For You
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="best-match-card"
+                 id="bestMatchCard">
+
+                <!-- Generated by results.js -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ELIGIBLE SCHOLARSHIPS
+        ================================================== -->
+
+        <section class="scholarship-section eligible-section"
+                 id="eligibleSection">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label eligible-label">
+                        ELIGIBLE
+                    </span>
+
+
+                    <h2>
+                        Scholarships You Can Apply For
+                    </h2>
+
+
+                    <p>
+                        These scholarships match your current eligibility profile.
+                    </p>
+
+                </div>
+
+
+                <span class="scholarship-count">
+
+                    <span id="eligibleSectionCount">
+                        0
+                    </span>
+
+                </span>
+
+            </div>
+
+
+
+            <!-- HORIZONTAL SCHOLARSHIP AREA -->
+
+            <div class="scholarship-scroll-wrapper">
+
+                <div class="scholarship-grid"
+                     id="scholarshipGrid">
+
+                    <!-- Eligible scholarship cards generated by results.js -->
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIEW MORE -->
+
+            <div class="view-more-wrapper"
+                 id="viewMoreWrapper"
+                 style="display:none;">
+
+                <button type="button"
+                        class="view-more-btn"
+                        id="viewMoreBtn">
+
+                    View More
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NOT ELIGIBLE SCHOLARSHIPS
+        ================================================== -->
+
+        <section class="scholarship-section not-eligible-section"
+                 id="notEligibleSection"
+                 style="display:none;">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label not-eligible-label">
+                        CURRENTLY NOT ELIGIBLE
+                    </span>
+
+
+                    <h2>
+                        Other Scholarships
+                    </h2>
+
+
+                    <p>
+                        These opportunities don't match one or more
+                        criteria in your current profile.
+                    </p>
+
+                </div>
+
+
+                <span class="scholarship-count not-count">
+
+                    <span id="notEligibleSectionCount">
+                        0
+                    </span>
+
+                </span>
+
+            </div>
+
+
+
+            <!-- HORIZONTAL SCHOLARSHIP AREA -->
+
+            <div class="scholarship-scroll-wrapper">
+
+                <div class="scholarship-grid not-eligible-grid"
+                     id="notEligibleGrid">
+
+                    <!-- Not eligible cards generated by results.js -->
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIEW MORE -->
+
+            <div class="view-more-wrapper"
+                 id="notEligibleMore"
+                 style="display:none;">
+
+                <button type="button"
+                        class="view-more-btn"
+                        id="notEligibleViewMoreBtn">
+
+                    View More
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLOSED SCHOLARSHIPS
+        ================================================== -->
+
+        <section class="scholarship-section closed-section"
+                 id="closedSection"
+                 style="display:none;">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label closed-label">
+                        CLOSED
+                    </span>
+
+
+                    <h2>
+                        Closed Scholarships
+                    </h2>
+
+
+                    <p>
+                        These scholarships are currently closed for applications.
+                    </p>
+
+                </div>
+
+
+                <span class="scholarship-count closed-count">
+
+                    <span id="closedSectionCount">
+                        0
+                    </span>
+
+                </span>
+
+            </div>
+
+
+
+            <!-- HORIZONTAL CLOSED SCHOLARSHIP AREA -->
+
+            <div class="scholarship-scroll-wrapper">
+
+                <div class="scholarship-grid closed-grid"
+                     id="closedGrid">
+
+                    <!-- Closed scholarship cards generated by results.js -->
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIEW MORE -->
+
+            <div class="view-more-wrapper"
+                 id="closedMore"
+                 style="display:none;">
+
+                <button type="button"
+                        class="view-more-btn"
+                        id="closedViewMoreBtn">
+
+                    View More
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NO RESULTS
+        ================================================== -->
+
+        <section class="no-results"
+                 id="noResults"
+                 style="display:none;">
+
+
+            <div class="no-results-icon">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+
+            <h2>
+                No Scholarships Found
+            </h2>
+
+
+            <p>
+                We couldn't find any scholarship opportunities
+                matching the current profile.
+            </p>
+
+
+            <button type="button"
+                    class="edit-profile-btn"
+                    id="updateProfileBtn">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Update Eligibility
+
+            </button>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     PROFILE UPDATE MODAL
+========================================================= -->
+
+<div class="modal-overlay"
+     id="profileModal"
+     style="display:none;">
+
+    <div class="profile-modal">
+
+
+        <!-- CLOSE -->
+
+        <button type="button"
+                class="modal-close"
+                id="cancelProfileModal"
+                aria-label="Close">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <!-- ICON -->
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-user-pen"></i>
+
+        </div>
+
+
+
+        <h2>
+            Update Eligibility Profile
+        </h2>
+
+
+
+        <p>
+
+            Do you want to update the eligibility information?
+            Your scholarship results will be recalculated.
+
+        </p>
+
+
+
+        <div class="modal-actions">
+
+            <button type="button"
+                    class="modal-cancel"
+                    id="cancelProfileModalBtn">
+
+                Cancel
+
+            </button>
+
+
+            <button type="button"
+                    class="modal-confirm"
+                    id="confirmProfileModal">
+
+                Edit Profile
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="results-toast"
+     id="resultsToast"
+     role="status"
+     aria-live="polite"
+     style="display:none;">
+
+    <div class="toast-icon"
+         id="toastIcon">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+
+    <span id="toastMessage">
+        Saved successfully
+    </span>
+
+</div>
+
+
+</div>
+<!-- END RESULTS APPLICATION -->
+
+
+
+<!-- =========================================================
+     RESULTS JAVASCRIPT
+========================================================= -->
+
+<script src="storage-guard.js"></script>
+    <script src="results.js"
+        defer></script>
+
+
+</body>
+
+</html>

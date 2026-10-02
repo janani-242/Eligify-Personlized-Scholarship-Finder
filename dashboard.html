@@ -1,0 +1,1140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eligify | Dashboard</title>
+
+
+<!-- Google Font -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+<!-- Remix Icons -->
+
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet">
+
+
+<!-- CSS -->
+
+<link
+    rel="stylesheet"
+    href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     OFFLINE PAGE
+========================================================= -->
+
+<div
+    id="offlinePage"
+    class="offline-page">
+
+    <div class="offline-content">
+
+        <div class="offline-icon">
+
+            <i class="ri-global-line"></i>
+
+        </div>
+
+
+        <h1>
+            Can't reach this page
+        </h1>
+
+
+        <p>
+            Check your internet connection and try again.
+        </p>
+
+
+        <p class="offline-error">
+            ERR_INTERNET_DISCONNECTED
+        </p>
+
+
+        <button
+            id="retryConnection"
+            type="button">
+
+            <i class="ri-refresh-line"></i>
+
+            Try again
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MAIN APP
+========================================================= -->
+
+<div id="dashboardApp">
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <img
+            src="logo.png"
+            alt="Eligify Logo">
+
+        <h2>
+            Eligify
+        </h2>
+
+    </div>
+
+
+
+    <ul>
+
+
+        <!-- HOME -->
+
+        <li class="active">
+
+            <a href="dashboard.html">
+
+                <i class="ri-home-5-fill"></i>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SCHOLARSHIPS -->
+
+        <li>
+
+            <a href="scholarships.html">
+
+                <i class="ri-book-open-line"></i>
+
+                <span>
+                    Scholarships
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SMART ELIGIBILITY -->
+
+        <li>
+
+            <a href="eligibility.html">
+
+                <i class="ri-award-line"></i>
+
+                <span>
+                    Smart Eligibility
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SAVED -->
+
+        <li>
+
+            <a href="saved.html">
+
+                <i class="ri-heart-3-line"></i>
+
+                <span>
+                    Saved
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- PROFILE -->
+
+        <li>
+
+            <a href="profile.html">
+
+                <i class="ri-user-3-line"></i>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        id="logoutBtn"
+        type="button">
+
+        <i class="ri-logout-box-r-line"></i>
+
+        Logout
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<div class="main">
+
+
+    <!-- BACK BUTTON -->
+
+    <button
+        type="button"
+        id="backBtn"
+        class="back-btn"
+        aria-label="Back">
+
+        <i class="ri-arrow-left-line"></i>
+
+    </button>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+
+    <div class="header-left">
+
+        <h1>
+            Eligify
+        </h1>
+
+        <p>
+            Unlock opportunities made for you.
+        </p>
+
+    </div>
+
+
+
+    <div class="header-right">
+
+
+        <!-- =================================================
+             NOTIFICATION
+             Opens notification.html
+        ================================================== -->
+
+        <a
+            href="notification.html"
+            id="notificationBtn"
+            class="icon-btn notification-btn"
+            aria-label="Notifications">
+
+            <i class="ri-notification-3-line"></i>
+
+            <span
+                id="notificationDot"
+                class="notification-dot">
+            </span>
+
+        </a>
+
+
+
+        <!-- =================================================
+             HISTORY
+             Opens history.html
+        ================================================== -->
+
+        <a
+            href="history.html"
+            class="icon-btn history-btn"
+            aria-label="Eligibility History">
+
+            <i class="ri-history-line"></i>
+
+        </a>
+
+
+
+        <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+        <a
+            href="profile.html"
+            class="profile-btn"
+            aria-label="Profile"
+            id="dashboardProfileBtn">
+
+            <img
+                id="dashboardProfilePhoto"
+                src=""
+                alt="Profile Photo">
+
+            <i
+                id="dashboardProfileIcon"
+                class="ri-user-3-fill">
+            </i>
+
+        </a>
+
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =========================================================
+     DID YOU KNOW
+========================================================= -->
+
+<section class="did-you-know">
+
+
+    <div class="did-icon">
+
+        <i class="ri-lightbulb-flash-fill"></i>
+
+    </div>
+
+
+
+    <div class="did-content">
+
+        <span>
+            DID YOU KNOW?
+        </span>
+
+
+        <h3 id="didTitle">
+            Loading Scholarship...
+        </h3>
+
+
+        <p id="didText">
+            Please wait while we fetch a scholarship.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SMART ELIGIBILITY HERO
+========================================================= -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+        <h2>
+            Smart Eligibility Matcher
+        </h2>
+
+
+        <p>
+            Complete your profile and instantly discover scholarships
+            that match your eligibility.
+        </p>
+
+
+        <button
+            id="checkEligibility"
+            type="button">
+
+            Check Eligibility
+
+        </button>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section class="categories">
+
+
+    <div class="section-title">
+
+        <h2>
+            Categories
+        </h2>
+
+
+        <button
+            id="viewMoreCategories"
+            class="view-more-categories"
+            type="button">
+
+            View More
+
+            <i class="ri-arrow-right-line"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <div class="category-grid">
+
+
+        <!-- 1 -->
+
+        <div
+            class="category-card"
+            data-category="Central Government">
+
+            <i class="ri-government-line"></i>
+
+            <h4>
+                Central Government
+            </h4>
+
+        </div>
+
+
+
+        <!-- 2 -->
+
+        <div
+            class="category-card"
+            data-category="State Government">
+
+            <i class="ri-building-2-line"></i>
+
+            <h4>
+                State Government
+            </h4>
+
+        </div>
+
+
+
+        <!-- 3 -->
+
+        <div
+            class="category-card"
+            data-category="State/Central">
+
+            <i class="ri-government-line"></i>
+
+            <h4>
+                State/Central
+            </h4>
+
+        </div>
+
+
+
+        <!-- 4 -->
+
+        <div
+            class="category-card"
+            data-category="Bank Sponsored">
+
+            <i class="ri-bank-line"></i>
+
+            <h4>
+                Bank Sponsored
+            </h4>
+
+        </div>
+
+
+
+        <!-- 5 -->
+
+        <div
+            class="category-card"
+            data-category="Bank / Corporate">
+
+            <i class="ri-bank-line"></i>
+
+            <h4>
+                Bank / Corporate
+            </h4>
+
+        </div>
+
+
+
+        <!-- 6 -->
+
+        <div
+            class="category-card"
+            data-category="Private Company">
+
+            <i class="ri-briefcase-4-line"></i>
+
+            <h4>
+                Private Company
+            </h4>
+
+        </div>
+
+
+
+        <!-- 7 -->
+
+        <div
+            class="category-card"
+            data-category="Corporate / Public">
+
+            <i class="ri-building-line"></i>
+
+            <h4>
+                Corporate / Public
+            </h4>
+
+        </div>
+
+
+
+        <!-- 8 -->
+
+        <div
+            class="category-card"
+            data-category="Trust / Foundation">
+
+            <i class="ri-hand-heart-line"></i>
+
+            <h4>
+                Trust / Foundation
+            </h4>
+
+        </div>
+
+
+
+        <!-- 9 -->
+
+        <div
+            class="category-card"
+            data-category="Central Trust">
+
+            <i class="ri-government-line"></i>
+
+            <h4>
+                Central Trust
+            </h4>
+
+        </div>
+
+
+
+        <!-- 10 -->
+
+        <div
+            class="category-card"
+            data-category="Global Trust">
+
+            <i class="ri-global-line"></i>
+
+            <h4>
+                Global Trust
+            </h4>
+
+        </div>
+
+
+
+        <!-- 11 -->
+
+        <div
+            class="category-card"
+            data-category="Statutory Trust">
+
+            <i class="ri-shield-check-line"></i>
+
+            <h4>
+                Statutory Trust
+            </h4>
+
+        </div>
+
+
+
+        <!-- 12 -->
+
+        <div
+            class="category-card"
+            data-category="Engineering Only">
+
+            <i class="ri-tools-line"></i>
+
+            <h4>
+                Engineering Only
+            </h4>
+
+        </div>
+
+
+
+        <!-- 13 -->
+
+        <div
+            class="category-card"
+            data-category="Medical Only">
+
+            <i class="ri-heart-pulse-line"></i>
+
+            <h4>
+                Medical Only
+            </h4>
+
+        </div>
+
+
+
+        <!-- 14 -->
+
+        <div
+            class="category-card"
+            data-category="Arts Only">
+
+            <i class="ri-palette-line"></i>
+
+            <h4>
+                Arts Only
+            </h4>
+
+        </div>
+
+
+
+        <!-- 15 -->
+
+        <div
+            class="category-card"
+            data-category="Girls Dedicated">
+
+            <i class="ri-user-heart-line"></i>
+
+            <h4>
+                Girls Dedicated
+            </h4>
+
+        </div>
+
+
+
+        <!-- 16 -->
+
+        <div
+            class="category-card"
+            data-category="Central/State">
+
+            <i class="ri-community-line"></i>
+
+            <h4>
+                Central/State
+            </h4>
+
+        </div>
+
+
+
+        <!-- 17 -->
+
+        <div
+            class="category-card"
+            data-category="Special Scheme">
+
+            <i class="ri-award-line"></i>
+
+            <h4>
+                Special Scheme
+            </h4>
+
+        </div>
+
+
+
+        <!-- 18 -->
+
+        <div
+            class="category-card"
+            data-category="Corporate / Trust">
+
+            <i class="ri-hand-coin-line"></i>
+
+            <h4>
+                Corporate / Trust
+            </h4>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DEADLINE SCHOLARSHIPS
+========================================================= -->
+
+<section class="scholarship-section">
+
+
+    <div class="section-header">
+
+        <h2>
+            ⏰ Deadline Scholarships
+        </h2>
+
+
+        <a href="scholarships.html">
+            View All
+        </a>
+
+    </div>
+
+
+
+    <div
+        id="deadlineContainer"
+        class="scholarship-container">
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     POPULAR SCHOLARSHIPS
+========================================================= -->
+
+<section class="scholarship-section">
+
+
+    <div class="section-header">
+
+        <h2>
+            🔥 Popular Scholarships
+        </h2>
+
+
+        <a href="scholarships.html">
+            View All
+        </a>
+
+    </div>
+
+
+
+    <div
+        id="popularContainer"
+        class="scholarship-container">
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     BOTTOM NAVIGATION
+========================================================= -->
+
+<nav class="bottom-nav">
+
+
+    <!-- HOME -->
+
+    <a
+        href="dashboard.html"
+        class="active">
+
+        <i class="ri-home-5-fill"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+
+    <!-- SCHOLARSHIPS -->
+
+    <a href="scholarships.html">
+
+        <i class="ri-book-open-line"></i>
+
+        <span>
+            Scholarships
+        </span>
+
+    </a>
+
+
+
+    <!-- ELIGIBILITY -->
+
+    <a href="eligibility.html">
+
+        <i class="ri-award-line"></i>
+
+        <span>
+            Eligibility
+        </span>
+
+    </a>
+
+
+
+    <!-- SAVED -->
+
+    <a href="saved.html">
+
+        <i class="ri-heart-3-line"></i>
+
+        <span>
+            Saved
+        </span>
+
+    </a>
+
+
+
+    <!-- PROFILE -->
+
+    <a href="profile.html">
+
+        <i class="ri-user-3-line"></i>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+
+</nav>
+
+
+
+<!-- =========================================================
+     LOGOUT POPUP
+========================================================= -->
+
+<div
+    id="logoutPopup"
+    class="popup-overlay">
+
+
+    <div class="popup">
+
+
+        <div class="popup-icon">
+
+            <i class="ri-logout-box-r-line"></i>
+
+        </div>
+
+
+        <h2>
+            Logout
+        </h2>
+
+
+        <p>
+            Are you sure you want to logout from Eligify?
+        </p>
+
+
+
+        <div class="popup-buttons">
+
+
+            <button
+                id="cancelLogout"
+                type="button">
+
+                Cancel
+
+            </button>
+
+
+
+            <button
+                id="confirmLogout"
+                type="button">
+
+                Logout
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="storage-guard.js"></script>
+
+<script src="user-storage.js"></script>
+
+
+<script
+    type="module"
+    src="dashboard.js">
+</script>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     HIDDEN ADMIN ACCESS POPUP
+========================================================= -->
+
+<div
+    id="adminAccessOverlay"
+    class="admin-access-overlay">
+
+
+    <div class="admin-access-popup">
+
+
+        <button
+            type="button"
+            id="closeAdminAccess"
+            class="admin-access-close"
+            aria-label="Close">
+
+            <i class="ri-close-line"></i>
+
+        </button>
+
+
+
+        <div class="admin-access-icon">
+
+            <i class="ri-shield-keyhole-line"></i>
+
+        </div>
+
+
+
+        <h2>
+            Admin Access
+        </h2>
+
+
+
+        <p>
+            Enter the access code to continue.
+        </p>
+
+
+
+        <div class="admin-code-box">
+
+            <i class="ri-lock-password-line"></i>
+
+
+            <input
+                type="password"
+                id="adminAccessCode"
+                placeholder="Enter access code"
+                autocomplete="off"
+                maxlength="20">
+
+        </div>
+
+
+
+        <p
+            id="adminAccessError"
+            class="admin-access-error">
+        </p>
+
+
+
+        <button
+            type="button"
+            id="adminAccessSubmit"
+            class="admin-access-submit">
+
+            Continue
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     CATEGORY VIEW MORE SCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    const categoryCards =
+        document.querySelectorAll(".category-card");
+
+
+    const viewMoreButton =
+        document.getElementById("viewMoreCategories");
+
+
+    const itemsPerClick = 4;
+
+
+    let visibleCount = 4;
+
+
+
+    function updateCategories() {
+
+
+        categoryCards.forEach(function (card, index) {
+
+
+            if (index < visibleCount) {
+
+                card.style.display = "";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+
+        if (visibleCount >= categoryCards.length) {
+
+            viewMoreButton.style.display = "none";
+
+        } else {
+
+            viewMoreButton.style.display = "flex";
+
+        }
+
+    }
+
+
+
+    updateCategories();
+
+
+
+    viewMoreButton.addEventListener("click", function () {
+
+
+        visibleCount += itemsPerClick;
+
+
+        updateCategories();
+
+    });
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Eligify | Eligibility History</title>
+
+<meta name="description"
+      content="View your previous scholarship eligibility checks">
+
+
+<!-- Google Font -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+<!-- Remix Icons -->
+
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet">
+
+
+<!-- History CSS -->
+
+<link
+    rel="stylesheet"
+    href="history.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     MAIN APP
+========================================================= -->
+
+<div id="historyApp">
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <img
+            src="logo.png"
+            alt="Eligify Logo">
+
+        <h2>
+            Eligify
+        </h2>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <ul>
+
+
+        <!-- HOME -->
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="ri-home-5-line"></i>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SCHOLARSHIPS -->
+
+        <li>
+
+            <a href="scholarships.html">
+
+                <i class="ri-book-open-line"></i>
+
+                <span>
+                    Scholarships
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- ELIGIBILITY -->
+
+        <li>
+
+            <a href="eligibility.html">
+
+                <i class="ri-award-line"></i>
+
+                <span>
+                    Smart Eligibility
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SAVED -->
+
+        <li>
+
+            <a href="saved.html">
+
+                <i class="ri-heart-3-line"></i>
+
+                <span>
+                    Saved
+                </span>
+
+            </a>
+
+        </li>
+
+
+
+        <!-- PROFILE -->
+
+        <li>
+
+            <a href="profile.html">
+
+                <i class="ri-user-3-line"></i>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        id="logoutBtn"
+        type="button">
+
+        <i class="ri-logout-box-r-line"></i>
+
+        Logout
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<div class="main">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+
+    <div class="header-left">
+
+        <h1>
+            Eligibility History
+        </h1>
+
+        <p>
+            View your previous scholarship eligibility checks.
+        </p>
+
+    </div>
+
+
+
+</header>
+
+
+
+<!-- =========================================================
+     PAGE CONTENT
+========================================================= -->
+
+<main class="history-container">
+
+
+<!-- =========================================================
+     PAGE INTRO
+========================================================= -->
+
+<section class="history-intro">
+
+
+    <div class="intro-content">
+
+        <span class="intro-label">
+            SCHOLARSHIP ACTIVITY
+        </span>
+
+
+        <h2>
+            Eligibility History
+        </h2>
+
+
+        <p>
+            View your previous eligibility checks and access
+            your results anytime.
+        </p>
+
+    </div>
+
+
+
+    <button
+        id="clearHistoryBtn"
+        class="clear-history-btn"
+        type="button">
+
+        <i class="ri-delete-bin-line"></i>
+
+        Clear History
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SUMMARY CARDS
+========================================================= -->
+
+<section class="history-summary">
+
+
+    <!-- TOTAL CHECKS -->
+
+    <div class="summary-card">
+
+
+        <div class="summary-icon total-icon">
+
+            <i class="ri-file-list-3-line"></i>
+
+        </div>
+
+
+        <div class="summary-content">
+
+            <span class="summary-label">
+                Total Checks
+            </span>
+
+
+            <strong id="historyCount">
+                0
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ELIGIBLE -->
+
+    <div class="summary-card eligible-card">
+
+
+        <div class="summary-icon eligible-icon">
+
+            <i class="ri-checkbox-circle-line"></i>
+
+        </div>
+
+
+        <div class="summary-content">
+
+            <span class="summary-label">
+                Eligible
+            </span>
+
+
+            <strong id="eligibleCount">
+                0
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- NOT ELIGIBLE -->
+
+    <div class="summary-card not-eligible-card">
+
+
+        <div class="summary-icon not-eligible-icon">
+
+            <i class="ri-close-circle-line"></i>
+
+        </div>
+
+
+        <div class="summary-content">
+
+            <span class="summary-label">
+                Not Eligible
+            </span>
+
+
+            <strong id="notEligibleCount">
+                0
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     PREVIOUS CHECKS
+========================================================= -->
+
+<section class="history-section">
+
+
+    <div class="section-header">
+
+
+        <div>
+
+            <span class="section-label">
+                ACTIVITY
+            </span>
+
+
+            <h2>
+                Previous Checks
+            </h2>
+
+
+            <p>
+                Your eligibility checks are listed below.
+            </p>
+
+        </div>
+
+
+
+        <span
+            id="historyStatus"
+            class="history-status">
+
+            0 checks
+
+        </span>
+
+
+    </div>
+
+
+
+    <!-- HISTORY CARDS -->
+
+    <div
+        id="historyList"
+        class="history-list">
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     EMPTY HISTORY
+========================================================= -->
+
+<section
+    id="emptyHistory"
+    class="empty-history"
+    style="display:none;">
+
+
+    <div class="empty-icon">
+
+        <i class="ri-file-search-line"></i>
+
+    </div>
+
+
+    <h2>
+        No Eligibility History
+    </h2>
+
+
+    <p>
+        You haven't checked your scholarship eligibility yet.
+        Your previous checks will appear here.
+    </p>
+
+
+    <button
+        id="emptyCheckBtn"
+        class="primary-btn"
+        type="button">
+
+        <i class="ri-search-line"></i>
+
+        Check Eligibility
+
+    </button>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="historyToast"
+    class="history-toast">
+
+
+    <span id="toastIcon">
+        ✓
+    </span>
+
+
+    <span id="toastMessage">
+        History updated
+    </span>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGOUT POPUP
+========================================================= -->
+
+<div
+    id="logoutPopup"
+    class="popup-overlay">
+
+
+    <div class="popup">
+
+
+        <div class="popup-icon">
+
+            <i class="ri-logout-box-r-line"></i>
+
+        </div>
+
+
+        <h2>
+            Logout
+        </h2>
+
+
+        <p>
+            Are you sure you want to logout from Eligify?
+        </p>
+
+
+        <div class="popup-buttons">
+
+
+            <button
+                id="cancelLogout"
+                type="button">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                id="confirmLogout"
+                type="button">
+
+                Logout
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- =========================================================
+     BOTTOM NAVIGATION
+========================================================= -->
+
+<nav class="bottom-nav">
+
+
+    <a href="dashboard.html">
+
+        <i class="ri-home-5-line"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+
+    <a href="scholarships.html">
+
+        <i class="ri-book-open-line"></i>
+
+        <span>
+            Scholarships
+        </span>
+
+    </a>
+
+
+
+    <a href="eligibility.html">
+
+        <i class="ri-award-line"></i>
+
+        <span>
+            Eligibility
+        </span>
+
+    </a>
+
+
+
+    <a href="saved.html">
+
+        <i class="ri-heart-3-line"></i>
+
+        <span>
+            Saved
+        </span>
+
+    </a>
+
+
+
+    <a
+        href="profile.html"
+        class="active">
+
+        <i class="ri-user-3-line"></i>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+
+</nav>
+
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="storage-guard.js"></script>
+
+<script src="user-storage.js"></script>
+
+<script src="history.js" defer></script>
+
+
+</div>
+
+
+</body>
+
+</html>

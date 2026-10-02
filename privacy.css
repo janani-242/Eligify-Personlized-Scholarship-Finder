@@ -1,0 +1,1285 @@
+/* =========================================================
+   ELIGIFY
+   PRIVACY & SECURITY
+   CLEAN APP-STYLE DESIGN
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --teal: #0B5D5B;
+    --dark: #063F3F;
+    --deep-teal: #052F2E;
+
+    --gold: #D4AF37;
+
+    --white: #FFFFFF;
+
+    --text: #202828;
+    --muted: #6F7A7A;
+    --light-muted: #9AA4A4;
+
+    --border: #E8ECEC;
+
+    --soft-teal: #EAF5F3;
+    --soft-gold: #FFF8E3;
+
+    --danger: #C62828;
+    --danger-dark: #A61F1F;
+    --soft-danger: #FFF1F1;
+    --danger-border: #F2D0D0;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #FFFFFF;
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.privacy-header {
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;
+    height: 64px;
+
+    padding: 0 28px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.privacy-header h1 {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: var(--teal);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--teal);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-btn:hover {
+    background: var(--soft-teal);
+}
+
+.back-btn:active {
+    transform: scale(0.94);
+}
+
+.back-btn i {
+    font-size: 22px;
+}
+
+.header-space {
+    width: 40px;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.privacy-page {
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding: 0 22px 50px;
+}
+
+
+/* =========================================================
+   APP BRAND
+========================================================= */
+
+.app-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 28px 2px 22px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.app-brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.brand-text h2 {
+    color: var(--teal);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.brand-text p {
+    margin-top: 3px;
+
+    color: var(--light-muted);
+
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   PRIVACY INTRO
+========================================================= */
+
+.privacy-intro {
+    padding: 25px 2px 27px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.privacy-intro h2 {
+    color: var(--text);
+
+    font-size: 22px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.privacy-intro p {
+    max-width: 600px;
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   PRIVACY GROUP
+========================================================= */
+
+.privacy-group {
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   GROUP TITLE
+========================================================= */
+
+.group-title {
+    padding: 25px 2px 10px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   PRIVACY ROW
+========================================================= */
+
+.privacy-row {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 2px;
+
+    border-top: 1px solid #F0F3F3;
+
+    transition:
+        background 0.2s ease;
+}
+
+.privacy-row:hover {
+    background: #FCFDFD;
+}
+
+
+/* =========================================================
+   ROW ICON
+========================================================= */
+
+.row-icon {
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: var(--soft-teal);
+
+    color: var(--teal);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-icon i {
+    font-size: 18px;
+}
+
+.security-icon {
+    background: var(--soft-gold);
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   ROW CONTENT
+========================================================= */
+
+.row-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.row-content h3 {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    line-height: 1.4;
+}
+
+.row-content p {
+    max-width: 600px;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   ACCOUNT CONTROL
+========================================================= */
+
+.account-control {
+    padding-bottom: 2px;
+}
+
+
+/* =========================================================
+   DELETE ICON
+========================================================= */
+
+.delete-icon {
+    background: var(--soft-danger);
+
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   DELETE ACCOUNT BUTTON
+========================================================= */
+
+.delete-account-btn {
+    margin-top: 13px;
+
+    min-height: 38px;
+
+    padding: 9px 15px;
+
+    border: 1px solid var(--danger-border);
+
+    border-radius: 9px;
+
+    background: var(--soft-danger);
+
+    color: var(--danger);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.delete-account-btn i {
+    font-size: 15px;
+}
+
+.delete-account-btn:hover {
+    background: var(--danger);
+
+    border-color: var(--danger);
+
+    color: var(--white);
+}
+
+.delete-account-btn:active {
+    transform: scale(0.97);
+}
+
+.delete-account-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   PRIVACY NOTE
+========================================================= */
+
+.privacy-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    padding: 16px;
+
+    border: 1px solid #E8EDEB;
+
+    border-radius: 12px;
+
+    background: #FBFDFC;
+}
+
+.note-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: var(--soft-gold);
+
+    color: var(--gold);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-icon i {
+    font-size: 17px;
+}
+
+.privacy-note h3 {
+    color: var(--teal);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-bottom: 3px;
+}
+
+.privacy-note p {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.privacy-footer {
+    padding: 32px 5px 5px;
+
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.footer-brand img {
+    width: 23px;
+    height: 23px;
+
+    object-fit: contain;
+}
+
+.footer-brand strong {
+    color: var(--teal);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.privacy-footer > p {
+    margin-top: 3px;
+
+    color: #8E9999;
+
+    font-size: 9px;
+}
+
+.privacy-footer small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #A8B0B0;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   DELETE ACCOUNT MODAL
+========================================================= */
+
+.delete-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    background: rgba(5, 47, 46, 0.48);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5000;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.22s ease,
+        visibility 0.22s ease;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.delete-modal.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MODAL BOX
+========================================================= */
+
+.delete-modal-box {
+    width: 100%;
+
+    max-width: 420px;
+
+    padding: 27px 25px 24px;
+
+    background: var(--white);
+
+    border: 1px solid #E7ECEB;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.14);
+
+    text-align: center;
+
+    transform: translateY(12px) scale(0.98);
+
+    transition:
+        transform 0.22s ease;
+}
+
+.delete-modal.show .delete-modal-box {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.delete-modal-icon {
+    width: 54px;
+    height: 54px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 15px;
+
+    background: var(--soft-danger);
+
+    color: var(--danger);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-modal-icon i {
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   MODAL HEADING
+========================================================= */
+
+.delete-modal-box h2 {
+    color: var(--text);
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MODAL DESCRIPTION
+========================================================= */
+
+.delete-modal-box > p {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DELETE WARNING
+========================================================= */
+
+.delete-warning {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: 1px solid #F0E5BA;
+
+    border-radius: 10px;
+
+    background: var(--soft-gold);
+
+    color: #806B1E;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    text-align: left;
+}
+
+.delete-warning i {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    font-size: 15px;
+}
+
+.delete-warning span {
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.delete-modal-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.cancel-delete-btn,
+.confirm-delete-btn {
+    flex: 1;
+
+    min-height: 40px;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.cancel-delete-btn {
+    border: 1px solid var(--border);
+
+    background: #FFFFFF;
+
+    color: var(--muted);
+}
+
+.cancel-delete-btn:hover {
+    background: #F7F9F9;
+
+    color: var(--text);
+}
+
+.cancel-delete-btn:active,
+.confirm-delete-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   CONFIRM DELETE BUTTON
+========================================================= */
+
+.confirm-delete-btn {
+    border: 1px solid var(--danger);
+
+    background: var(--danger);
+
+    color: var(--white);
+}
+
+.confirm-delete-btn:hover {
+    background: var(--danger-dark);
+
+    border-color: var(--danger-dark);
+}
+
+.confirm-delete-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.confirm-delete-btn i {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PRIVACY TOAST
+========================================================= */
+
+.privacy-toast {
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    min-width: 280px;
+
+    max-width: calc(100% - 32px);
+
+    padding: 12px 17px;
+
+    border: 1px solid #DCE8E6;
+
+    border-radius: 10px;
+
+    background: #FFFFFF;
+
+    color: var(--text);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 7000;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.privacy-toast.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+.privacy-toast i {
+    flex-shrink: 0;
+
+    font-size: 17px;
+
+    color: var(--teal);
+}
+
+.privacy-toast.error {
+    border-color: var(--danger-border);
+}
+
+.privacy-toast.error i {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .privacy-page {
+        max-width: 650px;
+
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .privacy-header {
+        height: 60px;
+
+        padding: 0 15px;
+    }
+
+    .privacy-header h1 {
+        font-size: 14px;
+    }
+
+    .back-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .back-btn i {
+        font-size: 21px;
+    }
+
+    .header-space {
+        width: 38px;
+    }
+
+
+    /* =====================================================
+       MAIN
+    ===================================================== */
+
+    .privacy-page {
+        max-width: 100%;
+
+        padding: 0 17px 40px;
+    }
+
+
+    /* =====================================================
+       APP BRAND
+    ===================================================== */
+
+    .app-brand {
+        gap: 11px;
+
+        padding: 22px 1px 18px;
+    }
+
+    .app-brand img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .brand-text h2 {
+        font-size: 16px;
+    }
+
+    .brand-text p {
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ===================================================== */
+
+    .privacy-intro {
+        padding: 21px 1px 23px;
+    }
+
+    .privacy-intro h2 {
+        font-size: 19px;
+    }
+
+    .privacy-intro p {
+        margin-top: 6px;
+
+        font-size: 9px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       GROUP
+    ===================================================== */
+
+    .group-title {
+        padding: 21px 1px 8px;
+
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* =====================================================
+       ROW
+    ===================================================== */
+
+    .privacy-row {
+        min-height: 63px;
+
+        gap: 11px;
+
+        padding: 12px 1px;
+    }
+
+
+    /* =====================================================
+       ICON
+    ===================================================== */
+
+    .row-icon {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 10px;
+    }
+
+    .row-icon i {
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       TEXT
+    ===================================================== */
+
+    .row-content h3 {
+        font-size: 11px;
+    }
+
+    .row-content p {
+        margin-top: 2px;
+
+        font-size: 8.5px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       DELETE BUTTON
+    ===================================================== */
+
+    .delete-account-btn {
+        width: 100%;
+
+        min-height: 37px;
+
+        margin-top: 11px;
+
+        padding: 8px 13px;
+
+        font-size: 9px;
+    }
+
+    .delete-account-btn i {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       NOTE
+    ===================================================== */
+
+    .privacy-note {
+        gap: 10px;
+
+        margin-top: 23px;
+
+        padding: 13px;
+
+        border-radius: 10px;
+    }
+
+    .note-icon {
+        width: 31px;
+        height: 31px;
+
+        border-radius: 8px;
+    }
+
+    .note-icon i {
+        font-size: 15px;
+    }
+
+    .privacy-note h3 {
+        font-size: 10px;
+    }
+
+    .privacy-note p {
+        font-size: 8.5px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .privacy-footer {
+        padding-top: 27px;
+    }
+
+    .footer-brand img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-brand strong {
+        font-size: 12px;
+    }
+
+    .privacy-footer > p {
+        font-size: 8px;
+    }
+
+    .privacy-footer small {
+        font-size: 7px;
+    }
+
+
+    /* =====================================================
+       DELETE MODAL
+    ===================================================== */
+
+    .delete-modal {
+        padding: 16px;
+    }
+
+    .delete-modal-box {
+        max-width: 100%;
+
+        padding: 23px 18px 19px;
+
+        border-radius: 15px;
+    }
+
+    .delete-modal-icon {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 12px;
+
+        border-radius: 13px;
+    }
+
+    .delete-modal-icon i {
+        font-size: 23px;
+    }
+
+    .delete-modal-box h2 {
+        font-size: 16px;
+    }
+
+    .delete-modal-box > p {
+        margin-top: 7px;
+
+        font-size: 9px;
+
+        line-height: 1.65;
+    }
+
+    .delete-warning {
+        margin-top: 12px;
+
+        padding: 10px;
+
+        gap: 7px;
+    }
+
+    .delete-warning i {
+        font-size: 14px;
+    }
+
+    .delete-warning span {
+        font-size: 8px;
+
+        line-height: 1.55;
+    }
+
+    .delete-modal-actions {
+        gap: 8px;
+
+        margin-top: 16px;
+    }
+
+    .cancel-delete-btn,
+    .confirm-delete-btn {
+        min-height: 38px;
+
+        padding: 8px 10px;
+
+        font-size: 9px;
+    }
+
+    .confirm-delete-btn i {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       TOAST
+    ===================================================== */
+
+    .privacy-toast {
+        bottom: 18px;
+
+        min-width: 0;
+
+        width: calc(100% - 32px);
+
+        padding: 11px 13px;
+
+        font-size: 9px;
+    }
+
+    .privacy-toast i {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .privacy-page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .privacy-intro h2 {
+        font-size: 18px;
+    }
+
+    .row-content p {
+        font-size: 8px;
+    }
+
+    .privacy-note p {
+        font-size: 8px;
+    }
+
+    .delete-modal-box {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .delete-modal-actions {
+        flex-direction: column;
+    }
+
+    .cancel-delete-btn,
+    .confirm-delete-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .privacy-page {
+        max-width: 760px;
+    }
+
+}

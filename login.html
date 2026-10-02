@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Eligify | Login</title>
+
+
+<!-- Google Font -->
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<!-- Login CSS -->
+<link
+    rel="stylesheet"
+    href="login.css">
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <div class="login-card">
+
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <img
+            src="eligify.jpeg"
+            class="logo"
+            id="logo"
+            alt="Eligify Logo">
+
+
+        <!-- =================================================
+             HEADING
+        ================================================== -->
+
+        <h1>
+            Welcome Back
+        </h1>
+
+
+        <p class="subtitle">
+            Sign in to continue to Eligify
+        </p>
+
+
+        <!-- =================================================
+             LOGIN FORM
+        ================================================== -->
+
+        <form
+            id="loginForm"
+            class="login-form"
+            novalidate>
+
+
+            <!-- Username / Email -->
+
+            <div class="input-box">
+
+                <i
+                    class="fa-solid fa-user"
+                    aria-hidden="true">
+                </i>
+
+
+                <input
+                    type="text"
+                    id="loginIdentifier"
+                    name="loginIdentifier"
+                    placeholder="Username or Email"
+                    autocomplete="username"
+                    autocapitalize="none"
+                    autocorrect="off"
+                    spellcheck="false">
+
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="input-box">
+
+                <i
+                    class="fa-solid fa-lock"
+                    aria-hidden="true">
+                </i>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    autocomplete="current-password">
+
+
+                <i
+                    class="fa-solid fa-eye toggle"
+                    id="togglePassword"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Show password">
+                </i>
+
+
+            </div>
+
+
+            <!-- Login Button -->
+
+            <button
+                type="submit"
+                class="login-btn"
+                id="loginButton">
+
+                Login
+
+            </button>
+
+
+        </form>
+
+
+        <!-- =================================================
+             FORGOT PASSWORD
+        ================================================== -->
+
+        <div class="forgot-password">
+
+            <a href="forgot.html">
+                Forgot Password?
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SIGN UP
+        ================================================== -->
+
+        <div class="signup">
+
+            Don't have an account?
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    id="toast"
+    class="toast"
+    role="alert"
+    aria-live="polite">
+
+
+    <i
+        class="fa-solid fa-circle-check"
+        id="toastIcon">
+    </i>
+
+
+    <span id="toastMessage">
+        Login Successful
+    </span>
+
+
+</div>
+
+
+<!-- =========================================================
+     LOGIN JAVASCRIPT
+     ---------------------------------------------------------
+     IMPORTANT:
+     Authentication is handled ONLY by login.js.
+
+     login.js:
+     Username / Email
+          ↓
+     Google Apps Script
+          ↓
+     Password SHA-256
+          ↓
+     Users!PasswordHash
+          ↓
+     Login Success / Invalid Credentials
+========================================================== -->
+
+<script src="storage-guard.js"></script>
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>

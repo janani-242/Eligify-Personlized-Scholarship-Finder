@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Forgot Password | Eligify</title>
+
+    <link
+        rel="stylesheet"
+        href="forgot.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="forgot-card">
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <img
+            src="Eligify.jpeg"
+            class="logo"
+            alt="Eligify"
+        >
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <h1>Forgot Password</h1>
+
+        <p class="subtitle">
+            Enter your registered email address
+        </p>
+
+
+        <!-- =================================================
+             FORGOT PASSWORD FORM
+        ================================================== -->
+
+        <form id="forgotForm">
+
+            <!-- =================================================
+                 EMAIL
+            ================================================== -->
+
+            <div class="field-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 MEMORY HUMAN VERIFICATION
+            ================================================== -->
+
+            <div class="verification-box">
+
+                <div class="verification-title">
+                    Verify you're human
+                </div>
+
+                <p class="verification-subtitle">
+                    Remember the icon shown below
+                </p>
+
+
+                <!-- =================================================
+                     MEMORY ICON
+                ================================================== -->
+
+                <div
+                    id="memoryArea"
+                    class="memory-area"
+                >
+
+                    <div
+                        id="memoryIcon"
+                        class="memory-icon"
+                    >
+                        ●
+                    </div>
+
+                    <p
+                        id="memoryText"
+                        class="memory-text"
+                    >
+                        Remember this icon
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     ICON OPTIONS
+                ================================================== -->
+
+                <div
+                    id="iconOptions"
+                    class="icon-options"
+                    style="display:none;"
+                >
+
+                    <button
+                        type="button"
+                        class="icon-option"
+                        data-icon=""
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="icon-option"
+                        data-icon=""
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="icon-option"
+                        data-icon=""
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="icon-option"
+                        data-icon=""
+                    ></button>
+
+                </div>
+
+
+                <!-- =================================================
+                     HUMAN VERIFICATION MESSAGE
+                ================================================== -->
+
+                <p
+                    id="verificationMessage"
+                    class="verification-message"
+                ></p>
+
+            </div>
+
+
+            <!-- =================================================
+                 EMAIL VERIFICATION MESSAGE
+            ================================================== -->
+
+            <p
+                id="emailMessage"
+                class="email-message"
+            ></p>
+
+
+            <!-- =================================================
+                 SEND RESET LINK
+            ================================================== -->
+
+            <button
+                type="submit"
+                id="resetButton"
+            >
+                Send Reset Link
+            </button>
+
+        </form>
+
+
+        <!-- =================================================
+             GENERAL MESSAGE
+        ================================================== -->
+
+        <p id="message"></p>
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            id="toast"
+            class="toast"
+        >
+
+            <span>
+                Email Verified Successfully
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             BACK TO LOGIN
+        ================================================== -->
+
+        <a
+            href="login.html"
+            class="back"
+        >
+            ← Back to Login
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="storage-guard.js"></script>
+    <script src="forgot.js"></script>
+
+</body>
+
+</html>

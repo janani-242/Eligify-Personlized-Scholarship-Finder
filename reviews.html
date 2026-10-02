@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Eligify | User Reviews</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- REMIX ICONS -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+
+    <!-- REVIEWS CSS -->
+
+    <link
+        rel="stylesheet"
+        href="reviews.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="reviews-header">
+
+        <button
+            class="back-btn"
+            onclick="goBack()"
+            aria-label="Go back">
+
+            <i class="ri-arrow-left-line"></i>
+
+        </button>
+
+
+        <div class="header-title">
+
+            <h1>
+                User Reviews
+            </h1>
+
+            <p>
+                Share your experience with Eligify
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="reviews-container">
+
+
+        <!-- =====================================
+             WRITE REVIEW
+        ====================================== -->
+
+        <section class="review-form-card"
+                 id="reviewFormSection">
+
+
+            <div class="section-heading">
+
+                <div class="heading-icon">
+
+                    <i class="ri-star-smile-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="reviewFormTitle">
+                        Write a Review
+                    </h2>
+
+                    <p id="reviewFormSubtitle">
+                        Share your experience with Eligify.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 USER PROFILE
+            ================================== -->
+
+            <div class="review-user">
+
+                <div
+                    class="review-avatar"
+                    id="reviewAvatar">
+
+                    <i class="ri-user-3-fill"></i>
+
+                </div>
+
+
+                <div class="review-user-info">
+
+                    <strong id="reviewUserName">
+                        User
+                    </strong>
+
+                    <span id="reviewUsername">
+                        @username
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 RATING
+            ================================== -->
+
+            <div class="rating-section">
+
+                <label>
+                    Your Rating
+                </label>
+
+
+                <div
+                    class="star-rating"
+                    id="starRating">
+
+
+                    <button
+                        type="button"
+                        class="star-btn"
+                        data-rating="1"
+                        aria-label="1 star">
+
+                        <i class="ri-star-line"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="star-btn"
+                        data-rating="2"
+                        aria-label="2 stars">
+
+                        <i class="ri-star-line"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="star-btn"
+                        data-rating="3"
+                        aria-label="3 stars">
+
+                        <i class="ri-star-line"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="star-btn"
+                        data-rating="4"
+                        aria-label="4 stars">
+
+                        <i class="ri-star-line"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="star-btn"
+                        data-rating="5"
+                        aria-label="5 stars">
+
+                        <i class="ri-star-line"></i>
+
+                    </button>
+
+                </div>
+
+
+                <span
+                    class="rating-text"
+                    id="ratingText">
+
+                    Select a rating
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =================================
+                 REVIEW TEXT
+            ================================== -->
+
+            <div class="review-input-group">
+
+                <label for="reviewText">
+                    Your Review
+                </label>
+
+
+                <textarea
+                    id="reviewText"
+                    rows="5"
+                    maxlength="500"
+                    placeholder="Tell us about your experience with Eligify..."
+                    autocomplete="off"></textarea>
+
+
+                <div class="character-count">
+
+                    <span>
+                        Maximum 500 characters
+                    </span>
+
+                    <strong id="characterCount">
+                        0 / 500
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SUBMIT / UPDATE BUTTON
+            ================================== -->
+
+            <div class="review-form-actions">
+
+                <button
+                    type="button"
+                    class="submit-review-btn"
+                    id="submitReviewBtn"
+                    onclick="submitReview()">
+
+                    <i class="ri-send-plane-fill"></i>
+
+                    <span id="submitReviewText">
+                        Submit Review
+                    </span>
+
+                </button>
+
+
+                <!-- EDIT CANCEL -->
+
+                <button
+                    type="button"
+                    class="cancel-edit-btn"
+                    id="cancelEditBtn"
+                    onclick="cancelEditReview()"
+                    style="display:none;">
+
+                    <i class="ri-close-line"></i>
+
+                    <span>
+                        Cancel Edit
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <p
+                class="review-note"
+                id="reviewNote">
+
+                You can share your experience whenever
+                you use Eligify. Each review will be sent
+                to the Eligify admin for approval.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             MY REVIEWS
+        ====================================== -->
+
+        <section
+            class="my-review-section"
+            id="myReviewSection"
+            style="display:none;">
+
+
+            <div class="section-heading">
+
+                <div class="heading-icon">
+
+                    <i class="ri-file-list-3-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>
+                        My Reviews
+                    </h2>
+
+                    <p>
+                        View and manage your submitted reviews.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 USER'S MULTIPLE REVIEWS
+            ================================== -->
+
+            <div
+                class="my-reviews-list"
+                id="myReviewsList">
+
+                <!-- User's reviews loaded dynamically -->
+
+            </div>
+
+
+            <!-- =================================
+                 NO MY REVIEWS
+            ================================== -->
+
+            <div
+                class="my-reviews-empty"
+                id="myReviewsEmpty"
+                style="display:none;">
+
+                <i class="ri-chat-smile-3-line"></i>
+
+                <h3>
+                    You haven't posted a review yet
+                </h3>
+
+                <p>
+                    Share your experience with Eligify above.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             APPROVED USER REVIEWS
+        ====================================== -->
+
+        <section class="all-reviews-section">
+
+
+            <div class="section-heading">
+
+                <div class="heading-icon">
+
+                    <i class="ri-chat-quote-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>
+                        What Users Say
+                    </h2>
+
+                    <p>
+                        Reviews and experiences shared by
+                        Eligify users.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 REVIEWS CONTAINER
+            ================================== -->
+
+            <div
+                class="reviews-list"
+                id="reviewsList">
+
+                <!--
+                    Approved reviews will be
+                    loaded dynamically here.
+                -->
+
+            </div>
+
+
+
+            <!-- =================================
+                 EMPTY STATE
+            ================================== -->
+
+            <div
+                class="reviews-empty"
+                id="reviewsEmpty"
+                style="display:none;">
+
+                <i class="ri-chat-off-line"></i>
+
+                <h3>
+                    No reviews yet
+                </h3>
+
+                <p>
+                    Be the first to share your experience.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 LOADING
+            ================================== -->
+
+            <div
+                class="reviews-loading"
+                id="reviewsLoading">
+
+                <i class="ri-loader-4-line"></i>
+
+                <span>
+                    Loading reviews...
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast">
+
+        <i
+            class="ri-check-line"
+            id="toastIcon">
+        </i>
+
+        <span id="toastMessage">
+            Review submitted successfully
+        </span>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="storage-guard.js"></script>
+    <script
+        src="reviews.js">
+    </script>
+
+
+</body>
+
+</html>

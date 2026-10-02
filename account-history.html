@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View all registered Eligify accounts and account history.">
+    <meta name="theme-color" content="#0B5D5B">
+
+    <title>Eligify | Account History</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- REMIX ICONS (same as admin dashboard) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- FONT AWESOME (kept because account-history.js may render FA icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="account-history.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="logo.png" alt="Eligify Logo">
+            <h2>Eligify</h2>
+        </div>
+
+        <ul>
+            <li>
+                <a href="admin-dashboard.html#dashboard">
+                    <i class="ri-dashboard-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-dashboard.html#scholarshipSection">
+                    <i class="ri-book-open-line"></i>
+                    <span>Scholarships</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="account-history.html">
+                    <i class="ri-user-line"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="user-reviews.html">
+                    <i class="ri-star-line"></i>
+                    <span>Reviews</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-notification.html">
+                    <i class="ri-notification-3-line"></i>
+                    <span>Notifications</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-dashboard.html?add=true">
+                    <i class="ri-add-circle-line"></i>
+                    <span>Add Scholarship</span>
+                </a>
+            </li>
+        </ul>
+
+        <button id="logoutBtn" type="button">
+            <i class="ri-logout-box-line"></i>
+            <span>Logout</span>
+        </button>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-title">
+                <h1 id="pageTitle">Account History</h1>
+                <p>View all registered Eligify accounts</p>
+            </div>
+
+            <div class="top-actions">
+                <div class="search-wrapper">
+                    <i class="ri-search-line"></i>
+                    <input
+                        type="text"
+                        id="searchBox"
+                        placeholder="Search account..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <button type="button" id="refreshBtn" class="refresh-btn">
+                    <i class="ri-refresh-line"></i>
+                    <span>Refresh</span>
+                </button>
+            </div>
+
+        </header>
+
+
+        <!-- SUMMARY CARD -->
+        <section class="welcome-card">
+
+            <div>
+                <span class="welcome-label">User Management</span>
+                <h2>Registered Accounts</h2>
+                <p id="historyInfo">
+                    Accounts are securely loaded from the Eligify account database.
+                </p>
+            </div>
+
+            <div class="count-box" aria-live="polite">
+                <i class="ri-group-line"></i>
+                <div>
+                    <strong id="accountCount">0</strong>
+                    <span>Total Accounts</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ACCOUNTS SECTION -->
+        <section class="content-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Accounts</h2>
+                    <p>All users who registered on Eligify</p>
+                </div>
+            </div>
+
+            <!-- LOADING -->
+            <div class="loading-state" id="loadingState" aria-live="polite">
+                <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                <p>Loading account history...</p>
+            </div>
+
+            <!-- LIST (filled by account-history.js) -->
+            <div class="accounts-list" id="accountsList"></div>
+
+            <!-- EMPTY -->
+            <div class="empty-state" id="emptyState" aria-live="polite" hidden>
+                <div class="state-icon"><i class="ri-user-unfollow-line"></i></div>
+                <h2>No Accounts Found</h2>
+                <p>No registered Eligify accounts are available.</p>
+            </div>
+
+            <!-- ERROR -->
+            <div class="error-state" id="errorState" aria-live="assertive" hidden>
+                <div class="state-icon"><i class="ri-error-warning-line"></i></div>
+                <h2>Unable to Load Accounts</h2>
+                <p id="errorMessage">
+                    We couldn't load the account history right now. Please try again.
+                </p>
+                <button type="button" class="retry-btn" id="retryBtn">
+                    <i class="ri-restart-line"></i>
+                    <span>Try Again</span>
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+    ====================================================== -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-box">
+            <div class="logout-icon"><i class="ri-logout-box-r-line"></i></div>
+            <h2>Logout</h2>
+            <p>Are you sure you want to logout?</p>
+
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" id="cancelLogoutBtn">Cancel</button>
+                <button type="button" class="logout-confirm-btn" id="confirmLogoutBtn">
+                    <i class="ri-logout-box-line"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+        <i class="ri-checkbox-circle-line" aria-hidden="true"></i>
+        <span id="toastMessage">Account history updated successfully</span>
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         IMPORTANT: storage-guard.js and user-storage.js MUST LOAD FIRST
+    ====================================================== -->
+    <script src="storage-guard.js"></script>
+    <script src="user-storage.js"></script>
+    <script src="account-history.js"></script>
+
+    <!-- Sidebar helpers: logout modal, refresh, search -->
+    <script>
+        (function () {
+            var modal = document.getElementById("logoutModal");
+
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                modal.classList.add("show");
+            });
+
+            document.getElementById("cancelLogoutBtn").addEventListener("click", function () {
+                modal.classList.remove("show");
+            });
+
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) modal.classList.remove("show");
+            });
+
+            // Adjust this to match your admin logout logic in admin-dashboard.js
+            document.getElementById("confirmLogoutBtn").addEventListener("click", function () {
+                try { sessionStorage.clear(); } catch (e) {}
+                window.location.href = "login.html";
+            });
+
+            document.getElementById("refreshBtn").addEventListener("click", function () {
+                var retry = document.getElementById("retryBtn");
+                // Re-uses the existing retry handler in account-history.js
+                if (retry) retry.click(); else window.location.reload();
+            });
+
+            // Simple client-side search over the rendered account cards
+            document.getElementById("searchBox").addEventListener("input", function (e) {
+                var q = e.target.value.toLowerCase().trim();
+                var cards = document.getElementById("accountsList").children;
+                for (var i = 0; i < cards.length; i++) {
+                    cards[i].style.display =
+                        cards[i].textContent.toLowerCase().indexOf(q) > -1 ? "" : "none";
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Help & Support | Eligify</title>
+
+    <meta name="description"
+        content="Get help, guidance and support while using Eligify Scholarship Finder.">
+
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+
+    <!-- Help CSS -->
+    <link rel="stylesheet"
+        href="help.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="help-header">
+
+        <button
+            class="back-btn"
+            onclick="goBack()"
+            aria-label="Go back">
+
+            <i class="ri-arrow-left-line"></i>
+
+        </button>
+
+
+        <h1>Help & Support</h1>
+
+
+        <div class="header-space"></div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="help-page">
+
+
+        <!-- =================================================
+             INTRO
+             ================================================= -->
+
+        <section class="help-intro">
+
+            <div class="help-icon">
+
+                <i class="ri-customer-service-2-line"></i>
+
+            </div>
+
+
+            <h2>How can we help?</h2>
+
+
+            <p>
+                Find answers, understand how Eligify works,
+                and get guidance whenever you need it.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GETTING STARTED
+             ================================================= -->
+
+        <section class="help-section">
+
+            <div class="section-label">
+
+                <i class="ri-rocket-2-line"></i>
+
+                <span>GETTING STARTED</span>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Start using Eligify in a few simple steps.
+            </h2>
+
+
+            <div class="getting-started">
+
+
+                <div class="start-row">
+
+                    <div class="start-number">
+                        01
+                    </div>
+
+                    <div class="start-content">
+
+                        <h3>Create your account</h3>
+
+                        <p>
+                            Sign up with your details and create
+                            your personal Eligify account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="start-row">
+
+                    <div class="start-number">
+                        02
+                    </div>
+
+                    <div class="start-content">
+
+                        <h3>Complete your profile</h3>
+
+                        <p>
+                            Enter your academic, personal and
+                            eligibility information accurately.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="start-row">
+
+                    <div class="start-number">
+                        03
+                    </div>
+
+                    <div class="start-content">
+
+                        <h3>Check eligibility</h3>
+
+                        <p>
+                            Submit your details to find scholarships
+                            that match your eligibility.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="start-row">
+
+                    <div class="start-number">
+                        04
+                    </div>
+
+                    <div class="start-content">
+
+                        <h3>Explore your matches</h3>
+
+                        <p>
+                            Review your eligible scholarships and
+                            explore their application information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUICK HELP
+             ================================================= -->
+
+        <section class="help-section">
+
+            <div class="section-label">
+
+                <i class="ri-compass-3-line"></i>
+
+                <span>QUICK HELP</span>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Need help with something specific?
+            </h2>
+
+
+            <div class="help-list">
+
+
+                <button
+                    class="help-row"
+                    onclick="showHelp('eligibility')">
+
+                    <div class="row-icon">
+
+                        <i class="ri-checkbox-circle-line"></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <h3>Check your eligibility</h3>
+
+                        <p>
+                            Learn how to complete your eligibility
+                            profile correctly.
+                        </p>
+
+                    </div>
+
+
+                    <i class="ri-arrow-right-s-line row-arrow"></i>
+
+                </button>
+
+
+
+                <button
+                    class="help-row"
+                    onclick="showHelp('matching')">
+
+                    <div class="row-icon">
+
+                        <i class="ri-sparkling-2-line"></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <h3>Understand scholarship matching</h3>
+
+                        <p>
+                            See how your information is compared
+                            with scholarship requirements.
+                        </p>
+
+                    </div>
+
+
+                    <i class="ri-arrow-right-s-line row-arrow"></i>
+
+                </button>
+
+
+
+                <button
+                    class="help-row"
+                    onclick="showHelp('results')">
+
+                    <div class="row-icon">
+
+                        <i class="ri-search-eye-line"></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <h3>View scholarship results</h3>
+
+                        <p>
+                            Understand eligible and unavailable
+                            scholarship results.
+                        </p>
+
+                    </div>
+
+
+                    <i class="ri-arrow-right-s-line row-arrow"></i>
+
+                </button>
+
+
+
+                <button
+                    class="help-row"
+                    onclick="showHelp('saved')">
+
+                    <div class="row-icon">
+
+                        <i class="ri-heart-3-line"></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <h3>Save scholarships</h3>
+
+                        <p>
+                            Keep scholarships you are interested
+                            in for later.
+                        </p>
+
+                    </div>
+
+
+                    <i class="ri-arrow-right-s-line row-arrow"></i>
+
+                </button>
+
+
+
+                <button
+                    class="help-row"
+                    onclick="showHelp('history')">
+
+                    <div class="row-icon">
+
+                        <i class="ri-history-line"></i>
+
+                    </div>
+
+
+                    <div class="row-content">
+
+                        <h3>View eligibility history</h3>
+
+                        <p>
+                            Revisit your previous eligibility checks
+                            and results.
+                        </p>
+
+                    </div>
+
+
+                    <i class="ri-arrow-right-s-line row-arrow"></i>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- Dynamic help content -->
+
+            <div
+                class="quick-help-detail"
+                id="quickHelpDetail">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROFILE & ACCOUNT
+             ================================================= -->
+
+        <section class="help-section">
+
+            <div class="section-label">
+
+                <i class="ri-user-settings-line"></i>
+
+                <span>ACCOUNT & PROFILE</span>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Manage your Eligify account easily.
+            </h2>
+
+
+            <div class="account-list">
+
+
+                <div class="account-row">
+
+                    <i class="ri-user-line"></i>
+
+                    <div>
+
+                        <h3>Your profile</h3>
+
+                        <p>
+                            Your profile stores the information used
+                            during scholarship eligibility checks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="account-row">
+
+                    <i class="ri-edit-line"></i>
+
+                    <div>
+
+                        <h3>Update your information</h3>
+
+                        <p>
+                            Keep your academic and personal details
+                            updated before checking eligibility.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="account-row">
+
+                    <i class="ri-lock-line"></i>
+
+                    <div>
+
+                        <h3>Account security</h3>
+
+                        <p>
+                            Use your own account credentials and avoid
+                            sharing your login information with others.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FAQ
+             ================================================= -->
+
+        <section class="help-section">
+
+            <div class="section-label">
+
+                <i class="ri-question-answer-line"></i>
+
+                <span>FREQUENTLY ASKED QUESTIONS</span>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Common questions about Eligify.
+            </h2>
+
+
+            <div class="faq-list">
+
+
+                <!-- FAQ 1 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            What is Eligify?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Eligify is a scholarship finder designed
+                            to help students discover scholarship
+                            opportunities based on their eligibility
+                            information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 2 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            How does Eligify find matching scholarships?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Eligify compares the information provided
+                            in your eligibility profile with the
+                            requirements associated with available
+                            scholarships.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 3 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            What information is considered for eligibility?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Depending on the scholarship, eligibility
+                            may consider factors such as course,
+                            year of study, academic percentage, state,
+                            community, family income, age, gender,
+                            first graduate status and single-child
+                            status.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 4 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            Why am I not eligible for a scholarship?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            A scholarship may have requirements that
+                            do not match one or more details in your
+                            profile. Check the eligibility reasons
+                            shown with the scholarship result.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 5 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            Can I save scholarships for later?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Use the heart icon available on
+                            scholarship results to save scholarships
+                            you want to revisit later.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 6 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            Where can I find my saved scholarships?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Your saved scholarships are available
+                            through the Saved section of your Eligify
+                            account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 7 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            Where can I view my previous eligibility checks?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Previous eligibility checks are available
+                            in the History section of your account.
+                            You can revisit the details and results
+                            from earlier checks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 8 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            Can I update my eligibility details?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. Update your profile information when
+                            your academic or personal details change,
+                            then perform a new eligibility check.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 9 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            Does Eligify apply for scholarships on my behalf?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            No. Eligify helps you discover and
+                            understand scholarship opportunities.
+                            Applications must be completed through
+                            the application method provided for each
+                            scholarship.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 10 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            What should I do if a scholarship link does not work?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Check your internet connection and try
+                            again. If the issue continues, the
+                            scholarship provider may have changed or
+                            temporarily disabled the application link.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 11 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            What if I find incorrect scholarship information?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Scholarship requirements can change over
+                            time. If you notice incorrect or outdated
+                            information, contact the Eligify support
+                            team so it can be reviewed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 12 -->
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                        onclick="toggleFAQ(this)">
+
+                        <span>
+                            What should I do if Eligify is not working properly?
+                        </span>
+
+                        <i class="ri-add-line"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Refresh the page and check your internet
+                            connection first. If the problem continues,
+                            contact support with a brief description
+                            of the issue.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TROUBLESHOOTING
+             ================================================= -->
+
+        <section class="help-section">
+
+            <div class="section-label">
+
+                <i class="ri-tools-line"></i>
+
+                <span>TROUBLESHOOTING</span>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Quick things to try when something goes wrong.
+            </h2>
+
+
+            <div class="trouble-list">
+
+
+                <div class="trouble-row">
+
+                    <div class="trouble-icon">
+                        <i class="ri-refresh-line"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>Refresh the page</h3>
+
+                        <p>
+                            Reload the current page and try the action
+                            again.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="trouble-row">
+
+                    <div class="trouble-icon">
+                        <i class="ri-wifi-line"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>Check your connection</h3>
+
+                        <p>
+                            Make sure your internet connection is
+                            stable before loading scholarship data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="trouble-row">
+
+                    <div class="trouble-icon">
+                        <i class="ri-edit-2-line"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>Check your details</h3>
+
+                        <p>
+                            Make sure the information entered in your
+                            eligibility profile is accurate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="trouble-row">
+
+                    <div class="trouble-icon">
+                        <i class="ri-global-line"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>Try again later</h3>
+
+                        <p>
+                            Temporary server or network issues may
+                            prevent some features from loading.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             IMPORTANT NOTE
+             ================================================= -->
+
+        <section class="note-section">
+
+            <div class="note-icon">
+
+                <i class="ri-information-line"></i>
+
+            </div>
+
+
+            <div>
+
+                <span class="note-label">
+                    IMPORTANT
+                </span>
+
+
+                <h2>
+                    Always verify scholarship details.
+                </h2>
+
+
+                <p>
+                    Scholarship eligibility, deadlines and
+                    requirements may change. Before applying,
+                    review the latest information provided by the
+                    scholarship provider.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT SUPPORT
+             ================================================= -->
+
+        <section class="support-section">
+
+
+            <div class="support-content">
+
+
+                <div class="support-icon">
+
+                    <i class="ri-mail-send-line"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="support-label">
+                        STILL NEED HELP?
+                    </span>
+
+
+                    <h2>
+                        Contact Eligify Support
+                    </h2>
+
+
+                    <p>
+                        Couldn't find the answer you were looking
+                        for? Reach out to our support team for
+                        assistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="mailto:eligify.support@gmail.com?subject=Eligify%20Support"
+                class="support-btn">
+
+                <i class="ri-mail-line"></i>
+
+                Contact Support
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="help-footer">
+
+            <strong>
+                Eligify
+            </strong>
+
+
+            <span>
+                Scholarship Finder
+            </span>
+
+
+            <small>
+                © 2026 Eligify · Version 1.0.0
+            </small>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="help.js"></script>
+
+
+</body>
+
+</html>

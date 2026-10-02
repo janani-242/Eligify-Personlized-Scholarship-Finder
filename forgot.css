@@ -1,0 +1,637 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+    background:#f8fafc;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* =====================================================
+   FORGOT CARD
+===================================================== */
+
+.forgot-card{
+    width:100%;
+    max-width:420px;
+    background:#ffffff;
+    padding:40px 35px;
+    border-radius:24px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+    width:90px;
+    height:auto;
+    display:block;
+    margin:0 auto 20px;
+    object-fit:contain;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+h1{
+    text-align:center;
+    color:#111827;
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+
+.subtitle{
+    text-align:center;
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+
+/* =====================================================
+   FIELD GROUP
+===================================================== */
+
+.field-group{
+    width:100%;
+    margin-bottom:20px;
+}
+
+
+.field-group label{
+    display:block;
+    color:#374151;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+input{
+    width:100%;
+    height:55px;
+    border:2px solid #e5e7eb;
+    border-radius:14px;
+    padding:0 15px;
+    background:#ffffff;
+    color:#111827;
+    font-size:15px;
+    outline:none;
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+input::placeholder{
+    color:#9ca3af;
+}
+
+
+input:focus{
+    border-color:#0B5D5B;
+    box-shadow:0 0 0 3px rgba(11,93,91,.10);
+}
+
+
+/* =====================================================
+   MEMORY VERIFICATION BOX
+===================================================== */
+
+.verification-box{
+    width:100%;
+    background:#f8fafc;
+    border:2px solid #e5e7eb;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:20px;
+}
+
+
+.verification-title{
+    color:#111827;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+
+.verification-subtitle{
+    color:#6b7280;
+    font-size:12px;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+
+/* =====================================================
+   MEMORY AREA
+===================================================== */
+
+.memory-area{
+    width:100%;
+    min-height:105px;
+    background:#EAF5F3;
+    border:1px solid rgba(11,93,91,.12);
+    border-radius:15px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:15px;
+}
+
+
+.memory-icon{
+    width:58px;
+    height:58px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#ffffff;
+    border-radius:15px;
+
+    font-size:30px;
+    line-height:1;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+
+    animation:memoryPulse 1.5s ease-in-out infinite;
+}
+
+
+.memory-text{
+    margin-top:9px;
+    color:#073F3D;
+    font-size:11px;
+    font-weight:500;
+    text-align:center;
+}
+
+
+/* =====================================================
+   MEMORY ICON ANIMATION
+===================================================== */
+
+@keyframes memoryPulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   ICON OPTIONS
+===================================================== */
+
+.icon-options{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+    margin-top:5px;
+}
+
+
+/* =====================================================
+   ICON OPTION BUTTON
+===================================================== */
+
+.icon-option{
+    width:100%;
+    aspect-ratio:1 / 1;
+
+    border:2px solid #e5e7eb;
+    border-radius:14px;
+
+    background:#ffffff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.icon-option:hover:not(:disabled){
+    transform:translateY(-2px);
+    border-color:#0B5D5B;
+    background:#EAF5F3;
+    box-shadow:0 5px 14px rgba(11,93,91,.10);
+}
+
+
+.icon-option:active:not(:disabled){
+    transform:scale(.96);
+}
+
+
+/* =====================================================
+   CORRECT ICON
+===================================================== */
+
+.icon-option.correct{
+    border-color:#0B5D5B;
+    background:#EAF5F3;
+    box-shadow:
+        0 0 0 3px rgba(11,93,91,.10);
+}
+
+
+/* =====================================================
+   WRONG ICON
+===================================================== */
+
+.icon-option.wrong{
+    border-color:#dc2626;
+    background:#fef2f2;
+
+    animation:shake .3s ease;
+}
+
+
+/* =====================================================
+   WRONG ICON ANIMATION
+===================================================== */
+
+@keyframes shake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-4px);
+    }
+
+    50%{
+        transform:translateX(4px);
+    }
+
+    75%{
+        transform:translateX(-4px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+
+/* =====================================================
+   DISABLED ICON
+===================================================== */
+
+.icon-option:disabled{
+    cursor:default;
+}
+
+
+/* =====================================================
+   HUMAN VERIFICATION MESSAGE
+===================================================== */
+
+.verification-message{
+    min-height:20px;
+
+    margin-top:10px;
+
+    font-size:12px;
+    line-height:1.5;
+
+    text-align:left;
+
+    font-weight:500;
+}
+
+
+.verification-message:empty{
+    display:none;
+}
+
+
+.verification-message.success{
+    color:#0B5D5B;
+    font-weight:600;
+}
+
+
+.verification-message.error{
+    color:#c62828;
+    font-weight:600;
+}
+
+
+/* =====================================================
+   EMAIL VERIFICATION MESSAGE
+===================================================== */
+
+.email-message{
+    min-height:20px;
+
+    margin-top:-8px;
+    margin-bottom:12px;
+
+    font-size:12px;
+    line-height:1.5;
+
+    text-align:left;
+
+    font-weight:500;
+}
+
+
+.email-message:empty{
+    display:none;
+}
+
+
+.email-message.success{
+    color:#0B5D5B;
+    font-weight:600;
+}
+
+
+.email-message.error{
+    color:#c62828;
+    font-weight:600;
+}
+
+
+/* =====================================================
+   MAIN BUTTON
+===================================================== */
+
+#resetButton{
+    width:100%;
+    height:55px;
+
+    border:none;
+    border-radius:14px;
+
+    background:#0B5D5B;
+    color:#ffffff;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        transform .2s ease,
+        box-shadow .25s ease;
+}
+
+
+#resetButton:hover:not(:disabled){
+    background:#073F3D;
+    transform:translateY(-1px);
+    box-shadow:0 6px 16px rgba(7,63,61,.16);
+}
+
+
+#resetButton:active:not(:disabled){
+    transform:translateY(0);
+}
+
+
+#resetButton:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   GENERAL MESSAGE
+===================================================== */
+
+#message{
+    text-align:center;
+    margin-top:15px;
+    font-size:13px;
+}
+
+
+#message.success{
+    color:#0B5D5B;
+}
+
+
+#message.error{
+    color:#dc2626;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+
+    bottom:30px;
+    left:50%;
+
+    transform:
+        translate(-50%,20px);
+
+    background:#073F3D;
+    color:#ffffff;
+
+    padding:13px 22px;
+
+    border-radius:12px;
+
+    font-size:13px;
+    font-weight:500;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease;
+
+    z-index:1000;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
+
+    white-space:nowrap;
+}
+
+
+.toast.show{
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        translate(-50%,0);
+}
+
+
+/* =====================================================
+   BACK TO LOGIN
+===================================================== */
+
+.back{
+    display:block;
+
+    text-align:center;
+
+    margin-top:25px;
+
+    text-decoration:none;
+
+    color:#0B5D5B;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.2s;
+}
+
+
+.back:hover{
+    color:#073F3D;
+    text-decoration:underline;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+
+    .forgot-card{
+        max-width:100%;
+        padding:30px 22px;
+        border-radius:20px;
+    }
+
+
+    .logo{
+        width:80px;
+        margin-bottom:17px;
+    }
+
+
+    h1{
+        font-size:26px;
+    }
+
+
+    .subtitle{
+        font-size:13px;
+        margin-bottom:25px;
+    }
+
+
+    .verification-box{
+        padding:15px;
+    }
+
+
+    .icon-options{
+        gap:8px;
+    }
+
+
+    .icon-option{
+        font-size:22px;
+        border-radius:12px;
+    }
+
+
+    .memory-icon{
+        width:54px;
+        height:54px;
+        font-size:27px;
+    }
+
+
+    #resetButton{
+        height:53px;
+    }
+
+
+    .toast{
+        bottom:20px;
+        max-width:90%;
+        text-align:center;
+        white-space:normal;
+    }
+
+}

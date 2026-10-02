@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Eligify | Profile</title>
+
+
+    <!-- =================================
+         GOOGLE FONT
+    ================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =================================
+         REMIX ICONS
+    ================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+
+    <!-- =================================
+         PROFILE CSS
+    ================================== -->
+
+    <link
+        rel="stylesheet"
+        href="profile.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
+
+    <header class="top-bar">
+
+
+        <!-- BACK BUTTON -->
+
+        <button
+            class="back-btn"
+            onclick="goBack()"
+            aria-label="Go back">
+
+            <i class="ri-arrow-left-line"></i>
+
+        </button>
+
+
+        <!-- EMPTY SPACE -->
+
+        <div class="top-spacer"></div>
+
+
+        <!-- THREE DOT MENU -->
+
+        <div class="top-actions">
+
+
+            <button
+                class="menu-btn"
+                onclick="toggleMenu(event)"
+                aria-label="More options">
+
+                <i class="ri-more-2-fill"></i>
+
+            </button>
+
+
+            <!-- =================================
+                 DROPDOWN MENU
+            ================================== -->
+
+            <div
+                class="dropdown"
+                id="menuDropdown">
+
+
+
+                <!-- ABOUT -->
+
+                <button onclick="aboutEligify()">
+
+                    <i class="ri-information-line"></i>
+
+                    <span>
+                        About Eligify
+                    </span>
+
+                </button>
+
+
+                <!-- PRIVACY -->
+
+                <button onclick="privacySecurity()">
+
+                    <i class="ri-shield-check-line"></i>
+
+                    <span>
+                        Privacy & Security
+                    </span>
+
+                </button>
+
+
+                <!-- REVIEWS -->
+
+                <button onclick="userReviews()">
+
+                    <i class="ri-star-line"></i>
+
+                    <span>
+                        User Reviews
+                    </span>
+
+                </button>
+
+
+                <!-- HELP -->
+
+                <button onclick="helpSupport()">
+
+                    <i class="ri-question-line"></i>
+
+                    <span>
+                        Help & Support
+                    </span>
+
+                </button>
+
+
+                <div class="dropdown-line"></div>
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    class="logout"
+                    onclick="logoutUser()">
+
+                    <i class="ri-logout-box-r-line"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN PROFILE
+    ========================================== -->
+
+    <main class="profile-container">
+
+
+        <!-- =====================================
+             PROFILE SECTION
+        ====================================== -->
+
+        <section class="profile-section">
+
+
+            <!-- =================================
+                 LEFT SIDE
+            ================================== -->
+
+            <div class="profile-left">
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="profile-photo-wrapper">
+
+                    <div
+                        class="profile-photo"
+                        id="profilePhoto">
+
+                        <i class="ri-user-3-fill"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <h1
+                    class="profile-name"
+                    id="profileName">
+                </h1>
+
+
+                <!-- BIO -->
+
+                <p
+                    class="profile-bio"
+                    id="profileBio">
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 RIGHT SIDE
+            ================================== -->
+
+            <div class="profile-right">
+
+
+                <!-- USERNAME -->
+
+                <div class="username-row">
+
+                    <h2
+                        class="profile-username"
+                        id="profileUsername">
+                    </h2>
+
+                    <i
+                        class="ri-verified-badge-fill verified-icon">
+                    </i>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PROFILE COUNTS
+                ================================== -->
+
+                <div class="profile-stats">
+
+
+                    <!-- SAVED -->
+
+                    <button
+                        type="button"
+                        class="profile-stat active"
+                        id="savedStat"
+                        onclick="showSection('saved')">
+
+                        <strong id="savedCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Saved
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- RECENTLY VIEWED -->
+
+                    <button
+                        type="button"
+                        class="profile-stat"
+                        id="viewedStat"
+                        onclick="showSection('viewed')">
+
+                        <strong id="viewedCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Recently Viewed
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- HISTORY -->
+
+                    <button
+                        type="button"
+                        class="profile-stat"
+                        id="historyStat"
+                        onclick="showSection('history')">
+
+                        <strong id="historyCount">
+                            0
+                        </strong>
+
+                        <span>
+                            History
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             EDIT PROFILE BUTTON
+        ========================================== -->
+
+        <div class="edit-button-wrapper">
+
+
+            <button
+                type="button"
+                class="edit-profile-main"
+                onclick="openEditProfile()">
+
+                <i class="ri-edit-line"></i>
+
+                <span>
+                    Edit Profile
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================================
+             PROFILE TABS
+        ========================================== -->
+
+        <nav class="profile-tabs">
+
+
+            <!-- SAVED -->
+
+            <button
+                type="button"
+                class="profile-tab active"
+                id="savedTab"
+                onclick="showSection('saved')">
+
+                <i class="ri-heart-fill"></i>
+
+                <span>
+                    Saved
+                </span>
+
+            </button>
+
+
+
+            <!-- RECENTLY VIEWED -->
+
+            <button
+                type="button"
+                class="profile-tab"
+                id="viewedTab"
+                onclick="showSection('viewed')">
+
+                <i class="ri-time-line"></i>
+
+                <span>
+                    Recently Viewed
+                </span>
+
+            </button>
+
+
+
+            <!-- HISTORY -->
+
+            <button
+                type="button"
+                class="profile-tab"
+                id="historyTab"
+                onclick="showSection('history')">
+
+                <i class="ri-history-line"></i>
+
+                <span>
+                    History
+                </span>
+
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- =========================================
+             CONTENT AREA
+        ========================================== -->
+
+        <section
+            class="content-area"
+            id="contentArea">
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         EDIT PROFILE MODAL
+    ========================================== -->
+
+    <div
+        class="modal-overlay"
+        id="editModal">
+
+
+        <div class="edit-card">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="edit-header">
+
+                <h2>
+                    Edit Profile
+                </h2>
+
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    onclick="closeEditProfile()"
+                    aria-label="Close">
+
+                    <i class="ri-close-line"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================
+                 EDIT PROFILE PHOTO
+            ================================== -->
+
+            <div class="edit-photo-section">
+
+
+                <div
+                    class="edit-photo"
+                    id="editPhoto">
+
+                    <i class="ri-user-3-fill"></i>
+
+                </div>
+
+
+                <label class="change-photo-btn">
+
+                    <i class="ri-camera-line"></i>
+
+                    <span>
+                        Change Photo
+                    </span>
+
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/*"
+                        onchange="previewPhoto(event)">
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 PROFILE FORM
+            ================================== -->
+
+            <form
+                id="profileForm"
+                onsubmit="saveProfile(event)">
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="editUsername">
+                        Username
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="ri-at-line"></i>
+
+
+                        <input
+                            type="text"
+                            id="editUsername"
+                            placeholder="Enter username"
+                            maxlength="30"
+                            autocomplete="off"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="editName">
+                        Name
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="ri-user-line"></i>
+
+
+                        <input
+                            type="text"
+                            id="editName"
+                            placeholder="Enter your name"
+                            maxlength="50"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BIO -->
+
+                <div class="form-group">
+
+                    <label for="editBio">
+                        Bio
+                    </label>
+
+
+                    <div
+                        class="input-wrapper textarea-wrapper">
+
+                        <i class="ri-edit-line"></i>
+
+
+                        <textarea
+                            id="editBio"
+                            rows="3"
+                            maxlength="150"
+                            placeholder="Tell something about yourself"></textarea>
+
+                    </div>
+
+
+                    <small>
+                        Maximum 150 characters
+                    </small>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="editEmail">
+                        Email
+                    </label>
+
+
+                    <div
+                        class="input-wrapper readonly-wrapper">
+
+                        <i class="ri-mail-line"></i>
+
+
+                        <input
+                            type="email"
+                            id="editEmail"
+                            readonly>
+
+
+                        <i
+                            class="ri-lock-line lock-icon">
+                        </i>
+
+                    </div>
+
+
+                    <small class="email-note">
+                        Email cannot be changed.
+                    </small>
+
+                </div>
+
+
+
+                <!-- SAVE PROFILE -->
+
+                <button
+                    type="submit"
+                    class="save-profile-btn">
+
+                    <i class="ri-check-line"></i>
+
+                    <span>
+                        Save Changes
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOAST MESSAGE
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast">
+
+
+        <i class="ri-check-line"></i>
+
+
+        <span id="toastMessage">
+            Profile updated successfully
+        </span>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="storage-guard.js"></script>
+    <script src="user-storage.js"></script>
+
+    <script src="profile.js"></script>
+
+
+</body>
+
+</html>
+

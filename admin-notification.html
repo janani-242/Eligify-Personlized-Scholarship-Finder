@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligify | Admin Notifications</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin-notification.css">
+</head>
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Eligify Logo">
+            <h2>Eligify</h2>
+        </div>
+
+        <ul>
+            <li><a href="admin-dashboard.html#dashboard"><i class="ri-dashboard-fill"></i><span>Dashboard</span></a></li>
+            <li><a href="admin-dashboard.html#scholarshipSection"><i class="ri-book-open-line"></i><span>Scholarships</span></a></li>
+            <li><a href="account-history.html"><i class="ri-user-line"></i><span>Users</span></a></li>
+            <li><a href="user-reviews.html"><i class="ri-star-line"></i><span>Reviews</span></a></li>
+            <li class="active"><a href="admin-notification.html"><i class="ri-notification-3-line"></i><span>Notifications</span></a></li>
+            <li><a href="admin-dashboard.html?add=true"><i class="ri-add-circle-line"></i><span>Add Scholarship</span></a></li>
+        </ul>
+
+        <button id="logoutBtn" type="button">
+            <i class="ri-logout-box-line"></i><span>Logout</span>
+        </button>
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <header class="topbar">
+            <div class="topbar-title">
+                <h1>Notification Center</h1>
+                <p>Send scholarship updates and track everything you've sent</p>
+            </div>
+
+            <button type="button" class="back-btn" id="backBtn">
+                <i class="ri-arrow-left-line"></i><span>Back to Dashboard</span>
+            </button>
+        </header>
+
+
+        <!-- HERO -->
+        <section class="welcome-card">
+            <div>
+                <span class="welcome-label">Admin Broadcast</span>
+                <h2>Keep Students Informed</h2>
+                <p>Send deadlines, new scholarships and announcements to every registered user in one click.</p>
+            </div>
+            <div class="hero-stats">
+                <div><strong id="statTotal">0</strong><span>Total Sent</span></div>
+                <div><strong id="statToday">0</strong><span>Sent Today</span></div>
+                <div><strong id="statWeek">0</strong><span>This Week</span></div>
+            </div>
+        </section>
+
+
+        <!-- COMPOSE + PREVIEW -->
+        <div class="notification-layout">
+
+            <section class="card">
+                <div class="card-header">
+                    <div class="card-header-icon"><i class="ri-send-plane-fill"></i></div>
+                    <div>
+                        <h3>Create Notification</h3>
+                        <p>Compose a message for users</p>
+                    </div>
+                </div>
+
+                <form id="notificationForm">
+                    <div class="form-group">
+                        <label for="notificationTitle">Notification Title <span class="required">*</span></label>
+                        <input type="text" id="notificationTitle" maxlength="100"
+                               placeholder="Example: New Scholarship Available" required>
+                        <div class="char-count" id="titleCount">0 / 100</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notificationMessage">Message <span class="required">*</span></label>
+                        <textarea id="notificationMessage" maxlength="1000"
+                                  placeholder="Enter the notification message..." required></textarea>
+                        <div class="char-count" id="messageCount">0 / 1000</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="notificationTarget">Target</label>
+                            <select id="notificationTarget">
+                                <option value="all">All Users</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notificationType">Notification Type</label>
+                            <select id="notificationType">
+                                <option value="general">General</option>
+                                <option value="scholarship">Scholarship</option>
+                                <option value="deadline">Deadline</option>
+                                <option value="announcement">Announcement</option>
+                                <option value="update">Update</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="send-btn" id="sendNotificationBtn">
+                        <i class="ri-send-plane-fill"></i> Send Notification
+                    </button>
+                </form>
+
+                <div class="info-box">
+                    <i class="ri-information-line"></i>
+                    This notification will be sent through the Eligify notification API to all registered users.
+                </div>
+            </section>
+
+
+            <section class="card">
+                <div class="card-header">
+                    <div class="card-header-icon gold"><i class="ri-eye-line"></i></div>
+                    <div>
+                        <h3>Notification Preview</h3>
+                        <p>Preview before sending</p>
+                    </div>
+                </div>
+
+                <div class="preview-box">
+                    <div class="preview-header">
+                        <i class="ri-notification-3-fill"></i>
+                        <span>Eligify Notification</span>
+                    </div>
+                    <div class="preview-content">
+                        <div class="preview-title" id="previewTitle">Notification Title</div>
+                        <div class="preview-message" id="previewMessage">Your notification message will appear here.</div>
+                        <div class="preview-meta">
+                            <span>Just now</span>
+                            <span class="preview-badge" id="previewType">General</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= SENT HISTORY ================= -->
+        <section class="card history-card" id="historySection">
+
+            <div class="history-head">
+                <div class="card-header">
+                    <div class="card-header-icon green"><i class="ri-history-line"></i></div>
+                    <div>
+                        <h3>Sent Notifications</h3>
+                        <p><span id="historyCount">0</span> notifications sent so far</p>
+                    </div>
+                </div>
+
+                <div class="history-tools">
+                    <div class="search-wrapper">
+                        <i class="ri-search-line"></i>
+                        <input type="text" id="historySearch" placeholder="Search sent notifications..." autocomplete="off">
+                    </div>
+
+                    <select id="historyFilter">
+                        <option value="all">All Types</option>
+                        <option value="general">General</option>
+                        <option value="scholarship">Scholarship</option>
+                        <option value="deadline">Deadline</option>
+                        <option value="announcement">Announcement</option>
+                        <option value="update">Update</option>
+                    </select>
+
+                    <button type="button" class="refresh-btn" id="historyRefresh">
+                        <i class="ri-refresh-line"></i><span>Refresh</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="historyList" class="history-list"></div>
+
+            <div class="history-empty" id="historyEmpty" hidden>
+                <div class="state-icon"><i class="ri-mail-send-line"></i></div>
+                <h3>No Notifications Yet</h3>
+                <p>Notifications you send will appear here with date, type and target.</p>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- LOGOUT MODAL -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-box">
+            <div class="logout-icon"><i class="ri-logout-box-r-line"></i></div>
+            <h2>Logout</h2>
+            <p>Are you sure you want to logout?</p>
+            <div class="modal-buttons">
+                <button type="button" class="cancel-btn" id="cancelLogoutBtn">Cancel</button>
+                <button type="button" class="logout-confirm-btn" id="confirmLogoutBtn"><i class="ri-logout-box-line"></i> Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST (same structure your admin-notification.js already uses) -->
+    <div class="toast" id="toast">
+        <i class="ri-checkbox-circle-fill"></i>
+        <span>Notification sent successfully</span>
+    </div>
+
+    <script src="admin-notification.js"></script>
+    <script src="notification-history.js"></script>
+</body>
+</html>
