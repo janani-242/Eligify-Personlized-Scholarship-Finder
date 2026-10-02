@@ -1,6 +1,7 @@
+
 /* =========================================================
    ELIGIFY RESULTS.CSS
-   FINAL VERSION
+   FULLY RESPONSIVE • PROFESSIONAL
    WHITE LOADER + DARK TEAL + GOLD
 ========================================================= */
 
@@ -144,8 +145,6 @@ img {
 
 /* =========================================================
    LOADER
-   WHITE BACKGROUND
-   DARK TEAL + GOLD
 ========================================================= */
 
 .results-loader {
@@ -164,11 +163,6 @@ img {
 
     color: var(--dark-teal);
 }
-
-
-/* =========================================================
-   LOADER MAIN CARD
-========================================================= */
 
 .loader-main {
     width: min(650px, 100%);
@@ -193,9 +187,7 @@ img {
 
 .loader-brand {
     display: flex;
-
     align-items: center;
-
     gap: 11px;
 
     margin-bottom: 25px;
@@ -208,7 +200,6 @@ img {
     flex-shrink: 0;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -229,7 +220,6 @@ img {
 
 .loader-brand-text {
     display: flex;
-
     flex-direction: column;
 
     line-height: 1.1;
@@ -239,7 +229,6 @@ img {
     color: #073F3D !important;
 
     font-size: 18px;
-
     font-weight: 700;
 
     letter-spacing: -0.3px;
@@ -255,8 +244,6 @@ img {
     letter-spacing: 1.7px;
 
     text-transform: uppercase;
-
-    opacity: 1;
 }
 
 
@@ -268,7 +255,6 @@ img {
     min-height: 105px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -284,7 +270,6 @@ img {
     height: 52px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -329,7 +314,6 @@ img {
 .loader-search-node i,
 .loader-result-node i {
     font-size: 18px;
-
     color: #D4AF37 !important;
 }
 
@@ -343,7 +327,7 @@ img {
 
 
 /* =========================================================
-   LOADER CONNECTING LINES
+   LOADER LINES
 ========================================================= */
 
 .loader-line {
@@ -411,7 +395,7 @@ img {
 
     font-weight: 700;
 
-    letter-spacing: -0.5px;
+    letter-spacing: -.5px;
 }
 
 #loaderMessage {
@@ -441,8 +425,6 @@ img {
 
     overflow: hidden;
 
-    border: none !important;
-
     border-radius: 20px;
 
     background: #EEF5F3 !important;
@@ -461,13 +443,11 @@ img {
             #D4AF37
         ) !important;
 
-    transition:
-        width .45s ease;
+    transition: width .45s ease;
 }
 
 .loader-progress-info {
     display: flex;
-
     justify-content: space-between;
 
     margin-top: 7px;
@@ -520,8 +500,6 @@ img {
 
     opacity: .55;
 
-    box-shadow: none !important;
-
     transition: .25s ease;
 }
 
@@ -536,9 +514,6 @@ img {
     background: #FFFCF3 !important;
 
     color: #073F3D !important;
-
-    box-shadow:
-        0 4px 12px rgba(212, 175, 55, 0.06);
 }
 
 .loader-step > span {
@@ -565,33 +540,27 @@ img {
 
 .loader-step.active > span {
     background: #D4AF37 !important;
-
     color: #073F3D !important;
 }
 
 .loader-step.completed > span {
     background: #0B5D5B !important;
-
     color: #FFFFFF !important;
 }
 
 .loader-step div {
     display: flex;
-
     flex-direction: column;
-
     gap: 1px;
 }
 
 .loader-step strong {
     color: #073F3D !important;
-
     font-size: 8px;
 }
 
 .loader-step small {
     color: #8A9D9B !important;
-
     font-size: 7px;
 }
 
@@ -639,9 +608,7 @@ img {
 
     background: var(--white);
 
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid var(--border);
 
     border-radius: 25px;
 
@@ -656,9 +623,7 @@ img {
 
     overflow: hidden;
 
-    border:
-        1px solid
-        #D7E3E1;
+    border: 1px solid #D7E3E1;
 
     border-radius: 14px;
 
@@ -669,7 +634,6 @@ img {
     height: 18px;
 
     display: flex;
-
     align-items: center;
 
     gap: 5px;
@@ -692,7 +656,6 @@ img {
     height: 54px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -721,7 +684,6 @@ img {
 
 .error-actions {
     display: flex;
-
     justify-content: center;
 
     gap: 12px;
@@ -738,7 +700,6 @@ img {
     padding: 0 20px;
 
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
@@ -747,7 +708,6 @@ img {
     border-radius: 11px;
 
     font-size: 12px;
-
     font-weight: 600;
 
     transition: .2s ease;
@@ -755,7 +715,6 @@ img {
 
 .retry-btn {
     background: var(--teal);
-
     color: var(--white);
 }
 
@@ -769,7 +728,6 @@ img {
 
 .error-home-btn {
     background: var(--light-teal);
-
     color: var(--dark-teal);
 }
 
@@ -821,7 +779,6 @@ img {
     padding: 0 28px;
 
     display: flex;
-
     align-items: center;
 
     gap: 25px;
@@ -829,7 +786,6 @@ img {
 
 .logo-area {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
@@ -846,7 +802,6 @@ img {
 
 .logo-text {
     display: flex;
-
     flex-direction: column;
 
     line-height: 1.05;
@@ -856,7 +811,6 @@ img {
     color: var(--dark-teal);
 
     font-size: 18px;
-
     font-weight: 800;
 }
 
@@ -890,7 +844,6 @@ img {
     margin-left: auto;
 
     display: flex;
-
     align-items: center;
 
     gap: 7px;
@@ -904,7 +857,6 @@ img {
     color: var(--muted);
 
     font-size: 11px;
-
     font-weight: 600;
 
     transition: .2s ease;
@@ -922,7 +874,6 @@ img {
     padding: 5px 8px 5px 5px;
 
     display: flex;
-
     align-items: center;
 
     gap: 8px;
@@ -938,7 +889,7 @@ img {
 
 
 /* =========================================================
-   HEADER PROFILE PHOTO
+   HEADER PROFILE
 ========================================================= */
 
 .header-user-photo {
@@ -952,7 +903,6 @@ img {
     overflow: hidden;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -1055,7 +1005,6 @@ img {
     padding: 0 15px;
 
     display: inline-flex;
-
     align-items: center;
 
     gap: 8px;
@@ -1151,9 +1100,7 @@ img {
     position: fixed;
 
     top: var(--header-height);
-
     right: 0;
-
     bottom: 0;
 
     z-index: 1200;
@@ -1226,7 +1173,6 @@ img {
 
 .sidebar-close-btn:hover {
     background: var(--danger-bg);
-
     color: var(--danger);
 }
 
@@ -1523,13 +1469,11 @@ img {
 
 .not-count {
     background: var(--danger-bg);
-
     color: var(--danger);
 }
 
 .closed-count {
     background: var(--warning-bg);
-
     color: var(--warning);
 }
 
@@ -1814,7 +1758,6 @@ img {
     display: flex;
 
     flex-direction: row;
-
     flex-wrap: nowrap;
 
     align-items: stretch;
@@ -1847,7 +1790,6 @@ img {
     position: relative;
 
     display: flex;
-
     flex-direction: column;
 
     border:
@@ -1910,19 +1852,16 @@ img {
 
 .eligible-badge {
     background: var(--success-bg);
-
     color: var(--success);
 }
 
 .not-eligible-badge {
     background: var(--danger-bg);
-
     color: var(--danger);
 }
 
 .closed-badge {
     background: var(--warning-bg);
-
     color: var(--warning);
 }
 
@@ -2292,7 +2231,7 @@ img {
 
 
 /* =========================================================
-   CLOSED SCHOLARSHIPS
+   CLOSED
 ========================================================= */
 
 .closed-scholarship-section {
@@ -2654,13 +2593,11 @@ a:focus-visible {
 @keyframes loaderPulse {
     0% {
         opacity: .45;
-
         transform: scale(.85);
     }
 
     100% {
         opacity: 0;
-
         transform: scale(1.20);
     }
 }
@@ -2711,13 +2648,55 @@ a:focus-visible {
 
 
 /* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .header-container {
+        padding: 0 22px;
+    }
+
+    .results-content {
+        padding:
+            30px 25px 65px;
+    }
+
+    .scholarship-grid {
+        gap: 17px;
+    }
+
+    .scholarship-card {
+        width: 320px;
+        min-width: 320px;
+
+        flex-basis: 320px;
+    }
+
+    .best-match-inner {
+        gap: 22px;
+    }
+
+    .best-match-info h3 {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
 
+    :root {
+        --header-height: 68px;
+    }
+
     .header-container {
         padding: 0 20px;
+
+        gap: 15px;
     }
 
     .header-page-title {
@@ -2744,12 +2723,79 @@ a:focus-visible {
         flex-direction: column;
     }
 
+    .best-match-info {
+        width: 100%;
+    }
+
     .best-match-actions {
         width: 100%;
     }
 
     .best-match-view-btn {
         flex: 1;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .scholarship-card {
+        width: 310px;
+        min-width: 310px;
+
+        flex-basis: 310px;
+    }
+
+    .profile-sidebar {
+        width: 320px;
+    }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .logo-subtitle {
+        display: none;
+    }
+
+    .header-container {
+        gap: 10px;
+    }
+
+    .header-user {
+        margin-left: auto;
+    }
+
+    .results-intro h1 {
+        font-size: 31px;
+    }
+
+    .intro-description {
+        font-size: 12px;
+    }
+
+    .best-match-inner {
+        padding: 23px;
+    }
+
+    .best-match-reasons {
+        padding:
+            0 23px 22px;
+    }
+
+    .scholarship-card {
+        width: 300px;
+        min-width: 300px;
+
+        flex-basis: 300px;
+    }
+
+    .modal-overlay {
+        padding: 20px;
     }
 }
 
@@ -2829,6 +2875,8 @@ a:focus-visible {
 
     .intro-description {
         font-size: 11px;
+
+        line-height: 1.7;
     }
 
 
@@ -2891,8 +2939,13 @@ a:focus-visible {
         min-height: 43px;
     }
 
+    .best-match-reasons {
+        padding:
+            0 20px 20px;
+    }
 
-    /* HORIZONTAL CARD SCROLL */
+
+    /* HORIZONTAL CARDS */
 
     .scholarship-scroll-wrapper {
         width: 100%;
@@ -2911,6 +2964,7 @@ a:focus-visible {
 
     .scholarship-grid {
         width: max-content;
+
         min-width: 100%;
 
         gap: 13px;
@@ -2956,7 +3010,15 @@ a:focus-visible {
     }
 
 
-    /* PROFILE PHOTO */
+    /* NO RESULTS */
+
+    .no-results {
+        padding:
+            50px 18px;
+    }
+
+
+    /* PROFILE */
 
     .profile-photo-wrapper {
         width: 60px;
@@ -2977,7 +3039,8 @@ a:focus-visible {
     }
 
     .profile-modal {
-        padding: 27px 20px;
+        padding:
+            27px 20px;
     }
 
     .modal-actions {
@@ -3004,7 +3067,7 @@ a:focus-visible {
     }
 
 
-    /* WHITE LOADER - MOBILE */
+    /* LOADER */
 
     .results-loader {
         padding: 12px;
@@ -3146,7 +3209,30 @@ a:focus-visible {
     }
 
 
-    /* CARD SIZE */
+    /* SECTION */
+
+    .section-heading {
+        gap: 7px;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .section-heading p {
+        font-size: 9px;
+    }
+
+    .scholarship-count {
+        height: 25px;
+
+        min-width: 30px;
+
+        font-size: 9px;
+    }
+
+
+    /* CARDS */
 
     .scholarship-scroll-wrapper {
         width: 100%;
@@ -3176,34 +3262,171 @@ a:focus-visible {
 
         flex:
             0 0 275px;
+
+        min-height: 350px;
+
+        padding: 16px;
     }
 
+    .scholarship-card-top {
+        margin-bottom: 13px;
+    }
 
-    /* SECTION */
+    .scholarship-title {
+        min-height: 50px;
 
-    .section-heading h2 {
-        font-size: 17px;
+        font-size: 13px;
+    }
+
+    .scholarship-provider {
+        font-size: 8px;
+    }
+
+    .scholarship-meta span {
+        max-width: 100%;
+
+        font-size: 7px;
+    }
+
+    .scholarship-amount {
+        margin-top: 15px;
+
+        padding: 11px;
+    }
+
+    .scholarship-amount strong {
+        font-size: 14px;
+    }
+
+    .scholarship-date {
+        font-size: 8px;
+    }
+
+    .scholarship-actions {
+        padding-top: 15px;
+
+        gap: 5px;
+    }
+
+    .reasons-btn,
+    .view-details-btn {
+        min-height: 37px;
+
+        padding: 0 7px;
+
+        font-size: 7px;
     }
 
 
     /* BEST MATCH */
 
+    .best-match-inner {
+        padding: 17px;
+    }
+
     .best-match-info h3 {
         font-size: 16px;
+    }
+
+    .best-match-info p {
+        font-size: 9px;
     }
 
     .best-match-meta {
         flex-direction: column;
 
         align-items: flex-start;
+
+        gap: 6px;
+
+        margin-top: 13px;
+    }
+
+    .best-match-meta span {
+        width: 100%;
+
+        font-size: 7px;
     }
 
     .best-match-actions {
         width: 100%;
+
+        gap: 6px;
+    }
+
+    .best-match-save-btn {
+        width: 41px;
+        height: 41px;
     }
 
     .best-match-view-btn {
-        min-width: 0;
+        min-height: 41px;
+
+        font-size: 9px;
+    }
+
+    .best-match-reasons {
+        padding:
+            0 17px 18px;
+    }
+
+    .best-match-reasons li {
+        font-size: 8px;
+    }
+
+
+    /* SIDEBAR */
+
+    .profile-sidebar {
+        width: min(330px, 94vw);
+
+        padding: 17px;
+    }
+
+
+    /* MODAL */
+
+    .profile-modal {
+        padding:
+            25px 17px;
+    }
+
+    .modal-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 21px;
+    }
+
+    .profile-modal h2 {
+        font-size: 19px;
+    }
+
+    .profile-modal p {
+        font-size: 10px;
+    }
+
+
+    /* NO RESULTS */
+
+    .no-results {
+        padding:
+            45px 15px;
+    }
+
+    .no-results-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 21px;
+    }
+
+    .no-results h2 {
+        font-size: 18px;
+    }
+
+    .no-results p {
+        font-size: 9px;
     }
 
 
@@ -3267,6 +3490,158 @@ a:focus-visible {
 
 
 /* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    :root {
+        --header-height: 60px;
+    }
+
+    .header-container {
+        padding:
+            0 10px;
+    }
+
+    .logo-image {
+        width: 31px;
+        height: 31px;
+    }
+
+    .header-user-photo {
+        width: 31px;
+        height: 31px;
+    }
+
+    .results-content {
+        padding:
+            18px 9px 42px;
+    }
+
+    .results-intro h1 {
+        font-size: 24px;
+    }
+
+    .intro-description {
+        font-size: 10px;
+    }
+
+    .profile-toggle-btn {
+        min-height: 38px;
+
+        font-size: 9px;
+    }
+
+    .scholarship-card {
+        width: 260px;
+
+        min-width: 260px;
+
+        flex:
+            0 0 260px;
+    }
+
+    .best-match-info h3 {
+        font-size: 15px;
+    }
+
+    .best-match-view-btn {
+        font-size: 8px;
+    }
+
+    .loader-main {
+        padding:
+            16px 9px;
+    }
+
+    .loader-profile-node,
+    .loader-search-node,
+    .loader-result-node {
+        width: 35px;
+        height: 35px;
+    }
+
+    .loader-profile-node i,
+    .loader-search-node i,
+    .loader-result-node i {
+        font-size: 12px;
+    }
+
+    .loader-line {
+        width: 22px;
+    }
+
+    .loader-brand-text strong {
+        font-size: 14px;
+    }
+
+    #loaderTitle {
+        font-size: 17px;
+    }
+
+    .loader-step strong {
+        font-size: 5.5px;
+    }
+
+    .loader-footer {
+        font-size: 6px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 700px) and (orientation: landscape) {
+
+    .results-content {
+        padding-top: 18px;
+    }
+
+    .profile-sidebar {
+        width: 300px;
+    }
+
+    .profile-modal {
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+    .loader-main {
+        max-height: 94vh;
+
+        overflow-y: auto;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .scholarship-card:hover,
+    .best-match-view-btn:hover,
+    .view-details-btn:hover,
+    .reasons-btn:hover,
+    .profile-toggle-btn:hover,
+    .view-more-btn:hover {
+        transform: none;
+
+        box-shadow: none;
+    }
+
+    .scholarship-scroll-wrapper {
+        scrollbar-width: thin;
+    }
+}
+
+
+/* =========================================================
    REDUCED MOTION
 ========================================================= */
 
@@ -3284,3 +3659,4 @@ a:focus-visible {
         transition-duration: .01ms !important;
     }
 }
+
