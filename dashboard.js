@@ -2609,6 +2609,66 @@ if (backBtn) {
 
 }
 
+// =========================================================
+// MOBILE LOGO - 5 CLICK ADMIN ACCESS
+// =========================================================
+
+const mobileLogo =
+document.getElementById("mobileLogo");
+
+let mobileLogoClickCount = 0;
+
+let mobileLogoClickTimer = null;
+
+
+if (mobileLogo) {
+
+    mobileLogo.addEventListener(
+        "click",
+        function () {
+
+            mobileLogoClickCount++;
+
+
+            // Reset timer
+            clearTimeout(
+                mobileLogoClickTimer
+            );
+
+
+            // Reset count if clicks are too slow
+            mobileLogoClickTimer =
+            setTimeout(
+                function () {
+
+                    mobileLogoClickCount = 0;
+
+                },
+                2000
+            );
+
+
+            // 5 clicks
+            if (mobileLogoClickCount === 5) {
+
+                mobileLogoClickCount = 0;
+
+                clearTimeout(
+                    mobileLogoClickTimer
+                );
+
+
+                window.location.href =
+                "admin-login.html";
+
+            }
+
+        }
+    );
+
+}
+
+
 
 // =========================================================
 // FINAL LOG
