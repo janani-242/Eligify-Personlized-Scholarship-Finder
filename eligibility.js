@@ -5489,6 +5489,11 @@ document
    INITIALIZE
 ========================================================== */
 
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
 document.addEventListener(
     "DOMContentLoaded",
     async () => {
@@ -5497,9 +5502,9 @@ document.addEventListener(
 
         const userId = getUserId();
 
-        /*
-           No logged-in user
-        */
+        /* =====================================================
+           NO LOGGED-IN USER
+        ===================================================== */
 
         if (
             !userId ||
@@ -5510,40 +5515,84 @@ document.addEventListener(
                 "No logged-in user found."
             );
 
-            form?.reset();
+            if (form) {
+                form.reset();
+            }
 
             updateDynamicQuestionVisibility();
             showStep(1);
             updateDisclaimerButton();
 
             return;
-
         }
 
 
-        /*
-           IMPORTANT:
-           First clear the current form.
-           This prevents previous account's
-           browser values from remaining.
-        */
+        /* =====================================================
+           IMPORTANT MULTI-USER PROTECTION
+           -----------------------------------------------------
+           Always start with a completely empty form.
+           Do NOT allow values from another account/browser
+           session to remain in the form.
+        ===================================================== */
 
         if (form) {
-
             form.reset();
-
         }
 
 
-        /*
-           Load ONLY current user's local profile.
-        */
+        /* =====================================================
+           RESET DYNAMIC COURSE FIELDS
+        ===================================================== */
+
+        if (courseCategory) {
+
+            courseCategory.innerHTML =
+                `<option value="">Select category</option>`;
+
+            courseCategory.disabled = true;
+        }
+
+
+        if (course) {
+
+            course.innerHTML =
+                `<option value="">Select category first</option>`;
+
+            course.disabled = true;
+        }
+
+
+        if (yearOfStudy) {
+
+            yearOfStudy.innerHTML =
+                `<option value="">Select your course first</option>`;
+
+            yearOfStudy.disabled = true;
+        }
+
+
+        if (otherCourseGroup) {
+
+            otherCourseGroup.classList.add(
+                "hidden"
+            );
+        }
+
+
+        /* =====================================================
+           LOAD ONLY CURRENT USER'S LOCAL PROFILE
+        ===================================================== */
 
         const localProfile =
             getSavedEligibilityProfile();
 
 
-        if (localProfile) {
+        if (
+            localProfile &&
+            profileBelongsToCurrentUser(
+                localProfile
+            )
+        ) {
 
             restoreSavedProfile(
                 localProfile
@@ -5552,9 +5601,9 @@ document.addEventListener(
         }
 
 
-        /*
-           Get ONLY current user's Google Sheet profile.
-        */
+        /* =====================================================
+           LOAD ONLY CURRENT USER'S GOOGLE SHEET PROFILE
+        ===================================================== */
 
         const cloudProfile =
             await restoreProfileFromGAS();
@@ -5574,6 +5623,10 @@ document.addEventListener(
         }
 
 
+        /* =====================================================
+           FINAL UI UPDATE
+        ===================================================== */
+
         updateDynamicQuestionVisibility();
 
         showStep(1);
@@ -5582,6 +5635,8 @@ document.addEventListener(
 
     }
 );
+
+
 
 /* ==========================================================
    GLOBAL API
