@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -13,16 +14,16 @@
 
 
 /* =========================================================
-   BODY
+   HTML + BODY
 ========================================================= */
 
-html,
-body {
+html {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
 
@@ -49,14 +50,14 @@ body {
 
 .logo-container {
     position: relative;
+
     z-index: 10;
+
+    width: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    max-width: 100%;
 
     padding: 20px;
 
@@ -70,6 +71,7 @@ body {
 
 .logo {
     width: 300px;
+
     max-width: 75vw;
     max-height: 55vh;
 
@@ -107,8 +109,6 @@ body {
     pointer-events: none;
 
     z-index: 1;
-
-    transform: translateZ(0);
 }
 
 
@@ -117,24 +117,26 @@ body {
 ========================================================= */
 
 .brand-footer {
-    position: absolute;
+    position: fixed;
 
     left: 50%;
     bottom: 28px;
 
     transform: translateX(-50%);
 
-    z-index: 20;
+    z-index: 100;
 
-    width: min(100%, 600px);
+    width: 100%;
+    max-width: 600px;
 
     padding: 0 20px;
 
     text-align: center;
 
-    white-space: normal;
+    display: block;
 
-    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -143,14 +145,14 @@ body {
 ========================================================= */
 
 .brand-name {
+    width: 100%;
+
     display: flex;
 
     align-items: center;
     justify-content: center;
 
     gap: 8px;
-
-    width: 100%;
 
     font-size: 15px;
     font-weight: 700;
@@ -161,7 +163,7 @@ body {
 
     color: #1e293b;
 
-    overflow-wrap: anywhere;
+    white-space: nowrap;
 }
 
 
@@ -170,6 +172,8 @@ body {
 ========================================================= */
 
 .brand-icon {
+    display: inline-block;
+
     flex: 0 0 auto;
 
     font-size: 18px;
@@ -185,9 +189,11 @@ body {
 ========================================================= */
 
 .tagline {
-    margin-top: 6px;
+    display: block;
 
     width: 100%;
+
+    margin-top: 6px;
 
     font-size: 10px;
     font-weight: 600;
@@ -198,7 +204,7 @@ body {
 
     color: #475569;
 
-    overflow-wrap: anywhere;
+    white-space: nowrap;
 }
 
 
@@ -210,6 +216,7 @@ body {
 
     .logo {
         width: 320px;
+
         max-width: 30vw;
     }
 
@@ -227,6 +234,10 @@ body {
         letter-spacing: 3.2px;
     }
 
+    .brand-icon {
+        font-size: 19px;
+    }
+
     .tagline {
         font-size: 10px;
         letter-spacing: 1.6px;
@@ -235,7 +246,7 @@ body {
 
 
 /* =========================================================
-   TABLET
+   LAPTOP / TABLET
 ========================================================= */
 
 @media (max-width: 1024px) {
@@ -246,6 +257,7 @@ body {
 
     .logo {
         width: 280px;
+
         max-width: 65vw;
         max-height: 50vh;
     }
@@ -260,12 +272,15 @@ body {
 
     .brand-footer {
         bottom: 26px;
+
         padding: 0 18px;
     }
 
     .brand-name {
         font-size: 14px;
         letter-spacing: 2.7px;
+
+        gap: 7px;
     }
 
     .brand-icon {
@@ -285,17 +300,13 @@ body {
 
 @media (max-width: 768px) {
 
-    body {
-        min-height: 100vh;
-        min-height: 100dvh;
-    }
-
     .logo-container {
         padding: 15px;
     }
 
     .logo {
         width: 240px;
+
         max-width: 70vw;
         max-height: 45vh;
     }
@@ -311,15 +322,21 @@ body {
     }
 
     .brand-footer {
-        bottom: 22px;
+        position: fixed;
+
+        left: 50%;
+        bottom: 24px;
 
         width: 100%;
 
         padding: 0 15px;
+
+        transform: translateX(-50%);
     }
 
     .brand-name {
         font-size: 13px;
+
         letter-spacing: 2.5px;
 
         gap: 7px;
@@ -333,6 +350,7 @@ body {
         margin-top: 5px;
 
         font-size: 9px;
+
         letter-spacing: 1px;
 
         line-height: 1.45;
@@ -352,6 +370,7 @@ body {
 
     .logo {
         width: 220px;
+
         max-width: 72vw;
         max-height: 42vh;
     }
@@ -367,13 +386,15 @@ body {
     }
 
     .brand-footer {
-        bottom: 20px;
+        bottom: 22px;
+
         padding: 0 12px;
     }
 
     .brand-name {
-        font-size: 12.5px;
-        letter-spacing: 2.2px;
+        font-size: 12px;
+
+        letter-spacing: 2px;
 
         gap: 6px;
     }
@@ -385,8 +406,11 @@ body {
     .tagline {
         margin-top: 5px;
 
-        font-size: 8.5px;
-        letter-spacing: 0.9px;
+        font-size: 8px;
+
+        letter-spacing: 0.8px;
+
+        line-height: 1.4;
     }
 }
 
@@ -403,6 +427,7 @@ body {
 
     .logo {
         width: 200px;
+
         max-width: 72vw;
         max-height: 38vh;
     }
@@ -424,10 +449,11 @@ body {
     }
 
     .brand-name {
-        font-size: 12px;
-        letter-spacing: 2px;
+        font-size: 11px;
 
-        gap: 6px;
+        letter-spacing: 1.7px;
+
+        gap: 5px;
     }
 
     .brand-icon {
@@ -437,8 +463,9 @@ body {
     .tagline {
         margin-top: 4px;
 
-        font-size: 8px;
-        letter-spacing: 0.8px;
+        font-size: 7.5px;
+
+        letter-spacing: 0.6px;
 
         line-height: 1.4;
     }
@@ -446,40 +473,56 @@ body {
 
 
 /* =========================================================
-   VERY SMALL DEVICES
+   VERY SMALL PHONE
 ========================================================= */
 
 @media (max-width: 320px) {
 
+    .logo-container {
+        padding: 8px;
+    }
+
     .logo {
         width: 175px;
+
         max-width: 70vw;
+        max-height: 35vh;
     }
 
     .glow {
         width: 270px;
         height: 270px;
+
+        max-width: 82vw;
+        max-height: 82vw;
     }
 
     .brand-footer {
         bottom: 14px;
+
         padding: 0 8px;
     }
 
     .brand-name {
-        font-size: 11px;
-        letter-spacing: 1.7px;
+        font-size: 10px;
 
-        gap: 5px;
+        letter-spacing: 1.4px;
+
+        gap: 4px;
     }
 
     .brand-icon {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .tagline {
-        font-size: 7px;
-        letter-spacing: 0.65px;
+        margin-top: 3px;
+
+        font-size: 6.8px;
+
+        letter-spacing: 0.45px;
+
+        line-height: 1.3;
     }
 }
 
@@ -491,33 +534,88 @@ body {
 @media (max-width: 900px) and (orientation: landscape) {
 
     .logo-container {
-        padding: 10px;
+        padding: 8px;
     }
 
     .logo {
         width: 190px;
+
         max-width: 35vw;
-        max-height: 55vh;
+        max-height: 48vh;
     }
 
     .glow {
-        width: 300px;
-        height: 300px;
+        width: 290px;
+        height: 290px;
 
         max-width: 55vh;
         max-height: 55vh;
+
+        opacity: 0.28;
     }
 
     .brand-footer {
-        bottom: 10px;
-        padding: 0 12px;
+        bottom: 8px;
+
+        padding: 0 10px;
+    }
+
+    .brand-name {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        gap: 5px;
+    }
+
+    .brand-icon {
+        font-size: 12px;
+    }
+
+    .tagline {
+        margin-top: 2px;
+
+        font-size: 7px;
+
+        letter-spacing: 0.5px;
+
+        line-height: 1.3;
+    }
+}
+
+
+/* =========================================================
+   SHORT SCREEN - PORTRAIT
+========================================================= */
+
+@media (max-height: 600px) and (orientation: portrait) {
+
+    .logo-container {
+        padding: 8px;
+    }
+
+    .logo {
+        width: 200px;
+
+        max-width: 65vw;
+        max-height: 35vh;
+    }
+
+    .glow {
+        width: 280px;
+        height: 280px;
+
+        max-width: 70vw;
+        max-height: 70vw;
+    }
+
+    .brand-footer {
+        bottom: 12px;
     }
 
     .brand-name {
         font-size: 11px;
-        letter-spacing: 1.8px;
-
-        gap: 5px;
+        letter-spacing: 1.6px;
     }
 
     .brand-icon {
@@ -528,72 +626,60 @@ body {
         margin-top: 3px;
 
         font-size: 7.5px;
-        letter-spacing: 0.7px;
-
-        line-height: 1.3;
+        letter-spacing: 0.6px;
     }
 }
 
 
 /* =========================================================
-   SHORT SCREENS
-========================================================= */
-
-@media (max-height: 600px) and (orientation: portrait) {
-
-    .logo {
-        max-height: 40vh;
-    }
-
-    .glow {
-        max-height: 75vw;
-        max-width: 75vw;
-    }
-
-    .brand-footer {
-        bottom: 14px;
-    }
-
-    .tagline {
-        margin-top: 3px;
-    }
-}
-
-
-/* =========================================================
-   VERY SHORT SCREENS
+   VERY SHORT SCREEN
 ========================================================= */
 
 @media (max-height: 450px) {
 
+    .logo-container {
+        padding: 5px;
+    }
+
     .logo {
-        width: 180px;
-        max-width: 40vw;
-        max-height: 45vh;
+        width: 170px;
+
+        max-width: 38vw;
+        max-height: 40vh;
     }
 
     .glow {
-        width: 260px;
-        height: 260px;
+        width: 250px;
+        height: 250px;
+
+        max-width: 55vh;
+        max-height: 55vh;
     }
 
     .brand-footer {
-        bottom: 8px;
+        bottom: 7px;
+
+        padding: 0 8px;
     }
 
     .brand-name {
-        font-size: 10px;
-        letter-spacing: 1.5px;
+        font-size: 9px;
+
+        letter-spacing: 1.2px;
+
+        gap: 4px;
     }
 
     .brand-icon {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .tagline {
-        font-size: 7px;
-        letter-spacing: 0.6px;
         margin-top: 2px;
+
+        font-size: 6.5px;
+
+        letter-spacing: 0.4px;
     }
 }
 
@@ -618,11 +704,13 @@ body {
 
     0% {
         opacity: 0;
+
         transform: scale(0.7);
     }
 
     100% {
         opacity: 1;
+
         transform: scale(1);
     }
 }
