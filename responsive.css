@@ -1,0 +1,154 @@
+/* =========================================================
+   ELIGIFY | GLOBAL RESPONSIVE LAYER
+   Loaded LAST on every page. Makes the whole website fit
+   phones, tablets and desktops without sideways scrolling.
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Media never wider than the screen */
+img,
+video,
+canvas,
+iframe,
+embed,
+object {
+    max-width: 100%;
+}
+
+svg {
+    max-width: 100%;
+}
+
+/* Long words / emails / links must wrap, not push the layout */
+h1, h2, h3, h4, h5, h6,
+p, li, td, th, label, a, span, small {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Tables scroll inside themselves instead of breaking the page */
+table {
+    max-width: 100%;
+}
+
+.table-responsive,
+.table-wrapper,
+.table-container,
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Popups / modals / dialogs always fit inside the screen */
+[class*="modal"],
+[class*="popup"],
+[class*="dialog"] {
+    max-width: calc(100vw - 24px);
+}
+
+/* Flex / grid children are allowed to shrink */
+.container > *,
+main > *,
+section > * {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TABLET  (<= 992px)
+========================================================= */
+
+@media (max-width: 992px) {
+
+    [class*="grid"] {
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   PHONE  (<= 768px)
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* 16px inputs stop iOS from zooming the page on focus */
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    /* Comfortable touch targets */
+    button,
+    .btn,
+    [role="button"],
+    input[type="button"],
+    input[type="submit"] {
+        min-height: 40px;
+    }
+
+    /* Fixed-width cards and boxes become fluid */
+    [class*="card"],
+    [class*="box"],
+    [class*="container"],
+    [class*="wrapper"] {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE  (<= 480px)
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* any multi-column grid collapses to one column */
+    .scholarship-grid,
+    .scholarships-grid,
+    .card-grid,
+    .cards-grid,
+    .results-grid,
+    .category-grid,
+    .stats-grid,
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b1220;
+  color: white;
+}
+
+/* Top Bar */
+.topbar {
+  background: #111827;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.avatar {
+  font-size: 50px;
+}
+
+/* Buttons */
+.btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #111827;
+  padding: 10px 0;
+  border-top: 1px solid #333;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+}

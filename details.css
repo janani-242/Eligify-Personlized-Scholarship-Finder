@@ -1,0 +1,1625 @@
+
+/* =========================================================
+   ELIGIFY SCHOLARSHIP DETAILS
+   DASHBOARD THEME
+   TEAL + GOLD + CLEAN PROFESSIONAL UI
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --teal: #0B5D5B;
+    --dark: #063F3F;
+    --deep: #052F2E;
+
+    --gold: #D4AF37;
+    --gold-light: #F5DC82;
+
+    --white: #FFFFFF;
+    --light: #F7F9FA;
+
+    --text: #223333;
+    --muted: #666666;
+
+    --border: #E6ECEC;
+
+    --teal-light: #EAF5F3;
+
+    --gold-bg: #FFF5D8;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    --shadow-hover:
+        0 18px 40px rgba(11, 93, 91, 0.16);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--light);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.details-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        25px
+        25px
+        120px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.details-header {
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.details-header h2 {
+
+    color: var(--teal);
+
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+========================================================= */
+
+.back-btn,
+.save-btn {
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    color: var(--teal);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: var(--shadow);
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.back-btn:hover,
+.save-btn:hover {
+
+    background: var(--teal);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(11, 93, 91, 0.18);
+}
+
+
+.back-btn i,
+.save-btn i {
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.scholarship-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal),
+            var(--dark)
+        );
+
+    color: var(--white);
+
+    box-shadow:
+        0 18px 45px rgba(11, 93, 91, 0.20);
+}
+
+
+/* =========================================================
+   HERO GOLD DECORATION
+========================================================= */
+
+.scholarship-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -140px;
+    right: -100px;
+
+    background: var(--gold);
+
+    opacity: 0.16;
+
+    border-radius: 50%;
+
+    filter: blur(8px);
+
+    pointer-events: none;
+}
+
+
+.scholarship-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    bottom: -110px;
+    left: -80px;
+
+    background: var(--white);
+
+    opacity: 0.05;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO TOP
+========================================================= */
+
+.hero-top {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SCHOLARSHIP ICON
+========================================================= */
+
+.scholarship-icon {
+
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    color: var(--white);
+
+    font-size: 27px;
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, 0.25);
+}
+
+
+.scholarship-icon i {
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.active-badge {
+
+    padding: 7px 16px;
+
+    border-radius: 30px;
+
+    background: var(--white);
+
+    color: var(--teal);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.scholarship-hero h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 22px;
+
+    max-width: 800px;
+
+    font-size: 30px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PROVIDER
+========================================================= */
+
+.provider {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 13px;
+}
+
+
+.provider i {
+
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   AMOUNT BOX
+========================================================= */
+
+.amount-box {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 22px;
+
+    width: 320px;
+
+    min-height: 80px;
+
+    padding: 14px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 18px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+.amount-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--gold);
+
+    color: var(--white);
+
+    font-size: 18px;
+}
+
+
+.amount-box p {
+
+    margin-bottom: 2px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.amount-box h2 {
+
+    color: var(--teal);
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   QUICK INFO
+========================================================= */
+
+.quick-info {
+
+    margin-top: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+.info-card {
+
+    min-height: 88px;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+
+.info-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-color:
+        rgba(11, 93, 91, 0.15);
+}
+
+
+.info-card > i {
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: var(--teal-light);
+
+    color: var(--teal);
+
+    font-size: 17px;
+}
+
+
+.info-card span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+.info-card h4 {
+
+    margin-top: 3px;
+
+    color: var(--teal);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.details-section {
+
+    margin-top: 20px;
+
+    padding: 24px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.25s ease;
+}
+
+
+.details-section:hover {
+
+    box-shadow:
+        0 14px 35px rgba(11, 93, 91, 0.10);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 17px;
+}
+
+
+.section-heading i {
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: var(--teal-light);
+
+    color: var(--teal);
+
+    font-size: 17px;
+}
+
+
+.section-heading h3 {
+
+    color: var(--teal);
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.details-section > p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ELIGIBILITY
+========================================================= */
+
+.eligibility-list {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 13px;
+}
+
+
+.eligibility-item {
+
+    min-height: 72px;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: var(--light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    transition: 0.2s ease;
+}
+
+
+.eligibility-item:hover {
+
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(212, 175, 55, 0.40);
+
+    box-shadow:
+        0 8px 22px rgba(11, 93, 91, 0.07);
+}
+
+
+/* =========================================================
+   ELIGIBILITY ICON
+========================================================= */
+
+.eligibility-icon {
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: var(--gold-bg);
+
+    color: #A77F00;
+}
+
+
+.eligibility-item span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+.eligibility-item p {
+
+    margin-top: 3px;
+
+    color: var(--teal);
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+
+    position: relative;
+
+    padding-left: 4px;
+}
+
+
+.timeline-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+.timeline-dot {
+
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    border:
+        4px solid
+        var(--gold-bg);
+}
+
+
+.timeline-dot.active {
+
+    background: var(--teal);
+
+    border-color:
+        var(--teal-light);
+}
+
+
+.timeline-content span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.timeline-content h4 {
+
+    margin-top: 3px;
+
+    color: var(--teal);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TIMELINE LINE
+========================================================= */
+
+.timeline-line {
+
+    width: 2px;
+
+    height: 17px;
+
+    margin-left: 11px;
+
+    margin-top: -13px;
+
+    margin-bottom: 2px;
+
+    background:
+        linear-gradient(
+            var(--gold),
+            var(--border)
+        );
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.documents-box {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.document-item {
+
+    min-height: 50px;
+
+    padding: 12px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: var(--light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    color: #4D5B5B;
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+
+.document-item:hover {
+
+    background: var(--teal-light);
+
+    border-color:
+        rgba(11, 93, 91, 0.15);
+}
+
+
+.document-item i {
+
+    flex-shrink: 0;
+
+    color: var(--teal);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   VERIFICATION
+========================================================= */
+
+.verification-card {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF3,
+            #FFF8DF
+        );
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.22);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(212, 175, 55, 0.08);
+}
+
+
+.verify-icon {
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--gold);
+
+    color: var(--white);
+}
+
+
+.verification-card h3 {
+
+    color: var(--teal);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.verification-card p {
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   APPLY INFORMATION
+========================================================= */
+
+.apply-info {
+
+    margin-top: 20px;
+
+    padding: 19px;
+
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--teal-light),
+            var(--white)
+        );
+
+    border:
+        1px solid
+        rgba(11, 93, 91, 0.10);
+}
+
+
+.apply-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.apply-content > i {
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--teal);
+
+    color: var(--gold-light);
+}
+
+
+.apply-content h3 {
+
+    color: var(--teal);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.apply-content p {
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   STICKY BOTTOM ACTION
+========================================================= */
+
+.bottom-action {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 15px;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    padding: 0 25px;
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.apply-btn {
+
+    width: 100%;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: var(--teal);
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 12px 30px rgba(11, 93, 91, 0.22);
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.apply-btn:hover {
+
+    background: var(--gold);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 35px rgba(212, 175, 55, 0.25);
+}
+
+
+.apply-btn i {
+
+    color: var(--gold-light);
+
+    font-size: 17px;
+}
+
+
+.apply-btn:hover i {
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--light);
+
+    z-index: 9999;
+}
+
+
+.loader {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border:
+        4px solid
+        #DDE8E8;
+
+    border-top-color: var(--gold);
+
+    border-right-color: var(--teal);
+
+    animation:
+        spin .8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+#detailsToast {
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.25);
+
+    box-shadow:
+        0 12px 35px
+        rgba(6, 63, 63, 0.22) !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .details-container {
+
+        max-width: 100%;
+
+        padding:
+            20px
+            20px
+            110px;
+    }
+
+
+    .quick-info {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .details-container {
+
+        padding:
+            16px
+            16px
+            105px;
+    }
+
+
+    .details-header {
+
+        height: 55px;
+    }
+
+
+    .details-header h2 {
+
+        font-size: 20px;
+    }
+
+
+    .scholarship-hero {
+
+        padding: 25px;
+
+        border-radius: 22px;
+    }
+
+
+    .scholarship-hero h1 {
+
+        font-size: 25px;
+    }
+
+
+    .quick-info {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 12px;
+    }
+
+
+    .eligibility-list {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .documents-box {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .bottom-action {
+
+        padding:
+            0 16px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .details-container {
+
+        padding:
+            12px
+            12px
+            100px;
+    }
+
+
+    .details-header {
+
+        height: 52px;
+    }
+
+
+    .details-header h2 {
+
+        font-size: 18px;
+    }
+
+
+    .back-btn,
+    .save-btn {
+
+        width: 41px;
+        height: 41px;
+
+        border-radius: 13px;
+    }
+
+
+    .scholarship-hero {
+
+        margin-top: 8px;
+
+        padding: 20px;
+
+        border-radius: 21px;
+    }
+
+
+    .scholarship-icon {
+
+        width: 55px;
+        height: 55px;
+
+        border-radius: 16px;
+
+        font-size: 23px;
+    }
+
+
+    .active-badge {
+
+        padding: 6px 13px;
+
+        font-size: 10px;
+    }
+
+
+    .scholarship-hero h1 {
+
+        margin-top: 18px;
+
+        font-size: 21px;
+    }
+
+
+    .provider {
+
+        font-size: 11px;
+    }
+
+
+    .amount-box {
+
+        width: 100%;
+
+        min-height: 70px;
+
+        padding: 12px;
+
+        margin-top: 18px;
+    }
+
+
+    .amount-icon {
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .amount-box h2 {
+
+        font-size: 20px;
+    }
+
+
+    .quick-info {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 9px;
+    }
+
+
+    .info-card {
+
+        min-height: 70px;
+
+        padding: 11px;
+
+        border-radius: 15px;
+
+        gap: 8px;
+    }
+
+
+    .info-card > i {
+
+        width: 34px;
+        height: 34px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+
+    .info-card span {
+
+        font-size: 9px;
+    }
+
+
+    .info-card h4 {
+
+        font-size: 11px;
+    }
+
+
+    .details-section {
+
+        padding: 17px;
+
+        border-radius: 18px;
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 13px;
+    }
+
+
+    .section-heading i {
+
+        width: 35px;
+        height: 35px;
+
+        border-radius: 11px;
+    }
+
+
+    .section-heading h3 {
+
+        font-size: 16px;
+    }
+
+
+    .details-section > p {
+
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+
+    .eligibility-list {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 9px;
+    }
+
+
+    .eligibility-item {
+
+        min-height: 64px;
+
+        padding: 11px;
+    }
+
+
+    .documents-box {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 9px;
+    }
+
+
+    .verification-card {
+
+        padding: 14px;
+    }
+
+
+    .verification-card h3 {
+
+        font-size: 13px;
+    }
+
+
+    .verification-card p {
+
+        font-size: 10px;
+    }
+
+
+    .apply-info {
+
+        padding: 15px;
+    }
+
+
+    .apply-content p {
+
+        font-size: 10px;
+    }
+
+
+    .bottom-action {
+
+        bottom: 10px;
+
+        padding:
+            0 12px;
+    }
+
+
+    .apply-btn {
+
+        height: 50px;
+
+        border-radius: 14px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .quick-info {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .scholarship-hero h1 {
+
+        font-size: 19px;
+    }
+
+
+    .details-header h2 {
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+
+    outline:
+        3px solid
+        rgba(212, 175, 55, 0.45);
+
+    outline-offset: 3px;
+}
